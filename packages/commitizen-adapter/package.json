@@ -1,17 +1,25 @@
 {
-  "name": "commitlint-config",
+  "name": "@tophat/commitizen-adapter",
   "version": "0.0.0",
-  "description": "Top Hat's config for commitlint",
+  "description": "A customized Commitizen adapter for commit message standardization and automatic semantic versioning.",
   "author": "Top Hat",
   "homepage": "https://github.com/tophat/commit-utils#readme",
   "license": "Apache-2.0",
   "main": "src/index.js",
   "directories": {
-    "src": "src",
+    "lib": "lib",
     "test": "__tests__"
   },
+    "dependencies": {
+        "lodash": "^4.17.10",
+        "longest": "^1.0.1",
+        "word-wrap": "^1.0.3"
+    },
+    "devDependencies": {
+        "@types/lodash": "^4.14.118"
+    },
   "files": [
-    "src"
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -22,8 +30,5 @@
   },
   "bugs": {
     "url": "https://github.com/tophat/commit-utils/issues"
-  },
-  "devDependencies": {
-    "@commitlint/utils": "^7.0.0"
   }
 }
