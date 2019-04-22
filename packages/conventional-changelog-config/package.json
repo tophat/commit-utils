@@ -1,6 +1,6 @@
 {
   "name": "@tophat/conventional-changelog-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Top Hat's conventional changelog config for changelog generation",
   "author": "Top Hat",
   "homepage": "https://github.com/tophat/commit-utils#readme",
@@ -24,6 +24,6 @@
     "url": "https://github.com/tophat/commit-utils/issues"
   },
   "publishConfig": {
-      "access" : "public"
+    "access": "public"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@tophat/commitlint-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Top Hat's config for commitlint",
   "author": "Top Hat",
   "homepage": "https://github.com/tophat/commit-utils#readme",
@@ -27,6 +27,6 @@
     "@commitlint/utils": "^7.0.0"
   },
   "publishConfig": {
-      "access" : "public"
+    "access": "public"
   }
 }
