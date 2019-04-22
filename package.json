@@ -1,9 +1,9 @@
 {
-  "name": "commit-watch",
+  "name": "commitwatch",
   "version": "0.0.1",
   "description": "commit message status check for continuous integration",
   "main": "index.js",
-  "repository": "git@github.com:tophat/commit-watch.git",
+  "repository": "git@github.com:tophat/commitwatch.git",
   "author": "Shouvik DCosta <shouvik.dcosta@tophatmonocle.com>",
   "license": "MIT",
   "devDependencies": {

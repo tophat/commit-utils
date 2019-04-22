@@ -1,2 +1,2 @@
-# commit-watch
+# commitwatch
 WIP
