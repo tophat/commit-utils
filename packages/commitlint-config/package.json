@@ -1,5 +1,5 @@
 {
-  "name": "commitlint-config",
+  "name": "@tophat/commitlint-config",
   "version": "0.0.0",
   "description": "Top Hat's config for commitlint",
   "author": "Top Hat",
@@ -7,7 +7,7 @@
   "license": "Apache-2.0",
   "main": "src/index.js",
   "directories": {
-    "src": "src",
+    "lib": "src",
     "test": "__tests__"
   },
   "files": [

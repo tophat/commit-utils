@@ -7,7 +7,7 @@
   "license": "Apache-2.0",
   "main": "src/index.js",
   "directories": {
-    "lib": "lib",
+    "lib": "src",
     "test": "__tests__"
   },
     "dependencies": {
@@ -19,7 +19,7 @@
         "@types/lodash": "^4.14.118"
     },
   "files": [
-    "lib"
+    "src"
   ],
   "repository": {
     "type": "git",
