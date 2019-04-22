@@ -6,6 +6,7 @@
   "repository": "git@github.com:tophat/commitwatch.git",
   "author": "Shouvik DCosta <shouvik.dcosta@tophatmonocle.com>",
   "license": "MIT",
+  "bin": "./src/index.js",
   "devDependencies": {
     "@tophat/eslint-config": "^0.1.4"
   },
