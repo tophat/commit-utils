@@ -1,5 +1,5 @@
 {
-  "name": "commitwatch",
+  "name": "commit-watch",
   "version": "0.0.1",
   "description": "commit message status check for continuous integration",
   "main": "index.js",
