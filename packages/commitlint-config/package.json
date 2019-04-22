@@ -1,0 +1,29 @@
+{
+  "name": "commitlint-config",
+  "version": "0.0.0",
+  "description": "Top Hat's config for commitlint ",
+  "author": "Top Hat",
+  "homepage": "https://github.com/tophat/commit-utils#readme",
+  "license": "Apache-2.0",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tophat/commit-utils.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/tophat/commit-utils/issues"
+  },
+  "devDependencies": {
+    "@commitlint/utils": "^7.0.0"
+  }
+}
