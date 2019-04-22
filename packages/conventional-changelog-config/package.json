@@ -1,5 +1,5 @@
 {
-  "name": "conventional-changelog-config",
+  "name": "@tophat/conventional-changelog-config",
   "version": "0.0.0",
   "description": "Top Hat's conventional changelog config for changelog generation",
   "author": "Top Hat",
@@ -7,7 +7,7 @@
   "license": "Apache-2.0",
   "main": "src/index.js",
   "directories": {
-    "src": "src",
+    "lib": "src",
     "test": "__tests__"
   },
   "files": [
