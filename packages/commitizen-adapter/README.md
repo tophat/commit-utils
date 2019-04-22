@@ -39,4 +39,4 @@ You will see the following commit types when you run the command
 ## Maximum Character Limit
 
 There is a maximum character limit of 72 for the header of the commit message 
-which is composed of the commit type and subject.
+which is composed of the commit type and subject. 
