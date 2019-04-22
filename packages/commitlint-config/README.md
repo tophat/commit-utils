@@ -1,6 +1,6 @@
 # `commitlint-config`
 
-> TODO: description
+> TODO: description 
 
 ## Usage
 
