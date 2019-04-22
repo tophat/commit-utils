@@ -1,5 +1,5 @@
 {
-  "name": "@tophat/conventional-changelog-config",
+  "name": "@thm/conventional-changelog-config",
   "version": "0.0.0",
   "description": "Top Hat's conventional changelog config for changelog generation",
   "author": "Top Hat",
