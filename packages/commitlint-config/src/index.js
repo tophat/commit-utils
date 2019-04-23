@@ -1,3 +1,6 @@
+const { constants } = require('@tophat/commit-utils-core')
+const { COMMIT_TYPES } = constants
+
 module.exports = {
     rules: {
         'body-leading-blank': [1, 'always'],
@@ -9,21 +12,7 @@ module.exports = {
         'type-enum': [
             2,
             'always',
-            [
-                'build',
-                'chore',
-                'ci',
-                'cr',
-                'docs',
-                'feat',
-                'fix',
-                'perf',
-                'refactor',
-                'revert',
-                'style',
-                'test',
-                'wip',
-            ],
+            Object.keys(COMMIT_TYPES),
         ],
     },
 }
