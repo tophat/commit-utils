@@ -1,6 +1,6 @@
 {
   "name": "@tophat/commit-utils-core",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Shared code between all of Top Hat's commit utils",
   "author": "Top Hat",
   "homepage": "https://github.com/tophat/commit-utils#readme",
