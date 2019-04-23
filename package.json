@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "commit message status check for continuous integration",
   "main": "index.js",
-  "repository": "git@github.com:tophat/commitwatch.git",
+  "repository": "git@github.com:tophat/commit-watch.git",
   "author": "Shouvik DCosta <shouvik.dcosta@tophatmonocle.com>",
   "license": "MIT",
   "bin": "./src/index.js",
