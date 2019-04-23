@@ -24,7 +24,7 @@
     "url": "https://github.com/tophat/commit-utils/issues"
   },
   "dependencies" : {
-      "@tophat/commit-utils-core": "*"
+      "@tophat/commit-utils-core": "^0.0.5"
   },
   "publishConfig": {
     "access": "public"
