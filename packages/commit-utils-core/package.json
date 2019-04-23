@@ -1,7 +1,7 @@
 {
-  "name": "@tophat/commitlint-config",
+  "name": "@tophat/commit-utils-core",
   "version": "0.0.5",
-  "description": "Top Hat's config for commitlint",
+  "description": "Shared code between all of Top Hat's commit utils",
   "author": "Top Hat",
   "homepage": "https://github.com/tophat/commit-utils#readme",
   "license": "Apache-2.0",
@@ -22,14 +22,5 @@
   },
   "bugs": {
     "url": "https://github.com/tophat/commit-utils/issues"
-  },
-  "dependencies" : {
-      "@tophat/commit-utils-core": "^0.0.5"
-  },
-  "devDependencies": {
-    "@commitlint/utils": "^7.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
