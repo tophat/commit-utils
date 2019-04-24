@@ -1,4 +1,4 @@
-const {constants} = require('@tophat/commit-utils-core')
+const { constants } = require('@tophat/commit-utils-core')
 const engine = require('./engine')
 
 const { COMMIT_TYPES } = constants
