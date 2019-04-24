@@ -1,0 +1,51 @@
+version: 2.1
+
+jobs:
+  lint:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run: echo "Lint everything and make it pretty!"
+
+  test:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run: echo "Full coverage or bust!"
+
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run: echo "Will it build?"
+
+  deploy:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run: echo "Ship it!"
+
+workflows:
+  version: 2
+  build_test_lint:
+    jobs:
+      - lint
+      - test
+      - build
+      - deploy:
+          requires:
+            - lint
+            - test
+            - build
+          filters:
+            branches:
+              only:
+                - master
