@@ -1,1 +1,1 @@
-module.exports = {extends: ['@tophat/commitlint-config']}
+module.exports = { extends: ['@tophat/commitlint-config'] }

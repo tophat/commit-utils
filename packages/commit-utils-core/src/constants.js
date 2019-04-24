@@ -8,7 +8,8 @@ const COMMIT_TYPES = {
         appearsInChangelog: false,
     },
     feat: {
-        description: 'A new feature (NOTE: This will be added to the changelog)',
+        description:
+            'A new feature (NOTE: This will be added to the changelog)',
         title: 'Features',
         prefix: 'feat',
         groupTitle: 'Features',
@@ -18,7 +19,7 @@ const COMMIT_TYPES = {
         description: 'A bug fix (NOTE: This will be added to the changelog)',
         title: 'Bug Fixes',
         prefix: 'fix',
-        groupTitle: 'Bug Fixes', 
+        groupTitle: 'Bug Fixes',
         appearsInChangelog: true,
     },
     cr: {
@@ -29,11 +30,12 @@ const COMMIT_TYPES = {
         appearsInChangelog: false,
     },
     style: {
-        description: "Changes that don't affect the code's meaning (whitespace, formatting, etc)",
+        description:
+            "Changes that don't affect the code's meaning (whitespace, formatting, etc)",
         title: 'Styles',
-        prefix: 'style', 
-        groupTitle: 'Styling', 
-        appearsInChangelog: false 
+        prefix: 'style',
+        groupTitle: 'Styling',
+        appearsInChangelog: false,
     },
     refactor: {
         description: 'Changes that neither fix a bug nor add a feature',
@@ -43,7 +45,8 @@ const COMMIT_TYPES = {
         appearsInChangelog: false,
     },
     perf: {
-        description: 'Changes that improve performance (NOTE: This will be added to the changelog)',
+        description:
+            'Changes that improve performance (NOTE: This will be added to the changelog)',
         title: 'Performance Improvements',
         prefix: 'perf',
         groupTitle: 'Performance Improvements',
@@ -52,30 +55,31 @@ const COMMIT_TYPES = {
     docs: {
         description: 'Changes to documentation only',
         title: 'Documentation',
-        prefix: 'docs', 
+        prefix: 'docs',
         groupTitle: 'Documentation',
-        appearsInChangelog: false 
+        appearsInChangelog: false,
     },
     test: {
         description: 'Adding missing tests or correcting existing tests',
         title: 'Tests',
-        prefix: 'test', 
-        groupTitle: 'Tests', 
-        appearsInChangelog: false 
+        prefix: 'test',
+        groupTitle: 'Tests',
+        appearsInChangelog: false,
     },
     revert: {
         description: 'Reverts a previous commit AHHHH',
         title: 'Reverts',
-        prefix: 'revert', 
-        groupTitle: 'Reverts', 
-        appearsInChangelog: true 
+        prefix: 'revert',
+        groupTitle: 'Reverts',
+        appearsInChangelog: true,
     },
     build: {
-        description: 'Changes that affect the build system or external dependencies',
+        description:
+            'Changes that affect the build system or external dependencies',
         title: 'Builds',
-        prefix: 'build', 
-        groupTitle: 'Build System', 
-        appearsInChangelog: false 
+        prefix: 'build',
+        groupTitle: 'Build System',
+        appearsInChangelog: false,
     },
     ci: {
         description: 'Changes to our CI configuration files and scripts',
@@ -87,8 +91,8 @@ const COMMIT_TYPES = {
     chore: {
         description: "Other changes that don't modify src or test files",
         title: 'Chores',
-        prefix: 'chore', 
-        groupTitle: 'Chores', 
+        prefix: 'chore',
+        groupTitle: 'Chores',
         appearsInChangelog: false,
     },
 }

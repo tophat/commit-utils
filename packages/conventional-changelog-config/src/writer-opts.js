@@ -35,7 +35,7 @@ module.exports = Promise.all([
 
 /* context looks like
  *{"commit":"commit","issue":"issues","date":"2018-06-19","version":"4.0.0","host":"https://github.com","owner":"tophatmonocle","repository":"fe-versioning-sandbox","repoUrl":"https://github.com/tophatmonocle/fe-versioning-sandbox","packageData":{"name":"@thm/test-package-2","version":"4.0.0","description":"FE versioning test package 2","main":"index.js","author":{"name":"Top Hat Monocle Corp."},"license":"UNLICENSED","publishConfig":{"registry":"https://thm.jfrog.io/thm/api/npm/npm-local/"},"dependencies":{"@thm/test-package-1":"^4.0.0"},"readme":"ERROR: No README data found!","_id":"@thm/test-package-2@4.0.0","repository":{"url":"git+ssh://git@github.com/tophatmonocle/fe-versioning-sandbox.git"},"bugs":{"url":"https://github.com/tophatmonocle/fe-versioning-sandbox/issues"},"homepage":"https://github.com/tophatmonocle/fe-versioning-sandbox#readme"},"gitSemverTags":[],"linkReferences":true}
-*/
+ */
 
 const shouldNoteGoInChangelog = title =>
     title === BREAKING_CHANGE ||

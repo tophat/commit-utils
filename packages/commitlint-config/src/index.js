@@ -9,10 +9,6 @@ module.exports = {
         'subject-empty': [2, 'never'],
         'type-case': [2, 'always', 'lower-case'],
         'type-empty': [2, 'never'],
-        'type-enum': [
-            2,
-            'always',
-            Object.keys(COMMIT_TYPES),
-        ],
+        'type-enum': [2, 'always', Object.keys(COMMIT_TYPES)],
     },
 }
