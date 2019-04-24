@@ -37,12 +37,12 @@ jobs:
     steps:
       - checkout
       - run:
-        command: |
-            yarn install --frozen-lockfile
-            npm i -D lerna
-            npm config set @tophat:registry https://registry.npmjs.org
-            npm config set '//registry.npmjs.org/:_authToken' ${NPM_AUTH_TOKEN}
-            lerna publish from-package
+        - command: |
+          - yarn install --frozen-lockfile
+          - npm i -D lerna
+          - npm config set @tophat:registry https://registry.npmjs.org
+          - npm config set '//registry.npmjs.org/:_authToken' ${NPM_AUTH_TOKEN}
+          - lerna publish from-package
 
 workflows:
   version: 2
