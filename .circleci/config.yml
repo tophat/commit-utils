@@ -7,7 +7,7 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run: echo "Lint everything and make it pretty!"
+      - run: npm run lint
 
   test:
     working_directory: ~/repo
