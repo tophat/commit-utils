@@ -30,11 +30,28 @@ jobs:
             - v1-dependencies-{{ checksum "yarn.lock" }}
       - run: yarn lint
 
+  publish:
+    - run:
+      - command: |
+          yarn install --frozen-lockfile
+          npm i -D lerna
+          npm config set @tophat:registry https://registry.npmjs.org
+          npm config set '//registry.npmjs.org/:_authToken' ${NPM_AUTH_TOKEN}
+          lerna publish from-package
+
 workflows:
   version: 2
-  build_lint:
+  build_lint_publish:
     jobs:
       - build
       - lint:
           requires:
             - build
+      - publish:
+          requires:
+            - build
+            - lint
+          filters:
+            branches:
+              only:
+                - master
