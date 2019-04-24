@@ -1,51 +1,40 @@
 version: 2.1
 
 jobs:
-  lint:
-    working_directory: ~/repo
-    docker:
-      - image: circleci/node:latest
-    steps:
-      - checkout
-      - run: npm run lint
-
-  test:
-    working_directory: ~/repo
-    docker:
-      - image: circleci/node:latest
-    steps:
-      - checkout
-      - run: echo "Full coverage or bust!"
-
   build:
     working_directory: ~/repo
     docker:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run: echo "Will it build?"
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+      - run: yarn install --frozen-lockfile
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
 
-  deploy:
+  lint:
     working_directory: ~/repo
     docker:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run: echo "Ship it!"
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+      - run: yarn lint
 
 workflows:
   version: 2
-  build_test_lint:
+  build_lint:
     jobs:
-      - lint
-      - test
       - build
-      - deploy:
+      - lint:
           requires:
-            - lint
-            - test
             - build
-          filters:
-            branches:
-              only:
-                - master
