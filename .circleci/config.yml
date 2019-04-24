@@ -37,12 +37,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        keys:
-          - v1-dependencies-{{ checksum "yarn.lock" }}
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
       - run: |
-          npm i -D lerna &&
-          npm config set '@tophat:registry' 'https://registry.npmjs.org' &&
-          npm config set '//registry.npmjs.org/:_authToken' ${NPM_AUTH_TOKEN} &&
+          npm i -D lerna
+          npm config set '@tophat:registry' 'https://registry.npmjs.org'
+          npm config set '//registry.npmjs.org/:_authToken' ${NPM_AUTH_TOKEN}
           lerna publish from-package
 
 workflows:
