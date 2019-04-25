@@ -9,10 +9,11 @@
   "bin": "./src/index.js",
   "devDependencies": {
     "@babel/core": "^7.4.3",
-    "all-contributors-cli": "^6.3.1",
     "@tophat/eslint-config": "^0.1.4",
+    "all-contributors-cli": "^6.3.1",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jest": "^22.4.1",

@@ -71,12 +71,15 @@ class GitHubService {
     start({ message }) {
         return this.update(message, undefined, 'pending')
     }
+
     pass({ message, url }) {
         return this.update(message, url, 'success')
     }
+
     fail({ message, url }) {
         return this.update(message, url, 'failure')
     }
+
     error({ message }) {
         return this.update(message, undefined, 'error')
     }
