@@ -1,4 +1,4 @@
-We are standardizing our commit messages to pave the way for automatic semantic
+We are standardizing our commit messages to pave the way for automatic semantic  
 package versioning, and to do so, we are using Commitizen as an interactive
 commit message builder. We've customized the conventional Commitizen adapter to
 suit our needs.
