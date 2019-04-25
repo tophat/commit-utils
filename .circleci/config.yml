@@ -38,3 +38,9 @@ workflows:
       - lint:
           requires:
             - build
+
+experimental:
+  notify:
+    branches:
+      only:
+        - master
