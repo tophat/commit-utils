@@ -1,4 +1,6 @@
 # @tophat/commitlint-config
+[![npm version](https://badge.fury.io/js/%40tophat%2Fcommitlint-config.svg)](https://badge.fury.io/js/%40tophat%2Fcommitlint-config)
+[![npm downloads](https://img.shields.io/npm/dm/%40tophat%2Fcommitlint-config.svg)](https://npm-stat.com/charts.html?package=%40tophat%2Fcommitlint-config)
 
 Top Hat's shareable configuration for [commitlint](https://github.com/conventional-changelog/commitlint)
 
@@ -11,7 +13,6 @@ Using Yarn:
 Or using npm: 
 
 `npm install @tophat/commitlint-config --save-dev`
-
 
 ## Usage
 

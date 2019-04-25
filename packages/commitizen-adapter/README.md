@@ -1,4 +1,8 @@
-We are standardizing our commit messages to pave the way for automatic semantic   
+# `commitizen-adapter`
+[![npm version](https://badge.fury.io/js/%40tophat%2Fcommitizen-adapter.svg)](https://badge.fury.io/js/%40tophat%2Fcommitizen-adapter)
+[![npm downloads](https://img.shields.io/npm/dm/%40tophat%2Fcommitizen-adapter.svg)](https://npm-stat.com/charts.html?package=%40tophat%2Fcommitizen-adapter)
+
+We are standardizing our commit messages to pave the way for automatic semantic
 package versioning, and to do so, we are using Commitizen as an interactive
 commit message builder. We've customized the conventional Commitizen adapter to
 suit our needs.
