@@ -38,6 +38,9 @@ jobs:
           command: yarn lint
 
   publish:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:latest
     steps:
       - attach_workspace:
           at: ~/repo
