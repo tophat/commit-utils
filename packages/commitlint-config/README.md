@@ -65,7 +65,7 @@ The following rules are considered problems for `@tophat/commitlint-config` and 
   ]
   ```
 
-**Examples**
+Examples
 ```sh
 echo "foo: some message" # fails
 echo "fix: some message" # passes
@@ -79,7 +79,7 @@ echo "fix: some message" # passes
   72
 ```
 
-**Examples**
+Examples
 ```sh
 echo "fix: some message that is way too long and breaks the line max-length by several characters" # fails
 echo "fix: some message" # passes
@@ -89,7 +89,7 @@ echo "fix: some message" # passes
 * **condition**: `subject` is empty
 * **rule**: `never`
 
-**Examples**
+Examples
 ```sh
 echo "fix:" # fails
 echo "fix: some message" # passes
@@ -103,7 +103,7 @@ echo "fix: some message" # passes
   'lower-case'
 ```
 
-**Examples**
+Examples
 ```sh
 echo "FIX(scope): some message" # fails
 echo "fix(scope): some message" # passes
@@ -113,7 +113,7 @@ echo "fix(scope): some message" # passes
 * **condition**: `type` is empty
 * **rule**: `never`
 
-**Examples**
+Examples
 ```sh
 echo ": some message" # fails
 echo "fix: some message" # passes
