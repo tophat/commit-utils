@@ -20,7 +20,7 @@ Make sure you have [commitlint](https://github.com/conventional-changelog/commit
 Create a file called `commitlint.config.js` and add the following snippet to it:
 ```
 module.exports = {
-    extends: ['@ptsecurity/commitlint-config']
+    extends: ['@tophat/commitlint-config']
 }
 ```
 
