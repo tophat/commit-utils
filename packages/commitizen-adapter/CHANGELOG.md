@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.10](https://github.com/tophat/commit-utils/compare/@tophat/commitizen-adapter@0.0.9...@tophat/commitizen-adapter@0.0.10) (2019-04-25)
+
+
+### Bug Fixes
+
+* update docs ([e811b3b](https://github.com/tophat/commit-utils/commit/e811b3b))
+
+
+
+
+
 ## [0.0.9](https://github.com/tophat/commit-utils/compare/@tophat/commitizen-adapter@0.0.8...@tophat/commitizen-adapter@0.0.9) (2019-04-25)
 
 **Note:** Version bump only for package @tophat/commitizen-adapter
