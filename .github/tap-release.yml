@@ -1,0 +1,58 @@
+asset: yvm.zip
+tap: tophat/homebrew-bar/Formula/yvm.rb
+template: >
+  class Yvm < Formula
+    desc     "$REPO_DESCRIPTION"
+    homepage "$REPO_WEBITE"
+    version  "$STABLE_VERSION"
+    url      "$STABLE_ASSET_URL"
+    sha256   "$STABLE_ASSET_SHA256"
+
+    bottle :unneeded
+
+    depends_on "node" => [:recommended] # Can be ignored if node already managed
+
+    conflicts_with "hadoop", :because => "both install `yarn` binaries"
+    conflicts_with "yarn", :because => "yvm installs and manages yarn"
+
+    def install
+      update_self_disabled = "echo 'YVM update-self disabled. Use `brew upgrade yvm`.'"
+      inreplace "yvm.sh" do |s|
+        s.gsub! 'YVM_DIR=${YVM_DIR-"${HOME}/.yvm"}', "YVM_DIR='#{prefix}'"
+        s.gsub! "curl -fsSL https://raw.githubusercontent.com/tophat/yvm/master/scripts/install.js | YVM_INSTALL_DIR=${YVM_DIR} node", update_self_disabled
+      end
+      inreplace "yvm.fish" do |s|
+        s.gsub! 'set -q YVM_DIR; or set -U YVM_DIR "$HOME/.yvm"', "set -U YVM_DIR '#{prefix}'"
+        s.gsub! "env YVM_INSTALL_DIR=$YVM_DIR curl -fsSL https://raw.githubusercontent.com/tophat/yvm/master/scripts/install.js | node", update_self_disabled
+      end
+      chmod 0755, "yvm.sh"
+      chmod 0755, "shim/yarn"
+      mkdir_p "/usr/local/var/yvm/versions"
+      ln_sf "/usr/local/var/yvm/versions", "./versions"
+      File.write(".version", "{ \"version\": \"#{version}\" }")
+      prefix.install [".version", "versions", "node_modules", "shim", "yvm.sh", "yvm.fish", "yvm.js"]
+    end
+
+    def caveats
+      emptor = <<~EOS
+        Run the following command to configure your shell rc file
+        $ YVM_INSTALL_DIR="#{prefix}" node "#{prefix}/yvm.js" configure-shell
+
+        If you have previously installed YVM, link the versions folder
+        to allow all brewed YVM access to the managed yarn distributions
+        $ ln -sF ~/.yvm/versions /usr/local/var/yvm
+      EOS
+      emptor
+    end
+
+    test do
+      File.write("#{ENV["HOME"]}/.bashrc", "")
+      ENV["YVM_INSTALL_DIR"] = prefix.to_s
+      system "#{prefix}/yvm.sh", "configure-shell"
+      system "bash -i -c 'echo $YVM_DIR'"
+      system "bash -i -c 'yvm ls-remote'"
+      ENV["YVM_DIR"] = prefix.to_s
+      system "#{prefix}/shim/yarn", "--version"
+      system "bash -i -c 'yvm ls'"
+    end
+  end
