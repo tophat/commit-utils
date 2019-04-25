@@ -8,10 +8,14 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
-      - run: yarn install --frozen-lockfile
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
       - save_cache:
+          name: Save Yarn Package Cache
           paths:
             - node_modules
           key: yarn-packages-{{ checksum "yarn.lock" }}
@@ -26,24 +30,23 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
-      - run: yarn lint
+      - run:
+          name: Run Linting
+          command: yarn lint
 
   publish:
-    working_directory: ~/repo
-    docker:
-      - image: circleci/node:latest
     steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
-      - run: |
-          npm i -D lerna
-          npm config set '@tophat:registry' 'https://registry.npmjs.org'
-          npm config set '//registry.npmjs.org/:_authToken' ${NPM_AUTH_TOKEN}
-          lerna publish from-package
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Authenticate with NPM Registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Publish New Package Version with Lerna
+          command: yarn lerna-publish
 
 workflows:
   version: 2
