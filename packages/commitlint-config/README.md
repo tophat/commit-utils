@@ -36,6 +36,8 @@ module.exports = {
 }
 ```
 
+Git hooks can get parameters via command-line arguments and stdin. Husky makes them accessible to commitlint via HUSKY_GIT_PARAMS. 
+
 ## Rules
 ### Problems
 
