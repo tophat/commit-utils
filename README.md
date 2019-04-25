@@ -19,6 +19,8 @@ The following packages are provided:
 
 [@tophat/conventional-changelog-config](https://github.com/tophat/commit-utils/tree/master/packages/conventional-changelog-config): A preset for conventional-changelog built on Top Hat's style guide
 
+[@tophat/commit-utils-core](https://github.com/tophat/commit-utils/tree/master/packages/commit-utils-core): A package containing code that is shared between all our config packages. This package is meant for *internal use* only.   
+
 
 ## Commit Convention 
 
