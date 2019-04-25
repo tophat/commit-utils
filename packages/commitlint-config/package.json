@@ -1,6 +1,6 @@
 {
   "name": "@tophat/commitlint-config",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Top Hat's config for commitlint",
   "author": "Top Hat",
   "homepage": "https://github.com/tophat/commit-utils#readme",
@@ -24,7 +24,7 @@
     "url": "https://github.com/tophat/commit-utils/issues"
   },
   "dependencies": {
-    "@tophat/commit-utils-core": "^0.0.7"
+    "@tophat/commit-utils-core": "^0.0.8"
   },
   "devDependencies": {
     "@commitlint/utils": "^7.0.0"
