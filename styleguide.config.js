@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 const path = require('path')
 
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
@@ -19,15 +19,19 @@ module.exports = {
     pagePerSection: true,
     showCode: true,
     showUsage: true,
-    webpackConfig: function(env) {
+    webpackConfig: function() {
         return {
             module: {
                 rules: [
                     {
                         test: /\.[jt]sx?$/,
-                        include: [path.join(process.cwd(), 'src'), path.resolve(__dirname, './components')],
+                        include: [
+                            path.join(process.cwd(), 'src'),
+                            path.resolve(__dirname, './components'),
+                        ],
                         use: {
-                            loader: 'babel-loader', options: require('../../babel.config'),
+                            loader: 'babel-loader',
+                            options: require('../../babel.config'),
                         },
                     },
                     {
@@ -53,17 +57,17 @@ module.exports = {
                                 loader: 'url-loader',
                                 options: {
                                     limit: 10000,
-                                    name: '[name]-[hash].[ext]'
-                                }
-                            }
-                        ]
+                                    name: '[name]-[hash].[ext]',
+                                },
+                            },
+                        ],
                     },
                     {
                         test: /\.icon\.svg$/,
                         loader: 'svg-sprite-loader',
                         options: {
-                            name: 'icon-[name]'
-                        }
+                            name: 'icon-[name]',
+                        },
                     },
                     {
                         test: /\.md$/,
@@ -85,11 +89,11 @@ module.exports = {
             watch: true,
             watchOptions: {
                 poll: 1000,
-                ignored: '/node_modules/'
-            }
+                ignored: '/node_modules/',
+            },
         }
     },
     styleguideDir: 'tmp/styleguide-dist',
     serverPort: 3000,
-    title: '@tophat/commit-utils'
+    title: '@tophat/commit-utils',
 }

@@ -1,7 +1,5 @@
-'use strict';
-
-const commitlintConfig = require('..');
+'use strict'
 
 describe('commitlint-config', () => {
-    it('needs tests');
-});
+    it('needs tests', () => {})
+})

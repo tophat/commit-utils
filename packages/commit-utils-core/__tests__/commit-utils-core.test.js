@@ -1,7 +1,5 @@
-'use strict';
-
-const commitUtilsCore = require('..');
+'use strict'
 
 describe('commit-utils-core', () => {
-    it('needs tests');
-});
+    it('needs tests', () => {})
+})
