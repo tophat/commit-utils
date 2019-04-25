@@ -23,7 +23,7 @@
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
     "lint-fix": "eslint --ignore-path .gitignore . --fix",
-    "lerna-publish": "lerna publish from-package"
+    "lerna-publish": "lerna publish from-package --yes"
   },
   "config": {
     "commitizen": {
