@@ -10,7 +10,7 @@ fi
 function version { echo "$@" | awk -F. '{ printf("%03d%03d%03d\n", $1,$2,$3); }'; }
 
 DESIRED_NODE_VERSION="$(cat $DIR/../.nvmrc)"
-DESIRED_YARN_VERSION="1.0.2"
+DESIRED_YARN_VERSION="$(cat $DIR/../.yvmrc)"
 
 NODE_VERSION=$(node --version)
 YARN_VERSION=$(yarn --version)
