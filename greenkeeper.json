@@ -1,0 +1,13 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "packages/commit-utils-core/package.json",
+        "packages/commitizen-adapter/package.json",
+        "packages/commitlint-config/package.json",
+        "packages/conventional-changelog-config/package.json"
+      ]
+    }
+  }
+}

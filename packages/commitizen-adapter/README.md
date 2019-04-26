@@ -3,7 +3,6 @@
 [![npm downloads](https://img.shields.io/npm/dm/%40tophat%2Fcommitizen-adapter.svg)](https://npm-stat.com/charts.html?package=%40tophat%2Fcommitizen-adapter)
 
 A [commitizen](https://github.com/commitizen/cz-cli) adapter that lets you interactively build commit messages using Top Hat's commit convention. 
-hanges that don't modify src or test files
 
 ## Installation 
 First, make sure you have commitizen installed and configured globally

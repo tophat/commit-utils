@@ -5,7 +5,7 @@
 [![CircleCI](https://circleci.com/gh/tophat/commit-utils/tree/master.svg?style=svg)](https://circleci.com/gh/tophat/commit-utils/tree/master)
 [![Slack workspace](https://slackinvite.dev.tophat.com/badge.svg)](https://opensource.tophat.com/slack)
 [![Maturity badge - level 1](https://img.shields.io/badge/Maturity-Level%201%20--%20New%20Project-yellow.svg)](https://github.com/tophat/getting-started/blob/master/scorecard.md)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Greenkeeper badge](https://badges.greenkeeper.io/tophat/commit-utils.svg)](https://greenkeeper.io/)
 
 
 This repository contains a collection of packages used by Top Hat to enforce our commitlint convention and use it to automatically generate changelogs. 
@@ -27,32 +27,21 @@ The following packages are provided:
 
 Top Hat uses the following commit types as part of our development flow. Note that some of the commit types are automatically added to the changelog using [@tophat/conventional-changelog-config](https://github.com/tophat/commit-utils/tree/master/packages/conventional-changelog-config)
 
-**wip**: Changes that are part of some work in progress
-
-**feat**: A new feature (**This will be added to the changelog**)
-
-**fix**: A bug fix (**This will be added to the changelog**)
-
-**cr**: Changes resulting from code review
-
-**style**: Changes that don't affect the code's meaning (whitespace, formatting, etc)
-
-**refactor**: Changes that neither fix a bug nor add a feature
-
-**perf**: Changes that improve performance (**This will be added to the changelog**)
-
-**docs**: Changes to documentation only
-
-**test**: Adding missing tests or correcting existing tests
-
-**revert**: Reverts a previous commit
-
-**build**: Changes that affect the build system or external dependencies
-
-**ci**: Changes to our CI configuration files and scripts
-
-**chore**: Other changes that don't modify src or test files
-
+| Commit Type | Title | Description | Added to changelog? |
+| --- | --- | --- | --- | 
+| wip | Work in Progress | Changes that are part of some work in progress | No
+| feat | Features | A new feature | **Yes**
+| fix | Bug Fixes | A bugfix | **Yes** 
+| cr | Code Reviews | Changes resulting from code review 
+| style | Styles | Changes that don't affect the code's meaning (whitespace, formatting, etc) | No
+| refactor | Code Refactoring | Changes that neither fix a bug nor add a feature | No
+| perf | Performance Improvements | Changes that improve performance | **Yes**
+| docs | Documentation | Changes to documentation only | No 
+| test | Tests | Adding missing tests or correcting existing tests | No
+| revert | Reverts | Reverts a previous commit | **Yes** 
+| build | Builds | Changes that affect the build system or external dependencies | No 
+| ci | Continous Integration | Changes to our CI configuration files and scripts | No
+| chore | Chores | Other changes that don't modify src or test files | No
 
 ## Contributing
 To report bugs, please a create a [new issue](https://github.com/tophat/commit-utils/issues).
