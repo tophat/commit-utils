@@ -67,3 +67,5 @@ lerna version
 Thanks to [Carol Skelly](https://github.com/iatek) for donating the github organization!
 
 Thanks to [Maryam Pazirandeh](https://github.com/maryampaz) for the awesome logo!
+
+Thanks to [Jason Long](https://twitter.com/jasonlong) for providing design inspiration with the [git logo](https://git-scm.com/downloads/logos).
