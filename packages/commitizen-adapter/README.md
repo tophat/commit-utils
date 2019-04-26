@@ -1,46 +1,46 @@
-# `commitizen-adapter`
+# commitizen-adapter
 [![npm version](https://badge.fury.io/js/%40tophat%2Fcommitizen-adapter.svg)](https://badge.fury.io/js/%40tophat%2Fcommitizen-adapter)
 [![npm downloads](https://img.shields.io/npm/dm/%40tophat%2Fcommitizen-adapter.svg)](https://npm-stat.com/charts.html?package=%40tophat%2Fcommitizen-adapter)
 
-We are standardizing our commit messages to pave the way for automatic semantic
-package versioning, and to do so, we are using Commitizen as an interactive
-commit message builder. We've customized the conventional Commitizen adapter to
-suit our needs.
+A commitizen adapter that lets you interactively build commit messages using Top Hat's commit convention. 
+hanges that don't modify src or test files
 
-## Commit Types
+## Installation 
+First, make sure you have commitizen installed and configured globally
 
-You will see the following commit types when you run the command 
-<span style="color: #e60031">`git cz`</span>:
+```sh
+npm install -g commitizen 
+```
 
---- 
+Then install the Top Hat commitizen adapter:
 
-**wip**: Changes that are part of some work in progress
+Using Yarn
+```sh
+yarn add @tophat/commitizen-adapter --dev 
+```
 
-**feat**: A new feature (NOTE: This will be added to the changelog)
+or using npm
+```sh
+npm install @tophat/commitizen-adapter --save-dev
+```
 
-**fix**: A bug fix (NOTE: This will be added to the changelog)
+Add the following snippet to your package.json file 
 
-**cr**: Changes resulting from code review
+```js
+"config": {
+  "commitizen": {
+    "path": "./node_modules/@tophat/commitizen-adapter"
+  }
+}
+```
 
-**style**: Changes that don't affect the code's meaning (whitespace, formatting, etc)
+Alternatively, if you're using a `.czrc` file, add this
+```js
+{
+  "path": "@tophat/commitizen-adapter"
+}
+```
 
-**refactor**: Changes that neither fix a bug nor add a feature
+## Usage
+Running `git cz` should now bring up an interactive prompt that lets you build commit messages
 
-**perf**: Changes that improve performance (NOTE: This will be added to the changelog)
-
-**docs**: Changes to documentation only
-
-**test**: Adding missing tests or correcting existing tests
-
-**revert**: Reverts a previous commit
-
-**build**: Changes that affect the build system or external dependencies
-
-**ci**: Changes to our CI configuration files and scripts
-
-**chore**: Other changes that don't modify src or test files
-
-## Maximum Character Limit
-
-There is a maximum character limit of 72 for the header of the commit message 
-which is composed of the commit type and subject. 
