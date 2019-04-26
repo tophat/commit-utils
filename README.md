@@ -1,6 +1,6 @@
 # commit-utils
 
-<span><img align="right" src="./docs/logo.svg" alt="Logo"></span>
+<span><img align="right" src="./website/static/img/commit-utils.svg" alt="Logo"></span>
 
 [![CircleCI](https://circleci.com/gh/tophat/commit-utils/tree/master.svg?style=svg)](https://circleci.com/gh/tophat/commit-utils/tree/master)
 [![Slack workspace](https://slackinvite.dev.tophat.com/badge.svg)](https://opensource.tophat.com/slack)
