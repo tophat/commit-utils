@@ -32,7 +32,7 @@ The changelog uses the commit message format from the
 
 ### Included Commit Types
 
-The full list of commit types are listed [here](https://github.com/tophat/commit-utils/blob/master/packages/commit-utils-core/src/constants.js).
+The full list of commit types are listed [here](https://github.com/tophat/commit-utils#commit-convention).
 However, only the following types will be included in the changelog generation.
  
 #### feat:
