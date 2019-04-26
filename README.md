@@ -62,8 +62,21 @@ When the build passes on master, you can create a release by using lerna. This w
 lerna version
 ```
 
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="http://msrose.github.io"><img src="https://avatars3.githubusercontent.com/u/3495264?v=4" width="100px;" alt="Michael Rose"/><br /><sub><b>Michael Rose</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=msrose" title="Code">💻</a> <a href="https://github.com/tophat/commit-utils/commits?author=msrose" title="Documentation">📖</a></td><td align="center"><a href="https://github.com/Yuuki-chan"><img src="https://avatars1.githubusercontent.com/u/5069639?v=4" width="100px;" alt="Tonia Tong"/><br /><sub><b>Tonia Tong</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=Yuuki-chan" title="Code">💻</a> <a href="https://github.com/tophat/commit-utils/commits?author=Yuuki-chan" title="Documentation">📖</a></td><td align="center"><a href="http://www.sanchitgera.ca"><img src="https://avatars0.githubusercontent.com/u/8632167?v=4" width="100px;" alt="Sanchit Gera"/><br /><sub><b>Sanchit Gera</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=sanchitgera" title="Code">💻</a> <a href="https://github.com/tophat/commit-utils/commits?author=sanchitgera" title="Documentation">📖</a></td><td align="center"><a href="https://github.com/JeremySant"><img src="https://avatars1.githubusercontent.com/u/9597842?v=4" width="100px;" alt="jeremysant"/><br /><sub><b>jeremysant</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=JeremySant" title="Code">💻</a></td><td align="center"><a href="https://github.com/maryampaz"><img src="https://avatars1.githubusercontent.com/u/30090413?v=4" width="100px;" alt="Maryam Pazirandeh"/><br /><sub><b>Maryam Pazirandeh</b></sub></a><br /><a href="#design-maryampaz" title="Design">🎨</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
 ## Credits
 
 Thanks to [Carol Skelly](https://github.com/iatek) for donating the github organization!
 
 Thanks to [Maryam Pazirandeh](https://github.com/maryampaz) for the awesome logo!
+
