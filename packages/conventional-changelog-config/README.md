@@ -46,10 +46,10 @@ feat: add bold and italics options to formatting toolbar
 
 In the changelog, this may look like:
 ```
-    1.1.0 (2019-04-26)
-    ------------------
-    Features
-    - add bold and italics options to formatting toolbar (#100) (1ab23c4)
+1.1.0 (2019-04-26)
+------------------
+Features
+- add bold and italics options to formatting toolbar (#100) (1ab23c4)
 ```
 
 #### fix
@@ -63,9 +63,10 @@ fix: adjust page preview height
 
 In the changelog, this may look like:
 ```
-    1.1.1 (2019-04-26)
-    Bug Fixes
-    - adjust page preview height (#101) (z987y65)
+1.1.1 (2019-04-26)
+------------------
+Bug Fixes
+- adjust page preview height (#101) (z987y65)
 ```
 
 #### perf
@@ -79,9 +80,10 @@ perf: reduce number of re-renders in the preview
 
 In the changelog, this may look like:
 ```
-    1.1.2 (2019-04-26)
-    Performance Improvements
-    - reduce number of re-renders in the preview (#103) (m56np7)
+1.1.2 (2019-04-26)
+------------------
+Performance Improvements
+- reduce number of re-renders in the preview (#103) (m56np7)
 ```
    
 ### revert
@@ -97,10 +99,10 @@ This reverts commit 1ab23c4.
 
 In the changelog, this may look like:
 ```
-    1.1.3 (2019-04-26)
-    ------------------
-    Reverts
-    - add bold and italics options to formatting toolbar (1ab23c4)
+1.1.3 (2019-04-26)
+------------------
+Reverts
+- add bold and italics options to formatting toolbar (1ab23c4)
 ```
     
 ### Breaking Changes
@@ -110,7 +112,8 @@ non-backwards compatible and requires consumers to take action.
 
 In the changelog, this may look like:
 ```
-    2.0.0 (2019-04-26)
-    Breaking Changes
-    - the formatter v2 endpoint has been deprecated (q12rs34)
+2.0.0 (2019-04-26)
+------------------
+Breaking Changes
+- the formatter v2 endpoint has been deprecated (q12rs34)
 ```
