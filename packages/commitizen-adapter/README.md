@@ -1,4 +1,5 @@
-# commitizen-adapter
+# @tophat/commitizen-adapter
+
 [![npm version](https://badge.fury.io/js/%40tophat%2Fcommitizen-adapter.svg)](https://badge.fury.io/js/%40tophat%2Fcommitizen-adapter)
 [![npm downloads](https://img.shields.io/npm/dm/%40tophat%2Fcommitizen-adapter.svg)](https://npm-stat.com/charts.html?package=%40tophat%2Fcommitizen-adapter)
 
