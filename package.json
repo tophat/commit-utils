@@ -2,7 +2,7 @@
   "name": "root",
   "private": false,
   "devDependencies": {
-    "@commitlint/cli": "^7.5.2",
+    "@commitlint/cli": "^8.1.0",
     "@tophat/commitizen-adapter": "^0.0.11",
     "@tophat/commitlint-config": "^0.1.2",
     "@tophat/eslint-config": "^0.1.4",
