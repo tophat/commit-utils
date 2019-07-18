@@ -7,7 +7,7 @@
     "@tophat/commitlint-config": "^0.1.2",
     "@tophat/eslint-config": "^0.1.4",
     "all-contributors-cli": "^6.3.1",
-    "commitizen": "^3.1.1",
+    "commitizen": "^4.0.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-jest": "^22.5.0",
