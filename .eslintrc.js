@@ -1,3 +1,3 @@
 module.exports = {
-    extends: '@tophat'
+    extends: ['@tophat/eslint-config/base']
 }

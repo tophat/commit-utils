@@ -52,9 +52,7 @@ class GitHubService {
             method: 'POST',
             responseType: 'json',
             timeout: 5000,
-            url: `https://api.github.com/repos/${this.repo}/statuses/${
-                this.commitSha
-            }`,
+            url: `https://api.github.com/repos/${this.repo}/statuses/${this.commitSha}`,
         }).catch(error => {
             if (error.response) {
                 logger.error(

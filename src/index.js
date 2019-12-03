@@ -1,11 +1,10 @@
 const chalk = require('chalk')
 const builder = require('junit-report-builder')
+const format = require('@commitlint/format')
 
 const logger = require('./logger')
 const { STATUSES } = require('./constants')
 const getCommitResults = require('./getCommitResults')
-
-const format = require('@commitlint/format')
 
 function buildJunitFile(lintFailures) {
     const suite = builder.testSuite().name('commitwatch')

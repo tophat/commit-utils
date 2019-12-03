@@ -1,10 +1,10 @@
-const getConfig = require('./getConfig')
-
-const RULES = require('./rules').rules
-const { STATUSES } = require('./constants')
-
 const lint = require('@commitlint/lint')
 const read = require('@commitlint/read')
+
+const getConfig = require('./getConfig')
+const { rules: RULES } = require('./rules')
+// eslint-disable-next-line import/order
+const { STATUSES } = require('./constants')
 
 const getCommitMessages = async () =>
     read({ from: 'origin/master', to: 'HEAD' })

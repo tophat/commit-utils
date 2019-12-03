@@ -20,9 +20,6 @@ help:
 	@echo "--------------------- Useful Commands for Development ----------------------"
 	@echo "make help                            - show this help message"
 	@echo "make install                         - install dependencies, blows up node_modules"
-	@echo "make test                            - runs test"
-	@echo "make test-watch                      - watches test"
-	@echo "make test-snapshots                  - runs test and overwrites snapshots"
 	@echo "make lint                            - runs eslint"
 	@echo "make lint-fix                        - attempts to autofix linting errors"
 	@echo "make watch                           - babelize locally for development"
@@ -46,27 +43,15 @@ package: check-versions node_modules ${ARTIFACT_DIR}
 	npm pack
 	mv *.tgz artifacts/
 
-# -------------- Testing and Linting --------------
-
-.PHONY: test
-test: check-versions node_modules ${ARTIFACT_DIR}
-	${JEST_ENV_VARIABLES} jest ${JEST_EXTRA_ARGS}
-
-.PHONY: test-snapshots
-test-snapshots: check-versions node_modules ${ARTIFACT_DIR}
-	${JEST_ENV_VARIABLES} jest -u ${JEST_EXTRA_ARGS}
-
-.PHONY: test-watch
-test-watch: check-versions node_modules
-	jest --watch
+# -------------- Linting --------------
 
 .PHONY: lint
 lint: check-versions node_modules ${ARTIFACT_DIR}
-	eslint ${ESLINT_ARGS} .
+	$(shell yarn bin)/eslint ${ESLINT_ARGS} .
 
 .PHONY: lint-fix
 lint-fix: check-versions node_modules
-	eslint --fix .
+	$(shell yarn bin)/eslint --fix .
 
 # --------------- CI Scripts -----------------
 
