@@ -1,6 +1,6 @@
 const chalk = require('chalk')
 const builder = require('junit-report-builder')
-const format = require('@commitlint/format')
+const format = require('@commitlint/format').default
 
 const logger = require('./logger')
 const { STATUSES } = require('./constants')
@@ -12,7 +12,7 @@ function buildJunitFile(lintFailures) {
     lintFailures.forEach(failure => {
         const lines = [
             `input: ${failure.input}`,
-            ...format(failure, { color: false }),
+            format(failure, { color: false }),
         ]
         suite
             .testCase()
