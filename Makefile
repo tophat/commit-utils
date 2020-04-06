@@ -5,8 +5,8 @@ export PATH := $(shell yarn bin):$(PATH)
 
 ifdef CI
     ESLINT_ARGS=--format junit --output-file $(ARTIFACT_DIR)/test_results/eslint/eslint.junit.xml
-	JEST_ENV_VARIABLES=JEST_SUITE_NAME="Jest Tests" JEST_JUNIT_OUTPUT=$(ARTIFACT_DIR)/test_results/jest/jest.junit.xml
-    JEST_EXTRA_ARGS=--testResultsProcessor ./node_modules/jest-junit --coverageReporters=text-lcov | coveralls
+	JEST_ENV_VARIABLES=JEST_SUITE_NAME="Jest Tests" JEST_JUNIT_OUTPUT_DIR=$(ARTIFACT_DIR)/test_results/jest/ JEST_JUNIT_OUTPUT_NAME=jest.junit.xml
+    JEST_EXTRA_ARGS=--reporters=default --reporters=jest-junit --coverageReporters=text-lcov
     YARN_ARGS=--frozen-lockfile
 else
     ESLINT_ARGS=
@@ -39,7 +39,8 @@ ifndef CI
 endif
 package: check-versions node_modules ${ARTIFACT_DIR}
 	rm -rf lib
-	babel src --out-dir=lib --copy-files --ignore .test.js
+	$(shell yarn bin)/babel src --out-dir=lib --copy-files --no-copy-ignored --ignore 'src/**/*.test.js'
+	./scripts/version.sh
 	npm pack
 	mv *.tgz artifacts/
 
@@ -53,10 +54,16 @@ lint: check-versions node_modules ${ARTIFACT_DIR}
 lint-fix: check-versions node_modules
 	$(shell yarn bin)/eslint --fix .
 
+# -------------- Tests --------------
+
+.PHONY: test
+test:
+	$(JEST_ENV_VARIABLES) $(shell yarn bin)/jest ${JEST_EXTRA_ARGS}
+
 # --------------- CI Scripts -----------------
 
 .PHONY: deploy
-deploy:
+deploy: package
 	./scripts/deploy.sh
 
 # ----------------- Helpers ------------------

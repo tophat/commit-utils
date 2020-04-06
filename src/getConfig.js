@@ -1,21 +1,18 @@
-const lodashMerge = require('lodash.merge')
-
-const getCIVars = require('./getCIVars')
-const ensureValid = require('./ensureValid')
-
-const ciVars = getCIVars(process.env)
-
-const defaultConfig = {
-    commitSha: ciVars.commitSha,
-    githubAccessToken: ciVars.githubAccessToken,
-    repoName: ciVars.repoName,
-    repoOwner: ciVars.repoOwner,
-}
+import getCIVars from './getCIVars'
+import ensureValid from './ensureValid'
 
 const getConfig = customConfig => {
-    const config = lodashMerge({}, defaultConfig, customConfig)
+    const ciVars = getCIVars(process.env)
+
+    const config = {
+        commitSha: ciVars.commitSha,
+        githubAccessToken: ciVars.githubAccessToken,
+        repoName: ciVars.repoName,
+        repoOwner: ciVars.repoOwner,
+        ...customConfig,
+    }
     ensureValid(config)
     return config
 }
 
-module.exports = getConfig
+export default getConfig

@@ -1,4 +1,4 @@
-const chalk = require('chalk')
+import chalk from 'chalk'
 
 const stdout = console.log // eslint-disable-line no-console
 const stderr = console.error // eslint-disable-line no-console
@@ -53,4 +53,4 @@ const logger = {
     warn,
 }
 
-module.exports = logger
+export default logger

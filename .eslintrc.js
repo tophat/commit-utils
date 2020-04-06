@@ -1,3 +1,4 @@
 module.exports = {
-    extends: ['@tophat/eslint-config/base']
+    parser: 'babel-eslint',
+    extends: ['@tophat/eslint-config/base', '@tophat/eslint-config/jest']
 }

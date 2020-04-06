@@ -1,4 +1,4 @@
-const logger = require('./logger')
+import logger from './logger'
 
 const ensureValid = config => {
     const requiredOptionsToConnectToBuild = [
@@ -25,4 +25,4 @@ const ensureValid = config => {
     }
 }
 
-module.exports = ensureValid
+export default ensureValid

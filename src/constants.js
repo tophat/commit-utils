@@ -1,8 +1,9 @@
-const STATUSES = {
+export const STATUSES = {
     FAIL: 'fail',
     PASS: 'pass',
     REMOVED: 'removed',
     WARN: 'warn',
 }
 
-exports.STATUSES = STATUSES
+export const EXIT_SUCCESS = 0
+export const EXIT_FAILURE = 1

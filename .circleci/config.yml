@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.11.1
+      - image: circleci/node:12.16.1
     working_directory: ~/workspace
     steps:
       - checkout
@@ -26,6 +26,11 @@ jobs:
           command: make lint
           when: always
 
+      - run:
+          name: Test
+          command: make test
+          when: always
+
       - store_artifacts:
           path: artifacts
 
@@ -37,7 +42,7 @@ jobs:
             - node_modules/
   deploy:
     docker:
-      - image: circleci/node:8.11.1
+      - image: circleci/node:12.16.1
     working_directory: ~/workspace
     steps:
       - checkout
@@ -50,7 +55,7 @@ jobs:
           command: make deploy
   website:
     docker:
-      - image: circleci/node:8.11
+      - image: circleci/node:12.16.1
     working_directory: ~/repo/website
     steps:
       - checkout:
@@ -71,7 +76,7 @@ jobs:
             - build/
   deploy_website:
     docker:
-      - image: circleci/node:8.11
+      - image: circleci/node:12.16.1
     working_directory: ~/repo/website
     steps:
       - checkout:

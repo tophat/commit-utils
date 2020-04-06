@@ -15,13 +15,13 @@ DESIRED_YARN_VERSION="$(cat $DIR/../.yvmrc)"
 NODE_VERSION=$(node --version)
 YARN_VERSION=$(yarn --version)
 
-#if [ "$NODE_VERSION" != "${DESIRED_NODE_VERSION}" ];
-#then
-#    echo -e "${RED}Node version is ${NODE_VERSION}. Please use the exact version ${DESIRED_NODE_VERSION} by running:"
-#    echo -e "${YELLOW}>>> nvm use${NC}"
-#    exit 1
-#fi
-#
+if [ "$NODE_VERSION" != "${DESIRED_NODE_VERSION}" ];
+then
+   echo -e "${RED}Node version is ${NODE_VERSION}. Please use the exact version ${DESIRED_NODE_VERSION} by running:"
+   echo -e "${YELLOW}>>> nvm use${NC}"
+   exit 1
+fi
+
 if [ "$(version "$YARN_VERSION")" !=  "$(version "$DESIRED_YARN_VERSION")" ];
 then
     echo -e "${RED}Yarn version is ${YARN_VERSION}. Please use version ${DESIRED_YARN_VERSION}${NC}"

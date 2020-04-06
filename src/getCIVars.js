@@ -36,4 +36,4 @@ const getCIVars = env => {
     }
 }
 
-module.exports = getCIVars
+export default getCIVars

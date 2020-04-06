@@ -1,6 +1,6 @@
-const axios = require('axios')
+import axios from 'axios'
 
-const logger = require('./logger')
+import logger from './logger'
 
 class GitHubService {
     constructor({ repoOwner, repoName, commitSha, githubAccessToken }) {
@@ -24,6 +24,31 @@ class GitHubService {
         )
     }
 
+    async postToGitHub(data) {
+        const opts = {
+            data,
+            headers: {
+                Authorization: `token ${this.githubAccessToken}`,
+            },
+            method: 'POST',
+            responseType: 'json',
+            timeout: 5000,
+            url: `https://api.github.com/repos/${this.repo}/statuses/${this.commitSha}`,
+        }
+
+        return axios(opts).catch(error => {
+            if (error.response) {
+                logger.error(
+                    `GitHubService HTTP_${error.response.status} :: ${
+                        error.response.data?.message ?? ''
+                    }`,
+                )
+                return
+            }
+            throw error
+        })
+    }
+
     update(message, url, status) {
         if (!this.enabled) {
             return Promise.resolve({})
@@ -33,36 +58,17 @@ class GitHubService {
 
         if (!this.contexts.has(context) && this.contexts.size >= 5) {
             logger.warn(
-                `Max reported statuses reached, github status will not be reported`,
+                'Max reported statuses reached, github status will not be reported',
             )
             return Promise.resolve()
         }
         this.contexts.add(context)
 
-        return axios({
-            data: {
-                context,
-                description: message,
-                state: status,
-                target_url: url,
-            },
-            headers: {
-                Authorization: `token ${this.githubAccessToken}`,
-            },
-            method: 'POST',
-            responseType: 'json',
-            timeout: 5000,
-            url: `https://api.github.com/repos/${this.repo}/statuses/${this.commitSha}`,
-        }).catch(error => {
-            if (error.response) {
-                logger.error(
-                    `GitHubService HTTP_${error.response.status} :: ${
-                        error.response.data ? error.response.data.message : ''
-                    }`,
-                )
-                return
-            }
-            throw error
+        return this.postToGitHub({
+            context,
+            description: message,
+            state: status,
+            target_url: url,
         })
     }
 
@@ -83,4 +89,4 @@ class GitHubService {
     }
 }
 
-module.exports = GitHubService
+export default GitHubService

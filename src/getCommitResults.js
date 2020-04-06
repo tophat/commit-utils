@@ -1,34 +1,22 @@
-const lint = require('@commitlint/lint')
-const read = require('@commitlint/read')
+import lint from '@commitlint/lint'
 
-const getConfig = require('./getConfig')
-const { rules: RULES } = require('./rules')
-// eslint-disable-next-line import/order
-const { STATUSES } = require('./constants')
-
-const getCommitMessages = async () =>
-    read({ from: 'origin/master', to: 'HEAD' })
+import getConfig from './getConfig'
+import { rules as RULES } from './rules'
+import { STATUSES } from './constants'
+import GitHubService from './gitHubService'
+import getCommitMessages from './getCommitMessages'
 
 const getSingleCommitLintFailedMessage = commitResult =>
     `Fix commit lint errors - "${commitResult.input}"`
 
 const getMultipleCommitLintsFailedMessage = () =>
-    `Multiple commit lint errors, run "make lint-commit-messages" locally`
+    'Multiple commit lint errors, run "make lint-commit-messages" locally'
 
 const getCommitLintResults = async () => {
-    const promises = []
     const messages = await getCommitMessages()
-    messages.forEach(message => {
-        promises.push(lint(message, RULES))
-    })
-    await Promise.all(promises)
-    return promises.reduce((reportAccumulator, promise) => {
-        promise.then(report => reportAccumulator.push(report))
-        return reportAccumulator
-    }, [])
+    const lintedMessages = messages.map(m => lint(m, RULES))
+    return await Promise.all(lintedMessages).then(reports => reports.flat())
 }
-
-const GitHubService = require('./gitHubService')
 
 const getCommitResults = async () => {
     const githubServicePromises = []
@@ -89,4 +77,4 @@ const getCommitResults = async () => {
     }
 }
 
-module.exports = getCommitResults
+export default getCommitResults
