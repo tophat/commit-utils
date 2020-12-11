@@ -5,6 +5,7 @@ const getConfig = customConfig => {
     const ciVars = getCIVars(process.env)
 
     const config = {
+        baseBranch: ciVars.baseBranch,
         commitSha: ciVars.commitSha,
         githubAccessToken: ciVars.githubAccessToken,
         repoName: ciVars.repoName,

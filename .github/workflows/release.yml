@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+env:
+  CI: 1
+
+jobs:
+  release:
+    name: Publish Commit Watch
+    runs-on: ubuntu-18.04
+    steps:
+        - uses: actions/checkout@v1
+        - uses: ./.github/actions/detect-node
+        - name: Setup Node.js
+          uses: actions/setup-node@v1
+          with:
+            node-version: ${{ env.NODE_VERSION }}
+        - name: Restore node_modules Cache
+          id: cache-node-modules
+          uses: actions/cache@v2
+          with:
+            path: node_modules
+            key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
+        - name: Install node_modules
+          if: steps.cache-node-modules.outputs.cache-hit != 'true'
+          run: yarn install --frozen-lockfile
+        - name: Build Package
+          run: yarn build
+        - name: Set Publish Credentials
+          env:
+            NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+            NPM_REGISTRY_URL: registry.npmjs.org
+          run: |
+            npm config set registry=https://${NPM_REGISTRY_URL}/
+            npm config set "//${NPM_REGISTRY_URL}/:_authToken" "${NPM_PUBLISH_TOKEN}"
+        - name: Publish Package
+          run: yarn deploy

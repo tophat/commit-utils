@@ -1,6 +1,6 @@
 # CommitWatch
 
-<span><img align="right" src="./docs/logo.png" alt="Logo"></span>
+<span><img align="right" src="./assets/logo.png" alt="Commit Watch Logo"></span>
 
 CommitWatch checks commit messages and ensures they're formatted based on your config preferences.
 
@@ -31,5 +31,36 @@ The most efficient way to get this running is to ensure that some environment va
 Optional:
 - `COMMIT_WATCH_OUTPUT_DIR`, defaults to './artifacts/test_results/commitwatch/'.
 - `COMMIT_WATCH_OUTPUT_FILENAME`, defaults to 'commitwatch.junit.xml'.
+- `CI_BASE_BRANCH`, defaults to `origin/master`.
 
-In your CI run node ./node_modules/.bin/commit-watch or `yarn commit-watch`.
+In your CI run `npx commit-watch` or `yarn commit-watch`.
+
+## Contributing
+
+Ensure you are using the correct version of node. It should match the version specified in `.nvmrc`. You can use a tool such as [nvm](https://github.com/nvm-sh/nvm) to automate this process.
+
+Install packages:
+
+```shell
+yarn
+```
+
+To run tests:
+
+```shell
+yarn test
+```
+
+And watch mode:
+
+```shell
+yarn test:watch
+```
+
+You can build the package via:
+
+```
+yarn build
+```
+
+Set the `CI=1` env variable to generate a test coverage report.

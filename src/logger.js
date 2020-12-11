@@ -23,7 +23,9 @@ const log = message => {
 }
 
 const info = message => {
-    stdout(chalk.cyan(`[INFO] ${message}`))
+    if (process.env.VERBOSE === '1') {
+        stdout(`[INFO] ${message}`)
+    }
 }
 
 const warn = message => {
