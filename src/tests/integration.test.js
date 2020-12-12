@@ -30,7 +30,6 @@ describe('Integration', () => {
             COMMITWATCH_GITHUB_TOKEN: null,
             CI_REPO_OWNER: null,
             CI_REPO_NAME: null,
-            CI_BRANCH: null,
             CI_COMMIT_SHA: null,
         }
     })
@@ -98,7 +97,6 @@ describe('Integration', () => {
             process.env.COMMITWATCH_GITHUB_TOKEN = 'MOCK_GH_TOKEN'
             process.env.CI_REPO_OWNER = 'MOCK_REPO_OWNER'
             process.env.CI_REPO_NAME = 'MOCK_REPO_NAME'
-            process.env.CI_BRANCH = 'MOCK_BRANCH'
             process.env.CI_COMMIT_SHA = 'MOCK_SHA'
         })
 

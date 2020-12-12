@@ -27,7 +27,6 @@ jobs:
             COMMITWATCH_GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
             CI_REPO_OWNER: ${{ github.repository_owner }}
             CI_REPO_NAME: ${{ github.event.repository.name }}
-            CI_BRANCH: ${{ github.head_ref }}
             CI_COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
             CI_BASE_BRANCH: ${{ github.base_ref }}
             VERBOSE: 1
