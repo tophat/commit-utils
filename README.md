@@ -40,6 +40,7 @@ Before running commit-watch, you need to ensure the relevant environment variabl
 | CI_BASE_BRANCH               | Defaults to `origin/master`.                         | The base branch to compare the commit sha against.                                                   |
 | COMMIT_WATCH_OUTPUT_DIR      | Defaults to `./artifacts/test_results/commitwatch/`. | Directory to write the junit report to.                                                              |
 | COMMIT_WATCH_OUTPUT_FILENAME | Defaults to `commitwatch.junit.xml`.                 | The name of the junit report.                                                                        |
+| VERBOSE                      | Defaults to `0`.                                     | Whether to enable verbose mode.                                                                      |
 
 ## Contributing
 
