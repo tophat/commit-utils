@@ -13,7 +13,7 @@ jobs:
     name: Publish Commit Watch
     runs-on: ubuntu-18.04
     steps:
-        - uses: actions/checkout@v1
+        - uses: actions/checkout@v2
         - uses: ./.github/actions/detect-node
         - name: Setup Node.js
           uses: actions/setup-node@v1
@@ -26,7 +26,6 @@ jobs:
             path: ./.yarn/cache
             key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
         - name: Install node_modules
-          if: steps.yarn-cache.outputs.cache-hit != 'true'
           run: yarn install --immutable
         - name: Build Package
           run: yarn build
