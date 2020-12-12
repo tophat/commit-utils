@@ -19,15 +19,15 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: ${{ env.NODE_VERSION }}
-        - name: Restore node_modules Cache
-          id: cache-node-modules
+        - name: Restore yarn cache
+          id: yarn-cache
           uses: actions/cache@v2
           with:
-            path: node_modules
+            path: ./.yarn/cache
             key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
         - name: Install node_modules
-          if: steps.cache-node-modules.outputs.cache-hit != 'true'
-          run: yarn install --frozen-lockfile
+          if: steps.yarn-cache.outputs.cache-hit != 'true'
+          run: yarn install --immutable
         - name: Build Package
           run: yarn build
         - name: Set Publish Credentials

@@ -45,6 +45,12 @@ Install packages:
 yarn
 ```
 
+To install the git hooks:
+
+```shell
+yarn husky install
+```
+
 To run tests:
 
 ```shell
