@@ -32,9 +32,8 @@ jobs:
         - name: Set Publish Credentials
           env:
             NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-            NPM_REGISTRY_URL: registry.npmjs.org
           run: |
-            npm config set registry=https://${NPM_REGISTRY_URL}/
-            npm config set "//${NPM_REGISTRY_URL}/:_authToken" "${NPM_PUBLISH_TOKEN}"
+            npm config set registry=https://registry.npmjs.org/
+            npm config set "//registry.npmjs.org/:_authToken" "${NPM_PUBLISH_TOKEN}"
         - name: Publish Package
           run: yarn deploy

@@ -16,7 +16,7 @@
     "build:babel": "rm -rf lib && yarn babel src --out-dir=lib --copy-files --no-copy-ignored --ignore 'src/**/*.test.js'",
     "build:package": "yarn pack --filename artifacts/package.tgz",
     "build": "yarn build:babel && yarn build:package",
-    "deploy": "yarn npm publish --access public"
+    "deploy": "npm publish artifacts/package.tgz --access public"
   },
   "bin": "./lib/index.js",
   "files": [
