@@ -38,3 +38,11 @@ jobs:
             npm config set "//registry.npmjs.org/:_authToken" "${NPM_PUBLISH_TOKEN}"
         - name: Publish Package
           run: yarn deploy
+        - name: Upload Artifacts
+          if: ${{ always() }}
+          uses: actions/upload-artifact@v2
+          with:
+            name: reports-and-build-artifacts
+            path: |
+                ${{ env.ARTIFACT_DIR }}
+                ~/.npm/_logs/*.log
