@@ -14,7 +14,7 @@
     "lint:fix": "eslint . --fix",
     "lint:ci": "eslint . --format junit --output-file ${ARTIFACT_DIR:-artifacts}/test_results/eslint/eslint.junit.xml",
     "build:babel": "rm -rf lib && yarn babel src --out-dir=lib --copy-files --no-copy-ignored --ignore 'src/**/*.test.js'",
-    "build:package": "yarn pack --filename ${ARTIFACT_DIR:-artifacts}/package.tgz",
+    "build:package": "mkdir -p ${ARTIFACT_DIR:-artifacts} && yarn pack --filename ${ARTIFACT_DIR:-artifacts}/package.tgz",
     "build": "yarn build:babel && yarn build:package",
     "deploy": "npm publish ${ARTIFACT_DIR:-artifacts}/package.tgz --access public"
   },

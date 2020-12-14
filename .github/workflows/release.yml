@@ -20,6 +20,8 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: ${{ env.NODE_VERSION }}
+        - name: Create artifacts directory
+          run: mkdir -p ${{ env.ARTIFACT_DIR }}
         - name: Restore yarn cache
           id: yarn-cache
           uses: actions/cache@v2
