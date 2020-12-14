@@ -2,9 +2,8 @@ name: Release
 
 on:
   push:
-    tags:
-      - "v*"
-
+    branches:
+      - master
 env:
   CI: 1
   ARTIFACT_DIR: ./artifacts
