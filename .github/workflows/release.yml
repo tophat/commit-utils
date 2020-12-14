@@ -1,20 +1,20 @@
-name: Continuous Integration
+name: Release
 
 on:
-  - pull_request #_target Making sure this runs whilst iterating
+  push:
+    tags:
+      - "v*"
 
 env:
   CI: 1
   ARTIFACT_DIR: ./artifacts
 
 jobs:
-  tests:
-    name: Lint
+  release:
+    name: Publish commit-utils
     runs-on: ubuntu-18.04
     steps:
         - uses: actions/checkout@v2
-          with:
-            ref: ${{ github.event.pull_request.head.sha }}
         - uses: ./.github/actions/detect-node
         - name: Setup Node.js
           uses: actions/setup-node@v1
@@ -30,10 +30,19 @@ jobs:
             key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
         - name: Install dependencies
           run: yarn install --immutable
-        - name: Linting
-          run: yarn lint
+        - name: Set Publish Credentials
+          env:
+            NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          run: |
+            npm config set registry=https://registry.npmjs.org/
+            npm config set "//registry.npmjs.org/:_authToken" "${NPM_PUBLISH_TOKEN}"
+        - name: Publish Package
+          run: yarn lerna-publich
         - name: Upload Artifacts
+          if: ${{ always() }}
           uses: actions/upload-artifact@v2
           with:
             name: reports-and-build-artifacts
-            path: ${{ env.ARTIFACT_DIR }}
+            path: |
+                ${{ env.ARTIFACT_DIR }}
+                ~/.npm/_logs/*.log
