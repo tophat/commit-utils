@@ -7,7 +7,7 @@ on:
 
 env:
   CI: 1
-  ARTIFACT_DIR: artifacts
+  ARTIFACT_DIR: ./artifacts
 
 jobs:
   release:
