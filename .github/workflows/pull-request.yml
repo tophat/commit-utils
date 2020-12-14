@@ -33,7 +33,11 @@ jobs:
         - name: Linting
           run: yarn lint:ci
         - name: Tests
-          run: yarn test
+          run: yarn test:ci
+        - name: Upload Coverage Report
+          run: yarn codecov
+          env:
+            CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         - name: Build
           run: yarn build
         - name: Upload Artifacts
