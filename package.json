@@ -13,9 +13,11 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
+    "figgy-pudding": "^3.5.2",
     "husky": "^2.1.0",
     "lerna": "^3.13.3",
-    "prettier": "^1.17.0"
+    "prettier": "^1.17.0",
+    "safe-buffer": "^5.2.1"
   },
   "husky": {
     "hooks": {
