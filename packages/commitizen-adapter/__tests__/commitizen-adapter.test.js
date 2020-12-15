@@ -12,25 +12,21 @@ describe('conventional-changelog-config', () => {
         const mockBreakingMessage = "We've patched her rents, stopped her vents"
 
         it('calls commit callback', async () => {
-            const cz = { prompt: jest.fn() }
             const mockAnswer = {
                 body: mockCommitBody,
                 type: mockCommitType,
                 subject: mockCommitSubject,
                 isBreaking: false,
             }
-            const promise = Promise.resolve(mockAnswer)
-            cz.prompt.mockReturnValue(promise)
+            const cz = { prompt: jest.fn(() => Promise.resolve(mockAnswer)) }
             const commit = jest.fn()
-            testEngine.prompter(cz, commit)
-            await promise
+            await testEngine.prompter(cz, commit)
             expect(commit).toHaveBeenCalledWith(
                 `${mockCommitType}: ${mockCommitSubject}\n\n${mockCommitBody}\n\n`,
             )
         })
 
         it('calls commit callback on breaking change', async () => {
-            const cz = { prompt: jest.fn() }
             const mockAnswer = {
                 body: mockCommitBody,
                 type: mockCommitType,
@@ -39,18 +35,15 @@ describe('conventional-changelog-config', () => {
                 isBreaking: true,
                 isBreakingConfirmed: 'yes',
             }
-            const promise = Promise.resolve(mockAnswer)
-            cz.prompt.mockReturnValue(promise)
+            const cz = { prompt: jest.fn(() => Promise.resolve(mockAnswer)) }
             const commit = jest.fn()
-            testEngine.prompter(cz, commit)
-            await promise
+            await testEngine.prompter(cz, commit)
             expect(commit).toHaveBeenCalledWith(
                 `${mockCommitType}: ${mockCommitSubject}\n\n${mockCommitBody}\n\nBREAKING CHANGE: ${mockBreakingMessage}`,
             )
         })
 
         it('aborts if author does not want to commit breaking change', async () => {
-            const cz = { prompt: jest.fn() }
             const mockAnswer = {
                 body: mockCommitBody,
                 type: mockCommitType,
@@ -59,11 +52,9 @@ describe('conventional-changelog-config', () => {
                 isBreaking: true,
                 isBreakingConfirmed: 'quit',
             }
-            const promise = Promise.resolve(mockAnswer)
-            cz.prompt.mockReturnValue(promise)
+            const cz = { prompt: jest.fn(() => Promise.resolve(mockAnswer)) }
             const commit = jest.fn()
-            testEngine.prompter(cz, commit)
-            await promise
+            await testEngine.prompter(cz, commit)
             expect(commit).not.toHaveBeenCalled()
         })
     })
