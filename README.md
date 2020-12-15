@@ -5,7 +5,7 @@
 [![CircleCI](https://circleci.com/gh/tophat/commit-utils/tree/master.svg?style=svg)](https://circleci.com/gh/tophat/commit-utils/tree/master)
 [![Slack workspace](https://slackinvite.dev.tophat.com/badge.svg)](https://opensource.tophat.com/slack)
 [![Maturity badge - level 1](https://img.shields.io/badge/Maturity-Level%201%20--%20New%20Project-yellow.svg)](https://github.com/tophat/getting-started/blob/master/scorecard.md)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Greenkeeper badge](https://badges.greenkeeper.io/tophat/commit-utils.svg)](https://greenkeeper.io/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
 This repository contains a collection of packages used by Top Hat to enforce our commitlint convention and use it to automatically generate changelogs. 
@@ -61,6 +61,18 @@ When the build passes on master, you can create a release by using lerna. This w
 ```
 lerna version
 ```
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="http://msrose.github.io"><img src="https://avatars3.githubusercontent.com/u/3495264?v=4" width="100px;" alt="Michael Rose"/><br /><sub><b>Michael Rose</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=msrose" title="Code">💻</a> <a href="https://github.com/tophat/commit-utils/commits?author=msrose" title="Documentation">📖</a></td><td align="center"><a href="https://github.com/Yuuki-chan"><img src="https://avatars1.githubusercontent.com/u/5069639?v=4" width="100px;" alt="Tonia Tong"/><br /><sub><b>Tonia Tong</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=Yuuki-chan" title="Code">💻</a> <a href="https://github.com/tophat/commit-utils/commits?author=Yuuki-chan" title="Documentation">📖</a></td><td align="center"><a href="http://www.sanchitgera.ca"><img src="https://avatars0.githubusercontent.com/u/8632167?v=4" width="100px;" alt="Sanchit Gera"/><br /><sub><b>Sanchit Gera</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=sanchitgera" title="Code">💻</a> <a href="https://github.com/tophat/commit-utils/commits?author=sanchitgera" title="Documentation">📖</a></td><td align="center"><a href="https://github.com/JeremySant"><img src="https://avatars1.githubusercontent.com/u/9597842?v=4" width="100px;" alt="jeremysant"/><br /><sub><b>jeremysant</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=JeremySant" title="Code">💻</a></td><td align="center"><a href="https://github.com/maryampaz"><img src="https://avatars1.githubusercontent.com/u/30090413?v=4" width="100px;" alt="Maryam Pazirandeh"/><br /><sub><b>Maryam Pazirandeh</b></sub></a><br /><a href="#design-maryampaz" title="Design">🎨</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 ## Credits
 

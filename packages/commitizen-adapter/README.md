@@ -1,4 +1,5 @@
-# commitizen-adapter
+# @tophat/commitizen-adapter
+
 [![npm version](https://badge.fury.io/js/%40tophat%2Fcommitizen-adapter.svg)](https://badge.fury.io/js/%40tophat%2Fcommitizen-adapter)
 [![npm downloads](https://img.shields.io/npm/dm/%40tophat%2Fcommitizen-adapter.svg)](https://npm-stat.com/charts.html?package=%40tophat%2Fcommitizen-adapter)
 
@@ -43,3 +44,4 @@ Alternatively, if you're using a `.czrc` file, add this
 ## Usage
 Running `git cz` should now bring up an interactive prompt that lets you build commit messages
 
+<span><img align="center" src="../../docs/tophat-cz-screenshot.png" alt="Screenshot"></span>
