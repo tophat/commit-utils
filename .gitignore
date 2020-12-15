@@ -1,2 +1,8 @@
 node_modules/
 website/build
+
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/versions
+.pnp.*
