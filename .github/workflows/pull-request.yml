@@ -38,8 +38,6 @@ jobs:
           run: ./.github/codecov.sh $GITHUB_EVENT_PATH
           env:
             CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-        - name: Build
-          run: yarn build
         - name: Upload Artifacts
           uses: actions/upload-artifact@v2
           with:
