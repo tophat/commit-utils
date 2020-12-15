@@ -35,7 +35,7 @@ jobs:
         - name: Tests
           run: yarn test:ci
         - name: Upload Coverage Report
-          run: yarn codecov
+          run: ./.github/codecov.sh $GITHUB_EVENT_PATH
           env:
             CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         - name: Build

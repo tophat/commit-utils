@@ -1,0 +1,61 @@
+{
+  "projectName": "commit-watch",
+  "projectOwner": "tophat",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "sdcosta",
+      "name": "Shouvik DCosta",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6020693?v=4",
+      "profile": "https://opensource.tophat.com/",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "infra"
+      ]
+    },
+    {
+      "login": "msrose",
+      "name": "Michael Rose",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3495264?v=4",
+      "profile": "https://github.com/msrose",
+      "contributions": [
+        "infra",
+        "doc",
+        "tool",
+        "bug"
+      ]
+    },
+    {
+      "login": "lime-green",
+      "name": "Josh",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/9436142?v=4",
+      "profile": "https://github.com/lime-green",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "noahnu",
+      "name": "Noah",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1297096?v=4",
+      "profile": "https://noahnu.com/",
+      "contributions": [
+        "bug",
+        "infra",
+        "tool",
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
