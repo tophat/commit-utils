@@ -1,5 +1,5 @@
 'use strict'
 
 describe('conventional-changelog-config', () => {
-    it('needs tests', () => {})
+    it('does stuff', () => {})
 })

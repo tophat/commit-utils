@@ -1,5 +1,8 @@
 'use strict'
+const { rules } = require('../src')
 
 describe('commitlint-config', () => {
-    it('needs tests', () => {})
+    it('config matches snapshot', () => {
+        expect(rules).toMatchSnapshot()
+    })
 })
