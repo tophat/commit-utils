@@ -27,6 +27,7 @@
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
     "lint-fix": "eslint --ignore-path .gitignore . --fix",
+    "test": "",
     "lerna-publish": "lerna publish from-package --yes",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
