@@ -2861,6 +2861,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"compare-func@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "compare-func@npm:2.0.0"
+  dependencies:
+    array-ify: ^1.0.0
+    dot-prop: ^5.1.0
+  checksum: 825690b828f028acf270578cd4d9ea0751987b474095cd47093a29ac087a21e5de2db86b83cc0cecb935dfca952ba8bbcd7ead240fe6b3b7ecb1a66a8b109d28
+  languageName: node
+  linkType: hard
+
 "component-emitter@npm:^1.2.1":
   version: 1.3.0
   resolution: "component-emitter@npm:1.3.0"
@@ -3511,6 +3521,15 @@ __metadata:
   dependencies:
     is-obj: ^1.0.0
   checksum: 6dadca2215c4844f8313828a67f4398c87e1dae263a111aa7e9255aecf31647bb4a6e80efdd7a768bb170d47c96265bb744ff659dbf1aa7c8c78d4cfe69be20c
+  languageName: node
+  linkType: hard
+
+"dot-prop@npm:^5.1.0":
+  version: 5.3.0
+  resolution: "dot-prop@npm:5.3.0"
+  dependencies:
+    is-obj: ^2.0.0
+  checksum: 76e6693d8803eeff9cb920988446bf223cf1f6e5b1c0c2fe07a66906392134931a481b11e3c0bd852c5cfc97fad65258bcb4359169ad1d8d624cb3f56932be98
   languageName: node
   linkType: hard
 
@@ -5392,6 +5411,13 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
+"is-obj@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "is-obj@npm:2.0.0"
+  checksum: ffa67ed5df66e37757876cd976380737a0430551789a0457b8c031eaedef8f5c6bc4ab6d903e529efb777545f8718ab73d9badde61c8b08720a3747ccff0b2a0
+  languageName: node
+  linkType: hard
+
 "is-plain-obj@npm:^1.0.0, is-plain-obj@npm:^1.1.0":
   version: 1.1.0
   resolution: "is-plain-obj@npm:1.1.0"
@@ -6480,7 +6506,7 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.19":
+"lodash@npm:^4.17.19, lodash@npm:^4.17.20":
   version: 4.17.20
   resolution: "lodash@npm:4.17.20"
   checksum: c62101d2500c383b5f174a7e9e6fe8098149ddd6e9ccfa85f36d4789446195f5c4afd3cfba433026bcaf3da271256566b04a2bf2618e5a39f6e67f8c12030cb6
@@ -6491,6 +6517,13 @@ fsevents@^2.1.2:
   version: 1.0.1
   resolution: "longest@npm:1.0.1"
   checksum: 5cd9311bd2f782ec45345ca3aefa206e47dc4f3856fcae3fae9062ce505ebaa98e3a4de6e38a778a9e969552d99f3a66da3d87dd831057cfc343b1f225087f52
+  languageName: node
+  linkType: hard
+
+"longest@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "longest@npm:2.0.1"
+  checksum: 2df2862f041862ad906b15ae667c815d6a1ada772d164e72ae13462b3efea381952841d368f0e10696ac584f3927eaaf87524d7656ecdcfefe22c3cb4c5b8fca
   languageName: node
   linkType: hard
 
@@ -8686,11 +8719,13 @@ resolve@^1.9.0:
   resolution: "root@workspace:."
   dependencies:
     "@commitlint/cli": ^7.5.2
+    "@tophat/commit-utils-core": ^0.0.9
     "@tophat/commitizen-adapter": ^0.0.11
     "@tophat/commitlint-config": ^0.1.2
     "@tophat/eslint-config": ^0.1.4
     all-contributors-cli: ^6.3.1
     commitizen: ^3.1.1
+    compare-func: ^2.0.0
     eslint: ^5.16.0
     eslint-config-prettier: ^4.1.0
     eslint-plugin-jest: ^22.5.0
@@ -8701,8 +8736,11 @@ resolve@^1.9.0:
     husky: ^2.1.0
     jest: ^26.6.3
     lerna: ^3.13.3
+    lodash: ^4.17.20
+    longest: ^2.0.1
     prettier: ^1.17.0
     safe-buffer: ^5.2.1
+    word-wrap: ^1.2.3
   languageName: unknown
   linkType: soft
 
@@ -10164,7 +10202,7 @@ resolve@^1.9.0:
   languageName: node
   linkType: hard
 
-"word-wrap@npm:^1.0.3, word-wrap@npm:~1.2.3":
+"word-wrap@npm:^1.0.3, word-wrap@npm:^1.2.3, word-wrap@npm:~1.2.3":
   version: 1.2.3
   resolution: "word-wrap@npm:1.2.3"
   checksum: 6526abd75d4409c76d1989cf2fbf6080b903db29824be3d17d0a0b8f6221486c76a021174eda2616cf311199787983c34bae3c5e7b51d2ad7476f2066cddb75a
