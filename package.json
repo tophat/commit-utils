@@ -18,6 +18,7 @@
     "figgy-pudding": "^3.5.2",
     "husky": "^2.1.0",
     "jest": "^26.6.3",
+    "jest-junit": "^12.0.0",
     "lerna": "^3.13.3",
     "lodash": "^4.17.20",
     "longest": "^2.0.1",
@@ -34,6 +35,7 @@
     "lint": "eslint --ignore-path .gitignore .",
     "lint-fix": "eslint --ignore-path .gitignore . --fix",
     "test": "jest",
+    "test:ci": "jest --ci",
     "lerna-publish": "lerna publish from-package --yes",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
