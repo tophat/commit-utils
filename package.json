@@ -33,6 +33,7 @@
   },
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
+    "lint:ci": "eslint . --format junit --output-file ${ARTIFACT_DIR:-artifacts}/test_results/eslint/eslint.junit.xml",
     "lint-fix": "eslint --ignore-path .gitignore . --fix",
     "test": "jest",
     "test:ci": "jest --ci",
