@@ -17,6 +17,9 @@ module.exports = {
         coverageReporters: ['lcov'],
         collectCoverage: true,
         coverageDirectory: `${ARTIFACT_DIR}/test_results/jest/`,
-        collectCoverageFrom: ['packages/**/src/**/*.js', '!packages/**/src/**/*.test.js'],
+        collectCoverageFrom: [
+            'packages/**/src/**/*.js',
+            '!packages/**/src/**/*.test.js',
+        ],
     }),
 }
