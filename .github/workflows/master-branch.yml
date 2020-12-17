@@ -10,7 +10,7 @@ env:
 jobs:
   tests:
     name: Lint, Tests, and Build
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     if: github.ref == 'refs/heads/master'
     steps:
         - uses: actions/checkout@v2
@@ -30,9 +30,9 @@ jobs:
         - name: Install dependencies
           run: yarn install --immutable
         - name: Linting
-          run: yarn lint
+          run: yarn lint:ci
         - name: Tests
-          run: yarn test
+          run: yarn test:ci
         - name: Upload Coverage Report
           run: ./.github/codecov.sh $GITHUB_EVENT_PATH
           env:
