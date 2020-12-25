@@ -1694,6 +1694,7 @@ __metadata:
   resolution: "@tophat/conventional-changelog-config@workspace:packages/conventional-changelog-config"
   dependencies:
     "@tophat/commit-utils-core": ^0.0.9
+    compare-func: ^2.0.0
   languageName: unknown
   linkType: soft
 
