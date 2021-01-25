@@ -1,7 +1,7 @@
 {
   "name": "root",
   "devDependencies": {
-    "@commitlint/cli": "^7.5.2",
+    "@commitlint/cli": "^11.0.0",
     "@tophat/commit-utils-core": "^0.0.9",
     "@tophat/commitizen-adapter": "^0.0.11",
     "@tophat/commitlint-config": "^0.1.2",
