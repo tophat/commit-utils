@@ -10,7 +10,7 @@
 
 const siteConfig = {
     title: 'commit-utils', // Title for your website.
-    tagline: 'A small wrapper around lerna that makes it easier to use in CI',
+    tagline: 'Utils for commits',
     url: 'https://tophat.github.io', // Your website URL
     baseUrl: '/commit-utils/', // Base URL for your project */
     // For github.io type URLs, you would set the url and baseUrl like:
