@@ -1,7 +1,10 @@
 name: Continuous Integration
 
 on:
-  - pull_request
+  push:
+    branches:
+      - master
+  pull_request:
 
 env:
   CI: 1
@@ -10,12 +13,11 @@ env:
 jobs:
   tests:
     name: Lint, Tests, and Build
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
         - uses: actions/checkout@v2
-          with:
-            ref: ${{ github.event.pull_request.head.sha }}
-        - uses: ./.github/actions/detect-node
+        - uses: ./.github/actions/detect-env
         - name: Setup Node.js
           uses: actions/setup-node@v1
           with:
@@ -45,3 +47,49 @@ jobs:
           with:
             name: reports-and-build-artifacts
             path: ${{ env.ARTIFACT_DIR }}
+  release:
+    name: Release Commit Watch
+    runs-on: ubuntu-20.04
+    needs: [tests]
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+        - uses: actions/checkout@v2
+          with:
+            persist-credentials: false
+        - uses: ./.github/actions/detect-env
+        - name: Setup Node.js
+          uses: actions/setup-node@v1
+          with:
+            node-version: ${{ env.NODE_VERSION }}
+        - name: Create artifacts directory
+          run: mkdir -p ${{ env.ARTIFACT_DIR }}
+        - name: Restore yarn cache
+          id: yarn-cache
+          uses: actions/cache@v2
+          with:
+            path: ./.yarn/cache
+            key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
+        - name: Install dependencies
+          run: yarn install --immutable
+        - uses: actions/download-artifact@v2
+          with:
+            name: reports-and-build-artifacts
+            path: ${{ env.ARTIFACT_DIR }}
+        - name: Semantic Release
+          uses: cycjimmy/semantic-release-action@v2
+          if: "github.event_name == 'push' && github.ref == 'refs/heads/master'"
+          with:
+            semantic_version: 16
+            branches: |
+                ['master']
+            dry_run: ${{ github.ref != 'refs/heads/master' }}
+            extra_plugins: |
+                @semantic-release/changelog
+                @semantic-release/git
+          env:
+            GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        - name: Publish Package
+          if: "github.event_name == 'push' && github.ref == 'refs/heads/master'"
+          env:
+            NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          run: yarn npm publish --access public

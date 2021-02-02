@@ -10,13 +10,13 @@ env:
 jobs:
   commit_watch:
     name: Run Commit Watch
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
         - uses: actions/checkout@v2
           with:
             ref: ${{ github.event.pull_request.head.sha }}
             fetch-depth: 0
-        - uses: ./.github/actions/detect-node
+        - uses: ./.github/actions/detect-env
         - name: Setup Node.js
           uses: actions/setup-node@v1
           with:

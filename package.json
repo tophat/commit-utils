@@ -17,7 +17,7 @@
     "build:babel": "rm -rf lib && yarn babel src --out-dir=lib --copy-files --no-copy-ignored --ignore 'src/**/*.test.js'",
     "build:package": "mkdir -p ${ARTIFACT_DIR:-artifacts} && yarn pack --filename ${ARTIFACT_DIR:-artifacts}/package.tgz",
     "build": "yarn build:babel && yarn build:package",
-    "deploy": "npm publish ${ARTIFACT_DIR:-artifacts}/package.tgz --access public",
+    "prepack": "yarn build:babel",
     "contrib:add": "all-contributors add",
     "contrib:generate": "all-contributors generate",
     "contrib:check": "all-contributors check"
