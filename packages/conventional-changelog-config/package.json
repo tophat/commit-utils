@@ -1,6 +1,6 @@
 {
   "name": "@tophat/conventional-changelog-config",
-  "version": "0.0.9",
+  "version": "0.0.0",
   "description": "Top Hat's conventional changelog config for changelog generation",
   "author": "Top Hat",
   "homepage": "https://github.com/tophat/commit-utils#readme",
@@ -24,7 +24,8 @@
     "url": "https://github.com/tophat/commit-utils/issues"
   },
   "dependencies": {
-    "@tophat/commit-utils-core": "^0.0.9"
+    "@tophat/commit-utils-core": "*",
+    "compare-func": "^2.0.0"
   },
   "publishConfig": {
     "access": "public"

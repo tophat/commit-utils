@@ -1,10 +1,15 @@
 {
   "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",
     "@tophat/commit-utils-core": "^0.0.9",
     "@tophat/commitizen-adapter": "^0.0.11",
     "@tophat/commitlint-config": "^0.1.2",
+    "@tophat/conventional-changelog-config": "workspace:packages/conventional-changelog-config",
     "@tophat/eslint-config": "^0.1.4",
     "all-contributors-cli": "^6.3.1",
     "commitizen": "^3.1.1",
@@ -19,12 +24,15 @@
     "husky": "^2.1.0",
     "jest": "^26.6.3",
     "jest-junit": "^12.0.0",
-    "lerna": "^3.13.3",
     "lodash": "^4.17.20",
     "longest": "^2.0.1",
+    "monodeploy": "https://github.com/tophat/monodeploy.git#next/v2",
     "prettier": "^1.17.0",
     "safe-buffer": "^5.2.1",
     "word-wrap": "^1.2.3"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "husky": {
     "hooks": {
@@ -37,7 +45,6 @@
     "lint-fix": "eslint --ignore-path .gitignore . --fix",
     "test": "jest",
     "test:ci": "jest --ci",
-    "lerna-publish": "lerna publish from-package --yes",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },

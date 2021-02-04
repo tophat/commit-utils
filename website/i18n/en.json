@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A small wrapper around lerna that makes it easier to use in CI",
+    "tagline": "Utils for commits",
     "docs": {
       "api": {
         "title": "API"
