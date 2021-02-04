@@ -84,6 +84,8 @@ jobs:
     if: "github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]')"
     steps:
         - uses: actions/checkout@v2
+          with:
+            token: ${{ secrets.GH_TOKEN }}
         - uses: ./.github/actions/detect-env
         - name: Setup Node.js
           uses: actions/setup-node@v1
@@ -99,6 +101,9 @@ jobs:
             key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
         - name: Install dependencies
           run: yarn install --immutable
+        - name: Determine Last Tagged Commit
+          run: |
+            echo BASE_COMMIT=$(git rev-list -1 `git describe --abbrev=0`) >> $GITHUB_ENV
         - name: Publish Package
           id: publish
           env:
@@ -106,7 +111,8 @@ jobs:
           run: |
             yarn monodeploy --log-level 0 \
               --conventional-changelog-config @tophat/conventional-changelog-config \
-              --prepend-changelog CHANGELOG.md
+              --prepend-changelog CHANGELOG.md \
+              --git-base-branch ${{ env.BASE_COMMIT }}
         - name: Commit Changes
           if: ${{ steps.publish.conclusion == 'success' }}
           run: |
