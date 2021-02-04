@@ -105,7 +105,7 @@ jobs:
         - name: Determine Last Tagged Commit
           run: |
             base=$(git rev-list -1 `git describe --abbrev=0`)
-            if (( $? != 0 )); then
+            if ! (( $? )); then
               echo BASE_COMMIT="$base" >> $GITHUB_ENV
             else
               exit 1
