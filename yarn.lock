@@ -6276,7 +6276,7 @@ fsevents@^2.1.2:
 
 "monodeploy@https://github.com/tophat/monodeploy.git#next/v2":
   version: 1.0.0
-  resolution: "monodeploy@https://github.com/tophat/monodeploy.git#commit=098c92e88ff4371afb7613cf877b3517422fe379"
+  resolution: "monodeploy@https://github.com/tophat/monodeploy.git#commit=37fa065d99903abfc19c52797fa429f1897e9eb6"
   dependencies:
     "@yarnpkg/cli": ^2.4.0
     "@yarnpkg/core": ^2.4.0
@@ -6290,7 +6290,7 @@ fsevents@^2.1.2:
     yargs: ^16.2.0
   bin:
     monodeploy: ./lib/cli.js
-  checksum: a51a96b0304a424baa9a915c896a76b49f9e0e968b352688825cb755bf39defa5327224552d845f173e0ff1164e6bd4837644b3e55bdc2b74cc6c5b8c823b623
+  checksum: 514c8abfeb36b9a8d14e523a201de7c71e670b595d3c296a199b93eda54c757083831fa43ff6b47d2831c9cb786ba6ae1d1d45998c4c5f941f92825267cc30d0
   languageName: node
   linkType: hard
 
