@@ -86,6 +86,7 @@ jobs:
         - uses: actions/checkout@v2
           with:
             token: ${{ secrets.GH_TOKEN }}
+            fetch-depth: 0
         - uses: ./.github/actions/detect-env
         - name: Setup Node.js
           uses: actions/setup-node@v1
@@ -103,7 +104,12 @@ jobs:
           run: yarn install --immutable
         - name: Determine Last Tagged Commit
           run: |
-            echo BASE_COMMIT=$(git rev-list -1 `git describe --abbrev=0`) >> $GITHUB_ENV
+            base=$(git rev-list -1 `git describe --abbrev=0`)
+            if (( $? != 0 )); then
+              echo BASE_COMMIT="$base" >> $GITHUB_ENV
+            else
+              exit 1
+            fi
         - name: Publish Package
           id: publish
           env:
