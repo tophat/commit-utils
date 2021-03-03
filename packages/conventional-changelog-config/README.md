@@ -15,27 +15,26 @@ Or using npm:
 
 `npm install @tophat/conventional-changelog-config --save-dev`
 
-
 ## Usage
 
 Using [Lerna](https://github.com/lerna/lerna):
 
-`lerna publish --skip-git --conventional-commits --changelog-preset 
+`lerna publish --skip-git --conventional-commits --changelog-preset
 @tophat/conventional-changelog-config --yes`
 
-Note: The `lerna` above should be the path to your Lerna executable if 
+Note: The `lerna` above should be the path to your Lerna executable if
 Lerna is not installed globally.
 
 ## Convention
 
-The changelog uses the commit message format from the 
+The changelog uses the commit message format from the
 [Angular Convention](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular#commit-message-format).
 
 ### Included Commit Types
 
 The full list of commit types are listed [here](https://github.com/tophat/commit-utils#commit-convention).
 However, only the following types will be included in the changelog generation.
- 
+
 #### feat:
 
 This commit is a new feature.
@@ -86,7 +85,7 @@ In the changelog, this may look like:
 Performance Improvements
 - reduce number of re-renders in the preview (#103) (m56np7)
 ```
-   
+
 ### revert
 
 This commit reverts a specified commit.
@@ -105,10 +104,10 @@ In the changelog, this may look like:
 Reverts
 - add bold and italics options to formatting toolbar (1ab23c4)
 ```
-    
+
 ### Breaking Changes
 
-This commit indicates that there is some major change that is 
+This commit indicates that there is some major change that is
 non-backwards compatible and requires consumers to take action.
 
 In the changelog, this may look like:
