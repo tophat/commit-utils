@@ -11,7 +11,7 @@ Using Yarn:
 
 `yarn add @tophat/commitlint-config --dev`
 
-Or using npm: 
+Or using npm:
 
 `npm install @tophat/commitlint-config --save-dev`
 
@@ -33,18 +33,17 @@ module.exports = {
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }  
+    }
   }
 }
 ```
 
-Git hooks can get parameters via command-line arguments and stdin. Husky makes them accessible to commitlint via HUSKY_GIT_PARAMS. 
+Git hooks can get parameters via command-line arguments and stdin. Husky makes them accessible to commitlint via HUSKY_GIT_PARAMS.
 
 ## Rules
 ### Problems
 
 The following rules are considered problems for `@tophat/commitlint-config` and will yield a non-zero exit code when not met.
-
 
 #### type-enum
 * **condition**: `type` is found in value
@@ -124,7 +123,7 @@ echo "fix: some message" # passes
 ```
 
 ### Warnings
-The following rules are considered warnings for `@tophat/commitlint-config`. Commitlint will pass but generate warnings if these conditions are not met. 
+The following rules are considered warnings for `@tophat/commitlint-config`. Commitlint will pass but generate warnings if these conditions are not met.
 
 #### body-leading-blank
 * **condition**: `body` begins with blank line
