@@ -132,3 +132,4 @@ The following rules are considered warnings for `@tophat/commitlint-config`. Com
 #### footer-leading-blank
 * **condition**: `footer` begins with blank line
 * **rule**: `always`
+
