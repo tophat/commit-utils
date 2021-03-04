@@ -45,4 +45,3 @@ Alternatively, if you're using a `.czrc` file, add this
 Running `git cz` should now bring up an interactive prompt that lets you build commit messages
 
 <span><img align="center" src="../../docs/tophat-cz-screenshot.png" alt="Screenshot"></span>
-
