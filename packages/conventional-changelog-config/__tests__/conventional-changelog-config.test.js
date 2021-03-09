@@ -1,24 +1,60 @@
 'use strict'
 const writerOptsConfig = require('../src/writer-opts')
 const { BREAKING_CHANGE } = require('../src/helpers')
+const { whatBump } = require('../src/conventional-recommended-bump')
+const { STRATEGY } = require('../src/commitTypes')
+
+const mockContext = {
+    host: 'gitstub.com',
+    repository: 'test',
+    owner: 'tophat',
+    repoUrl: '',
+}
+const mockCommitHash = '84c3ee0ac680287af37940cabbbeb8052e49a7ab'
+const getMockCommit = (notes = []) => ({
+    references: [],
+    hash: mockCommitHash,
+    scope: '',
+    notes: [...notes],
+    subject: 'this is the commit message',
+})
 
 describe('conventional-changelog-config', () => {
-    describe('writer-opts', () => {
-        const mockContext = {
-            host: 'gitstub.com',
-            repository: 'test',
-            owner: 'tophat',
-            repoUrl: '',
-        }
-        const mockCommitHash = '84c3ee0ac680287af37940cabbbeb8052e49a7ab'
-        const getMockCommit = () => ({
-            references: [],
-            hash: mockCommitHash,
-            scope: '',
-            notes: [],
-            subject: 'this is the commit message',
+    describe('what bump', () => {
+        it('chooses breaking change over feature', () => {
+            const commits = [
+                getMockCommit([{ title: 'BREAKING CHANGE: apple' }]),
+                getMockCommit([{ title: 'feat: orange' }]),
+            ]
+            expect(whatBump(commits).level).toEqual(STRATEGY.MAJOR)
         })
 
+        it('chooses feature over fix', () => {
+            const commits = [
+                getMockCommit([{ title: 'fix: apple' }]),
+                getMockCommit([{ title: 'feat: orange' }]),
+            ]
+            expect(whatBump(commits).level).toEqual(STRATEGY.MINOR)
+        })
+
+        it('chooses fix over nothing', () => {
+            const commits = [
+                getMockCommit([{ title: 'fix: apple' }]),
+                getMockCommit([{ title: 'chore: orange' }]),
+            ]
+            expect(whatBump(commits).level).toEqual(STRATEGY.PATCH)
+        })
+
+        it('chooses nothing if no fix, feat or breaking', () => {
+            const commits = [
+                getMockCommit([{ title: 'chore: apple' }]),
+                getMockCommit([{ title: 'chore: orange' }]),
+            ]
+            expect(whatBump(commits).level).toBeNull()
+        })
+    })
+
+    describe('writer-opts', () => {
         it('transforms breaking commit notes', async () => {
             const mockText = 'the change is breaking'
             const mockCommit = getMockCommit()

@@ -47,7 +47,7 @@ module.exports = {
                         },
                     },
                     {
-                        test: filePath => {
+                        test: (filePath) => {
                             const isSvg = /\.(svg)$/.test(filePath)
                             const isIcon = /\.icon\.svg$/.test(filePath)
                             return isSvg && !isIcon

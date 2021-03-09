@@ -1,5 +1,6 @@
 'use strict'
 const constants = require('../src/constants')
+
 const { COMMIT_TYPES } = constants
 
 describe('commit-utils-core', () => {

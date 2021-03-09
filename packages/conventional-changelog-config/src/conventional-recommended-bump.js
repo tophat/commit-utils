@@ -1,43 +1,48 @@
 const parserOpts = require('./parser-opts')
-const { FEATURE_TYPE } = require('./commitTypes')
-const { isNoteOfType, BREAKING_CHANGE } = require('./helpers')
-
-const MAJOR = 0
-const MINOR = 1
-const PATCH = 2
+const { FEATURE_TYPES, PATCH_TYPES, STRATEGY } = require('./commitTypes')
+const { BREAKING_CHANGE } = require('./helpers')
 
 module.exports = {
     parserOpts,
 
-    whatBump: commits => {
-        let level = PATCH
-        let breakings = 0
-        let features = 0
-
-        commits.forEach(commit => {
-            commit.notes.forEach(note => {
-                if (note.title === BREAKING_CHANGE) {
-                    breakings += 1
-                    level = MAJOR
-                } else if (isNoteOfType(note.title, FEATURE_TYPE)) {
-                    features += 1
-                    if (level === PATCH) {
-                        level = MINOR
-                    }
+    whatBump: (commits) => {
+        const pattern = new RegExp('^(\\w+)(\\([^:]+\\))?:.*', 'g')
+        const level = commits.reduce((level, commit) => {
+            for (const note of commit.notes) {
+                if (note.title.toUpperCase().includes(BREAKING_CHANGE)) {
+                    return STRATEGY.MAJOR
                 }
-            })
 
-            if (commit.type === FEATURE_TYPE) {
-                features += 1
-                if (level === PATCH) {
-                    level = MINOR
+                const matches = [...note.title.matchAll(pattern)]?.[0]
+                const type = matches?.[1]
+
+                if (FEATURE_TYPES.includes(type)) {
+                    return Math.min(level, STRATEGY.MINOR)
+                }
+                if (PATCH_TYPES.includes(type)) {
+                    return Math.min(level, STRATEGY.PATCH)
                 }
             }
-        })
+
+            if (commit.header?.toUpperCase().includes(BREAKING_CHANGE)) {
+                return STRATEGY.MAJOR
+            }
+
+            const commitType = commit.type
+            if (commitType) {
+                if (FEATURE_TYPES.includes(commitType)) {
+                    return Math.min(level, STRATEGY.MINOR)
+                }
+                if (PATCH_TYPES.includes(commitType)) {
+                    return Math.min(level, STRATEGY.PATCH)
+                }
+            }
+            return level
+        }, STRATEGY.NONE)
 
         return {
-            level,
-            reason: `${BREAKING_CHANGE}s: ${breakings}; features: ${features}`,
+            level: level === STRATEGY.NONE ? null : level,
+            reason: '',
         }
     },
 }

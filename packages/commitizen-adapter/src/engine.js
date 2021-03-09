@@ -90,13 +90,13 @@ module.exports = function engine(options) {
                         )
                     },
                 },
-            ]).then(answers => {
+            ]).then((answers) => {
                 if (
                     answers.isBreaking &&
                     answers.isBreakingConfirmed === 'quit'
                 ) {
                     // eslint-disable-next-line no-console
-                    console.log(`\nCommit aborted.\n`)
+                    console.log('\nCommit aborted.\n')
                     return
                 }
 
