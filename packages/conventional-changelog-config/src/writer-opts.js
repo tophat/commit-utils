@@ -3,6 +3,7 @@
 const util = require('util')
 const fs = require('fs')
 const path = require('path')
+
 const compareFunc = require('compare-func')
 
 const parserOpts = require('./parser-opts')
@@ -37,7 +38,7 @@ module.exports = Promise.all([
  *{"commit":"commit","issue":"issues","date":"2018-06-19","version":"4.0.0","host":"https://github.com","owner":"tophatmonocle","repository":"fe-versioning-sandbox","repoUrl":"https://github.com/tophatmonocle/fe-versioning-sandbox","packageData":{"name":"@thm/test-package-2","version":"4.0.0","description":"FE versioning test package 2","main":"index.js","author":{"name":"Top Hat Monocle Corp."},"license":"UNLICENSED","publishConfig":{"registry":"https://thm.jfrog.io/thm/api/npm/npm-local/"},"dependencies":{"@thm/test-package-1":"^4.0.0"},"readme":"ERROR: No README data found!","_id":"@thm/test-package-2@4.0.0","repository":{"url":"git+ssh://git@github.com/tophatmonocle/fe-versioning-sandbox.git"},"bugs":{"url":"https://github.com/tophatmonocle/fe-versioning-sandbox/issues"},"homepage":"https://github.com/tophatmonocle/fe-versioning-sandbox#readme"},"gitSemverTags":[],"linkReferences":true}
  */
 
-const shouldNoteGoInChangelog = title =>
+const shouldNoteGoInChangelog = (title) =>
     title === BREAKING_CHANGE ||
     title === 'Revert' ||
     changelogCommitTypes.some(({ prefix }) => isNoteOfType(title, prefix))
@@ -56,7 +57,7 @@ function getWriterOpts() {
                 discard = false
             }
 
-            commit.notes.forEach(note => {
+            commit.notes.forEach((note) => {
                 if (note.title === BREAKING_CHANGE) {
                     note.title = 'Breaking Changes'
                 } else if (note.title === 'Revert') {
@@ -143,7 +144,7 @@ function getWriterOpts() {
             }
 
             // remove references that already appear in the subject
-            commit.references = commit.references.filter(reference => {
+            commit.references = commit.references.filter((reference) => {
                 if (issues.indexOf(reference.issue) === -1) {
                     return true
                 }

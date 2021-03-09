@@ -3,7 +3,7 @@ const isNoteOfTypeWithScope = (title, type) => title.startsWith(`${type}(`)
 const isNoteOfType = (title, type) =>
     title === type || isNoteOfTypeWithScope(title, type)
 
-const getNoteScope = title => {
+const getNoteScope = (title) => {
     const match = title.match(/\((.*)\)/)
 
     if (match) {
