@@ -21,14 +21,13 @@ const readFile = util.promisify(fs.readFile)
 module.exports = Promise.all([
     readFile(path.join(__dirname, './templates/template.hbs'), 'utf-8'),
     readFile(path.join(__dirname, './templates/header.hbs'), 'utf-8'),
-    readFile(path.join(__dirname, './templates/commit.hbs'), 'utf-8'),
     readFile(path.join(__dirname, './templates/footer.hbs'), 'utf-8'),
-]).then(([template, header, commit, footer]) => {
+]).then(([template, header, footer]) => {
     const writerOpts = getWriterOpts()
 
     writerOpts.mainTemplate = template
     writerOpts.headerPartial = header
-    writerOpts.commitPartial = commit
+    writerOpts.commitPartial = null
     writerOpts.footerPartial = footer
 
     return writerOpts
