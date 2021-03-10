@@ -1,10 +1,10 @@
 {{#if noteGroups}}
 {{#each noteGroups}}
 
-## {{title}}
+### {{title}}
 
 {{#each notes}}
-*{{#if scope}} **{{scope}}:**{{/if}}{{#if revertHash}} Revert {{#if @root.linkReferences~}}
+*{{#if scope}} **{{scope}}**:{{/if}}{{#if revertHash}} Revert {{#if @root.linkReferences~}}
   [{{revertHash}}](
   {{~#if @root.repository}}
     {{~#if @root.host}}
