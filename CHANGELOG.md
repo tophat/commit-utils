@@ -6,6 +6,46 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 <!-- MONODEPLOY:BELOW -->
 
+## [0.5.4](https://github.com/tophat/commit-utils/compare/@tophat/commit-utils-core@0.5.3...@tophat/commit-utils-core@0.5.4) "@tophat/commit-utils-core" (2021-03-10)<a name="0.5.4"></a>
+
+## Bug Fixes
+
+* fix small title formatting issues ([#18](https://github.com/tophat/commit-utils/issues/18)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+* whitespace change to trigger release, ignore ([#73](https://github.com/tophat/commit-utils/issues/73)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+* whitespace release ([#74](https://github.com/tophat/commit-utils/issues/74)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+* only patch for fix and perf commit types ([#76](https://github.com/tophat/commit-utils/issues/76)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+
+
+## [0.5.4](https://github.com/tophat/commit-utils/compare/@tophat/commitizen-adapter@0.5.3...@tophat/commitizen-adapter@0.5.4) "@tophat/commitizen-adapter" (2021-03-10)<a name="0.5.4"></a>
+
+## Bug Fixes
+
+* fix small title formatting issues ([#18](https://github.com/tophat/commit-utils/issues/18)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+* whitespace change to trigger release, ignore ([#73](https://github.com/tophat/commit-utils/issues/73)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+* whitespace release ([#74](https://github.com/tophat/commit-utils/issues/74)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+* only patch for fix and perf commit types ([#76](https://github.com/tophat/commit-utils/issues/76)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+
+
+## [0.3.4](https://github.com/tophat/commit-utils/compare/@tophat/commitlint-config@0.3.3...@tophat/commitlint-config@0.3.4) "@tophat/commitlint-config" (2021-03-10)<a name="0.3.4"></a>
+
+## Bug Fixes
+
+* fix small title formatting issues ([#18](https://github.com/tophat/commit-utils/issues/18)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+* whitespace change to trigger release, ignore ([#73](https://github.com/tophat/commit-utils/issues/73)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+* whitespace release ([#74](https://github.com/tophat/commit-utils/issues/74)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+* only patch for fix and perf commit types ([#76](https://github.com/tophat/commit-utils/issues/76)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+
+
+## [0.5.4](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@0.5.3...@tophat/conventional-changelog-config@0.5.4) "@tophat/conventional-changelog-config" (2021-03-10)<a name="0.5.4"></a>
+
+## Bug Fixes
+
+* fix small title formatting issues ([#18](https://github.com/tophat/commit-utils/issues/18)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+* whitespace change to trigger release, ignore ([#73](https://github.com/tophat/commit-utils/issues/73)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+* whitespace release ([#74](https://github.com/tophat/commit-utils/issues/74)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+* only patch for fix and perf commit types ([#76](https://github.com/tophat/commit-utils/issues/76)) ([52e33ea](https://github.com/tophat/commit-utils/commits/52e33ea))
+
+
 ## 0.5.1 "@tophat/commit-utils-core@0.5.1" (2021-03-09)<a name="0.5.1"></a>
 
 ## Bug Fixes
