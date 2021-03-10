@@ -102,6 +102,11 @@ jobs:
             key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
         - name: Install dependencies
           run: yarn install --immutable
+        - name: Configure Git
+          run: |
+            git config --global user.email opensource-leads+bot@tophatmonocle.com
+            git config --global user.name tophat-opensource-bot
+            git config --global init.defaultBranch master
         - name: Publish Package
           id: publish
           env:
@@ -114,9 +119,6 @@ jobs:
         - name: Commit Changes
           if: ${{ steps.publish.conclusion == 'success' }}
           run: |
-            git config user.name tophat-opensource-bot
-            git config user.email opensource-leads+bot@tophatmonocle.com
-            git config --global init.defaultBranch master
             yarn dedupe
             if ! git diff-index --quiet HEAD -- CHANGELOG.md; then
               git push --tags \
