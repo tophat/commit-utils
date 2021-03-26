@@ -1,5 +1,7 @@
 import chalk from 'chalk'
 
+import { getBaseConfigs } from './getConfig'
+
 const stdout = console.log // eslint-disable-line no-console
 const stderr = console.error // eslint-disable-line no-console
 
@@ -23,7 +25,7 @@ const log = message => {
 }
 
 const info = message => {
-    if (process.env.VERBOSE === '1') {
+    if (getBaseConfigs().VERBOSE === '1') {
         stdout(`[INFO] ${message}`)
     }
 }

@@ -7,6 +7,7 @@ import format from '@commitlint/format'
 import logger from './logger'
 import { EXIT_FAILURE, EXIT_SUCCESS, STATUSES } from './constants'
 import getCommitResults from './getCommitResults'
+import { getBaseConfigs } from './getConfig'
 
 function buildJunitFile({ lintFailures, outputDir, outputFilename }) {
     const suite = builder.testSuite().name('commitwatch')
@@ -24,6 +25,7 @@ function buildJunitFile({ lintFailures, outputDir, outputFilename }) {
 
 const main = async () => {
     const results = await getCommitResults()
+    const configs = getBaseConfigs()
 
     if (results.status === STATUSES.FAIL) {
         logger.log(chalk.redBright('commitWatch FAIL'))
@@ -32,11 +34,8 @@ const main = async () => {
         buildJunitFile({
             lintFailures: results.lintFailures,
             outputDir:
-                process.env.COMMIT_WATCH_OUTPUT_DIR ??
-                'artifacts/test_results/commitwatch/',
-            outputFilename:
-                process.env.COMMIT_WATCH_OUTPUT_FILENAME ??
-                'commitwatch.junit.xml',
+                configs.OUTPUT_DIR ?? 'artifacts/test_results/commitwatch/',
+            outputFilename: configs.OUTPUT_FILENAME ?? 'commitwatch.junit.xml',
         })
         return EXIT_FAILURE
     }
