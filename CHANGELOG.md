@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/tophat/commit-watch/compare/v0.1.0...v0.2.0) (2021-03-26)
+
+
+### Features
+
+* support config from cli args and config file ([#61](https://github.com/tophat/commit-watch/issues/61)) ([39a6549](https://github.com/tophat/commit-watch/commit/39a654947cf022cb7996627c97f669e0531a5042))
+
 # [0.1.0](https://github.com/tophat/commit-watch/compare/v0.0.13...v0.1.0) (2021-03-26)
 
 

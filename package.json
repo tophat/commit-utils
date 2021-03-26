@@ -1,6 +1,6 @@
 {
   "name": "commit-watch",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "commit message status check for continuous integration",
   "main": "index.js",
   "repository": "git@github.com:tophat/commit-watch.git",
