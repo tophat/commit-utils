@@ -3,7 +3,7 @@
 <img align="right" width="100px" height="100px" src="./assets/logo.png" alt="Logo">
 
 [![Maturity badge - level 2](https://img.shields.io/badge/Maturity-Level%202%20--%20First%20Release-yellowgreen.svg)](https://github.com/tophat/getting-started/blob/master/scorecard.md) [![GitHub license](https://img.shields.io/github/license/tophat/commit-watch)](https://github.com/tophat/commit-watch/blob/master/LICENSE) [![Slack workspace](https://slackinvite.dev.tophat.com/badge.svg)](https://opensource.tophat.com/slack) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![npm](https://img.shields.io/npm/v/commit-watch) ![node-current](https://img.shields.io/node/v/commit-watch) ![npm](https://img.shields.io/npm/dm/commit-watch) [![codecov](https://codecov.io/gh/tophat/commit-watch/branch/master/graph/badge.svg?token=eBYKrg0Vaw)](https://codecov.io/gh/tophat/commit-watch)
@@ -98,6 +98,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/lime-green"><img src="https://avatars0.githubusercontent.com/u/9436142?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Josh</b></sub></a><br /><a href="https://github.com/tophat/commit-watch/issues?q=author%3Alime-green" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://noahnu.com/"><img src="https://avatars0.githubusercontent.com/u/1297096?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Noah</b></sub></a><br /><a href="https://github.com/tophat/commit-watch/issues?q=author%3Anoahnu" title="Bug reports">🐛</a> <a href="#infra-noahnu" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#tool-noahnu" title="Tools">🔧</a> <a href="https://github.com/tophat/commit-watch/commits?author=noahnu" title="Code">💻</a> <a href="https://github.com/tophat/commit-watch/commits?author=noahnu" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/asottile"><img src="https://avatars3.githubusercontent.com/u/1810591?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anthony Sottile</b></sub></a><br /><a href="#security-asottile" title="Security">🛡️</a></td>
+    <td align="center"><a href="https://jaredrand.ca/"><img src="https://avatars.githubusercontent.com/u/16545273?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jared Rand</b></sub></a><br /><a href="https://github.com/tophat/commit-watch/commits?author=WulffHunter" title="Code">💻</a></td>
   </tr>
 </table>
 

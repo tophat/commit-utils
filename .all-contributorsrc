@@ -64,6 +64,15 @@
       "contributions": [
         "security"
       ]
+    },
+    {
+      "login": "WulffHunter",
+      "name": "Jared Rand",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16545273?v=4",
+      "profile": "https://jaredrand.ca/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
