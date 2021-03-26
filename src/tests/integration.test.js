@@ -110,6 +110,23 @@ describe('Integration', () => {
             expect(requests[1].state).toEqual('failure')
         })
 
+        it('reports mutiple commit failures to github with correct message', async () => {
+            mockMessages(['missing prefix', 'bad commit'])
+            await mainSafe()
+
+            const requests = mockAxios.history.post.map(r => getRequestData(r))
+            expect(requests).toHaveLength(3)
+            expect(requests[0].state).toEqual('pending')
+            expect(requests[1].state).toEqual('failure')
+            expect(requests[2].state).toEqual('failure')
+            expect(requests[2].description).toEqual(
+                'Multiple commit lint errors, please ensure your commit messages conform to the conventional commit spec.',
+            )
+            expect(requests[2].target_url).toEqual(
+                'https://www.conventionalcommits.org/en/v1.0.0/',
+            )
+        })
+
         it('reports success to github', async () => {
             mockMessages(['chore: good message'])
             await mainSafe()
