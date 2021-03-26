@@ -1,3 +1,10 @@
+# [0.1.0](https://github.com/tophat/commit-watch/compare/v0.0.13...v0.1.0) (2021-03-26)
+
+
+### Features
+
+* Update failure message ([#65](https://github.com/tophat/commit-watch/issues/65)) ([4c489e1](https://github.com/tophat/commit-watch/commit/4c489e18ad89a323140bbefde8a51aafce1bd216))
+
 ## [0.0.13](https://github.com/tophat/commit-watch/compare/v0.0.12...v0.0.13) (2021-02-21)
 
 
