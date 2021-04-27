@@ -23,34 +23,48 @@ describe('conventional-changelog-config', () => {
     describe('what bump', () => {
         it('chooses breaking change over feature', () => {
             const commits = [
-                getMockCommit([{ title: 'BREAKING CHANGE: apple' }]),
-                getMockCommit([{ title: 'feat: orange' }]),
+                getMockCommit([{ title: 'BREAKING CHANGE', text: 'apple' }]),
+                getMockCommit([{ title: 'feat', text: 'orange' }]),
             ]
             expect(whatBump(commits).level).toEqual(STRATEGY.MAJOR)
         })
 
         it('chooses feature over fix', () => {
             const commits = [
-                getMockCommit([{ title: 'fix: apple' }]),
-                getMockCommit([{ title: 'feat: orange' }]),
+                getMockCommit([{ title: 'fix', text: 'apple' }]),
+                getMockCommit([{ title: 'feat', text: 'orange' }]),
             ]
             expect(whatBump(commits).level).toEqual(STRATEGY.MINOR)
         })
 
         it('chooses fix over nothing', () => {
             const commits = [
-                getMockCommit([{ title: 'fix: apple' }]),
-                getMockCommit([{ title: 'chore: orange' }]),
+                getMockCommit([{ title: 'fix', text: 'apple' }]),
+                getMockCommit([{ title: 'chore', text: 'orange' }]),
             ]
             expect(whatBump(commits).level).toEqual(STRATEGY.PATCH)
         })
 
         it('chooses nothing if no fix, feat or breaking', () => {
             const commits = [
-                getMockCommit([{ title: 'chore: apple' }]),
-                getMockCommit([{ title: 'chore: orange' }]),
+                getMockCommit([{ title: 'chore', text: 'apple' }]),
+                getMockCommit([{ title: 'chore', text: 'orange' }]),
             ]
             expect(whatBump(commits).level).toBeNull()
+        })
+
+        it('interpets revert as patch', () => {
+            const commits = [
+                {
+                    ...getMockCommit([{ title: 'chore', text: 'orange' }]),
+                    revert: {
+                        prefix: 'Revert',
+                        header: '"chore: switch back"',
+                        hash: 'abc',
+                    },
+                },
+            ]
+            expect(whatBump(commits).level).toEqual(STRATEGY.PATCH)
         })
     })
 
