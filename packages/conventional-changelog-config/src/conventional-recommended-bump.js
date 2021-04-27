@@ -6,14 +6,14 @@ module.exports = {
     parserOpts,
 
     whatBump: (commits) => {
-        const pattern = new RegExp('^(\\w+)(\\([^:]+\\))?:.*', 'g')
+        const titlePattern = new RegExp('^(\\w+)(\\([^)]+\\))?$', 'g')
         const level = commits.reduce((level, commit) => {
             for (const note of commit.notes) {
                 if (note.title.toUpperCase().includes(BREAKING_CHANGE)) {
                     return STRATEGY.MAJOR
                 }
 
-                const matches = [...note.title.matchAll(pattern)]?.[0]
+                const matches = [...note.title.matchAll(titlePattern)]?.[0]
                 const type = matches?.[1]
 
                 if (FEATURE_TYPES.includes(type)) {
@@ -37,6 +37,11 @@ module.exports = {
                     return Math.min(level, STRATEGY.PATCH)
                 }
             }
+
+            if (commit.revert) {
+                return Math.min(level, STRATEGY.PATCH)
+            }
+
             return level
         }, STRATEGY.NONE)
 
