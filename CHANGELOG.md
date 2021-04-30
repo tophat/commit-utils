@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 <!-- MONODEPLOY:BELOW -->
 
+## [0.5.7](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@0.5.6...@tophat/conventional-changelog-config@0.5.7) "@tophat/conventional-changelog-config" (2021-04-30)<a name="0.5.7"></a>
+
+### Bug Fixes
+
+* give header precedence over notes ([#83](https://github.com/tophat/commit-utils/issues/83)) ([5b38488](https://github.com/tophat/commit-utils/commits/5b38488))
+
+
 ## [0.5.6](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@0.5.5...@tophat/conventional-changelog-config@0.5.6) "@tophat/conventional-changelog-config" (2021-04-27)<a name="0.5.6"></a>
 
 ### Bug Fixes
