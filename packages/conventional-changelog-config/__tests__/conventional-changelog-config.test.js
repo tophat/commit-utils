@@ -29,6 +29,16 @@ describe('conventional-changelog-config', () => {
             expect(whatBump(commits).level).toEqual(STRATEGY.MAJOR)
         })
 
+        it('chooses breaking change over feature when breaking change is only in header', () => {
+            const commits = [
+                {
+                    ...getMockCommit([{ title: 'feat', text: 'orange' }]),
+                    header: 'BREAKING CHANGE: This is a change!',
+                },
+            ]
+            expect(whatBump(commits).level).toEqual(STRATEGY.MAJOR)
+        })
+
         it('chooses feature over fix', () => {
             const commits = [
                 getMockCommit([{ title: 'fix', text: 'apple' }]),

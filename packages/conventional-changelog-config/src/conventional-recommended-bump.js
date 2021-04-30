@@ -8,6 +8,10 @@ module.exports = {
     whatBump: (commits) => {
         const titlePattern = new RegExp('^(\\w+)(\\([^)]+\\))?$', 'g')
         const level = commits.reduce((level, commit) => {
+            if (commit.header?.toUpperCase().includes(BREAKING_CHANGE)) {
+                return STRATEGY.MAJOR
+            }
+
             for (const note of commit.notes) {
                 if (note.title.toUpperCase().includes(BREAKING_CHANGE)) {
                     return STRATEGY.MAJOR
@@ -22,10 +26,6 @@ module.exports = {
                 if (PATCH_TYPES.includes(type)) {
                     return Math.min(level, STRATEGY.PATCH)
                 }
-            }
-
-            if (commit.header?.toUpperCase().includes(BREAKING_CHANGE)) {
-                return STRATEGY.MAJOR
             }
 
             const commitType = commit.type
