@@ -21,12 +21,53 @@ const getMockCommit = (notes = []) => ({
 
 describe('conventional-changelog-config', () => {
     describe('what bump', () => {
+        it('uses all notes when making a decision', () => {
+            expect(
+                whatBump([
+                    getMockCommit([
+                        { title: 'feat', text: 'orange' },
+                        { title: 'BREAKING CHANGE', text: 'this is breaking' },
+                    ]),
+                ]).level,
+            ).toEqual(STRATEGY.MAJOR)
+
+            expect(
+                whatBump([
+                    getMockCommit([
+                        { title: 'feat', text: 'orange' },
+                        { title: 'fix', text: 'this is breaking' },
+                    ]),
+                ]).level,
+            ).toEqual(STRATEGY.MINOR)
+
+            expect(
+                whatBump([
+                    getMockCommit([
+                        { title: 'fix', text: 'this is breaking' },
+                        { title: 'feat', text: 'orange' },
+                    ]),
+                ]).level,
+            ).toEqual(STRATEGY.MINOR)
+        })
+
         it('chooses breaking change over feature', () => {
-            const commits = [
-                getMockCommit([{ title: 'BREAKING CHANGE', text: 'apple' }]),
-                getMockCommit([{ title: 'feat', text: 'orange' }]),
-            ]
-            expect(whatBump(commits).level).toEqual(STRATEGY.MAJOR)
+            expect(
+                whatBump([
+                    getMockCommit([{ title: 'feat', text: 'orange' }]),
+                    getMockCommit([
+                        { title: 'BREAKING CHANGE', text: 'apple' },
+                    ]),
+                ]).level,
+            ).toEqual(STRATEGY.MAJOR)
+
+            expect(
+                whatBump([
+                    getMockCommit([
+                        { title: 'BREAKING CHANGE', text: 'apple' },
+                    ]),
+                    getMockCommit([{ title: 'feat', text: 'orange' }]),
+                ]).level,
+            ).toEqual(STRATEGY.MAJOR)
         })
 
         it('chooses breaking change over feature when breaking change is only in header', () => {
