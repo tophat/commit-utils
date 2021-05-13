@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 <!-- MONODEPLOY:BELOW -->
 
+## [0.5.8](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@0.5.7...@tophat/conventional-changelog-config@0.5.8) "@tophat/conventional-changelog-config" (2021-05-13)<a name="0.5.8"></a>
+
+### Bug Fixes
+
+* parse all commit notes when making a decision ([#87](https://github.com/tophat/commit-utils/issues/87)) ([50ede19](https://github.com/tophat/commit-utils/commits/50ede19))
+
+
 ## [0.5.7](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@0.5.6...@tophat/conventional-changelog-config@0.5.7) "@tophat/conventional-changelog-config" (2021-04-30)<a name="0.5.7"></a>
 
 ### Bug Fixes
