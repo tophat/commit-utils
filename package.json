@@ -11,6 +11,7 @@
     "@tophat/commitlint-config": "^0.1.2",
     "@tophat/conventional-changelog-config": "workspace:packages/conventional-changelog-config",
     "@tophat/eslint-config": "^0.8.0",
+    "@yarnpkg/pnpify": "^3.0.0-rc.3",
     "all-contributors-cli": "^6.3.1",
     "commitizen": "^3.1.1",
     "compare-func": "^2.0.0",

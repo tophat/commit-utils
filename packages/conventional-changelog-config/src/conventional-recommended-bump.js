@@ -8,6 +8,8 @@ module.exports = {
     whatBump: (commits) => {
         const titlePattern = new RegExp('^(\\w+)(\\([^)]+\\))?$', 'g')
         const level = commits.reduce((level, commit) => {
+            let intermediateLevel = level
+
             if (commit.header?.toUpperCase().includes(BREAKING_CHANGE)) {
                 return STRATEGY.MAJOR
             }
@@ -21,28 +23,42 @@ module.exports = {
                 const type = matches?.[1]
 
                 if (FEATURE_TYPES.includes(type)) {
-                    return Math.min(level, STRATEGY.MINOR)
+                    intermediateLevel = Math.min(
+                        intermediateLevel,
+                        STRATEGY.MINOR,
+                    )
+                    continue
                 }
                 if (PATCH_TYPES.includes(type)) {
-                    return Math.min(level, STRATEGY.PATCH)
+                    intermediateLevel = Math.min(
+                        intermediateLevel,
+                        STRATEGY.PATCH,
+                    )
+                    continue
                 }
             }
 
             const commitType = commit.type
             if (commitType) {
                 if (FEATURE_TYPES.includes(commitType)) {
-                    return Math.min(level, STRATEGY.MINOR)
+                    intermediateLevel = Math.min(
+                        intermediateLevel,
+                        STRATEGY.MINOR,
+                    )
                 }
                 if (PATCH_TYPES.includes(commitType)) {
-                    return Math.min(level, STRATEGY.PATCH)
+                    intermediateLevel = Math.min(
+                        intermediateLevel,
+                        STRATEGY.PATCH,
+                    )
                 }
             }
 
             if (commit.revert) {
-                return Math.min(level, STRATEGY.PATCH)
+                intermediateLevel = Math.min(intermediateLevel, STRATEGY.PATCH)
             }
 
-            return level
+            return intermediateLevel
         }, STRATEGY.NONE)
 
         return {
