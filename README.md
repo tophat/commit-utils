@@ -3,7 +3,8 @@
 <span><img align="right" src="./website/static/img/commit-utils.svg" alt="Logo"></span>
 
 [![Continuous Integration](https://github.com/tophat/commit-utils/actions/workflows/pull-request.yml/badge.svg)](https://github.com/tophat/commit-utils/actions/workflows/pull-request.yml)
-[![Slack workspace](https://slackinvite.dev.tophat.com/badge.svg)](https://opensource.tophat.com/slack)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+[![Discord](https://img.shields.io/discord/809577721751142410)](https://discord.gg/YhK3GFcZrk)
 [![Maturity badge - level 1](https://img.shields.io/badge/Maturity-Level%201%20--%20New%20Project-yellow.svg)](https://github.com/tophat/getting-started/blob/master/scorecard.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
