@@ -1,5 +1,3 @@
 {
-    "prConcurrentLimit": 5,
-    "commitMessagePrefix": "chore: ",
-    "rangeStrategy": "replace"
+    "extends": ["github>tophat/new-project-kit//.github/renovate"]
 }
