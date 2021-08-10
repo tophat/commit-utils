@@ -112,20 +112,7 @@ jobs:
           env:
             NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           run: |
-            yarn monodeploy --log-level 0 \
-              --conventional-changelog-config @tophat/conventional-changelog-config \
-              --prepend-changelog CHANGELOG.md \
-              --persist-versions
-        - name: Commit Changes
-          if: ${{ steps.publish.conclusion == 'success' }}
-          run: |
-            yarn dedupe
-            if ! git diff-index --quiet HEAD -- CHANGELOG.md; then
-              git push --tags \
-                && git add yarn.lock CHANGELOG.md "packages/**/package.json" \
-                && git commit -m "chore: release commit-utils [skip ci]" -n \
-                && git push
-            fi
+            yarn monodeploy --log-level 0 --config-file monodeploy.config.js
         - name: Upload Artifacts
           if: ${{ always() }}
           uses: actions/upload-artifact@v2
