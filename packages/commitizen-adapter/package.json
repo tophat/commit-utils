@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "@tophat/commit-utils-core": "^0.5.4",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.21",
     "longest": "^2.0.1",
-    "word-wrap": "^1.0.3"
+    "word-wrap": "^1.2.3"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.118"
