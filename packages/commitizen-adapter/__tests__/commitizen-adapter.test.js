@@ -1,12 +1,14 @@
-'use strict'
 const { constants } = require('@tophat/commit-utils-core')
 
-const { COMMIT_TYPES } = constants
+const { COMMIT_TYPES, MAX_HEADER_LENGTH } = constants
 const engine = require('../src/engine')
 
 describe('conventional-changelog-config', () => {
     describe('engine', () => {
-        const testEngine = engine({ types: COMMIT_TYPES })
+        const testEngine = engine({
+            types: COMMIT_TYPES,
+            maxHeaderLength: MAX_HEADER_LENGTH,
+        })
         const mockCommitBody = 'Mary Ellen Carter, rise again!'
         const mockCommitType = COMMIT_TYPES.fix.prefix
         const mockCommitSubject = 'Put cables to her fore and aft'
@@ -46,9 +48,13 @@ describe('conventional-changelog-config', () => {
             const cz = getMockCz(mockAnswer)
             const commitCallback = jest.fn()
             await testEngine.prompter(cz, commitCallback)
-            expect(commitCallback).toHaveBeenCalledWith(
-                `${mockCommitType}: ${mockCommitSubject}\n\n${mockCommitBody}\n\nBREAKING CHANGE: ${mockBreakingMessage}`,
-            )
+            expect(commitCallback.mock.calls[0][0]).toMatchInlineSnapshot(`
+        "fix: Put cables to her fore and aft
+
+        Mary Ellen Carter, rise again!
+
+        BREAKING CHANGE: We've patched her rents, stopped her vents"
+      `)
         })
 
         it('aborts if author does not want to commit breaking change(s)', async () => {

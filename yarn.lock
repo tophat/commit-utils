@@ -338,16 +338,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.2.0":
-  version: 7.13.10
-  resolution: "@babel/runtime@npm:7.13.10"
-  dependencies:
-    regenerator-runtime: ^0.13.4
-  checksum: 9229c12ad2b0ba28f64fb920ef132a04742ad860939cc2a163dd2472831e40b4a72aba2b9eb3bcf02e3f03c773a06a6a8d829440d3888c1493f81198133f2152
-  languageName: node
-  linkType: hard
-
-"@babel/runtime@npm:^7.10.5":
+"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.5, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.2.0":
   version: 7.14.8
   resolution: "@babel/runtime@npm:7.14.8"
   dependencies:
@@ -1043,36 +1034,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tophat/commit-utils-core@^0.5.4, @tophat/commit-utils-core@workspace:packages/commit-utils-core":
+"@tophat/commit-utils-core@*, @tophat/commit-utils-core@workspace:packages/commit-utils-core":
   version: 0.0.0-use.local
   resolution: "@tophat/commit-utils-core@workspace:packages/commit-utils-core"
   languageName: unknown
   linkType: soft
 
-"@tophat/commit-utils-core@npm:^0.0.9":
-  version: 0.0.9
-  resolution: "@tophat/commit-utils-core@npm:0.0.9"
-  checksum: 3b0c5dc3bbb894114d91ff0c6a4263f419b6f0c5e49c7a2fdeddd4cfe0ec19ccd9cfec8d66ec780a47ca406c2adcd626e7fbda46fa1b89a51742bd9180d9b673
-  languageName: node
-  linkType: hard
-
-"@tophat/commitizen-adapter@npm:^0.0.11":
-  version: 0.0.11
-  resolution: "@tophat/commitizen-adapter@npm:0.0.11"
-  dependencies:
-    "@tophat/commit-utils-core": ^0.0.9
-    lodash: ^4.17.10
-    longest: ^1.0.1
-    word-wrap: ^1.0.3
-  checksum: 78e05957b3405b4ae1c5b7755b3d4ed57f7a1b8af75fcfa028ec72c6be39b9800b9b64aeac773fa619e3fd21188a23db5696b15cc69bbdf62f97780f9e1ec597
-  languageName: node
-  linkType: hard
-
 "@tophat/commitizen-adapter@workspace:packages/commitizen-adapter":
   version: 0.0.0-use.local
   resolution: "@tophat/commitizen-adapter@workspace:packages/commitizen-adapter"
   dependencies:
-    "@tophat/commit-utils-core": ^0.5.4
+    "@tophat/commit-utils-core": "*"
     "@types/lodash": ^4.14.118
     lodash: ^4.17.10
     longest: ^2.0.1
@@ -1080,21 +1052,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tophat/commitlint-config@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "@tophat/commitlint-config@npm:0.1.2"
-  dependencies:
-    "@tophat/commit-utils-core": ^0.0.9
-  checksum: de0eddfa514a865931f8133f9a0ed66b4140a5eecae75dadc796ee28bfde5487da807efa91af9597c3ea9a7bd47ba2ba4a6501cae475d563804385cf1aed2a03
-  languageName: node
-  linkType: hard
-
 "@tophat/commitlint-config@workspace:packages/commitlint-config":
   version: 0.0.0-use.local
   resolution: "@tophat/commitlint-config@workspace:packages/commitlint-config"
   dependencies:
     "@commitlint/utils": ^7.0.0
-    "@tophat/commit-utils-core": ^0.5.4
+    "@tophat/commit-utils-core": "*"
   languageName: unknown
   linkType: soft
 
@@ -1102,7 +1065,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tophat/conventional-changelog-config@workspace:packages/conventional-changelog-config"
   dependencies:
-    "@tophat/commit-utils-core": ^0.5.4
+    "@tophat/commit-utils-core": "*"
     compare-func: ^2.0.0
   languageName: unknown
   linkType: soft
@@ -1248,14 +1211,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.118":
-  version: 4.14.165
-  resolution: "@types/lodash@npm:4.14.165"
-  checksum: b6b4ebf0a3bf674751abdb1a033e64517df41f795f09a81fdd4fb7f9390f81dae132d42c53c4ff09f8bb57a77129722a730b752732b43010aaec84ca463c20ec
-  languageName: node
-  linkType: hard
-
-"@types/lodash@npm:^4.14.165":
+"@types/lodash@npm:^4.14.118, @types/lodash@npm:^4.14.165":
   version: 4.14.172
   resolution: "@types/lodash@npm:4.14.172"
   checksum: 5fc51ea40d7e455bd1c760bcc60c9e81f82d85988666d4d4969bd8311367c63bbf1fe2be48755ba87836710e45fff94014ec164ebe6ccaa72815014981152434
@@ -6649,17 +6605,7 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "micromatch@npm:4.0.2"
-  dependencies:
-    braces: ^3.0.1
-    picomatch: ^2.0.5
-  checksum: 39590a96d9ffad21f0afac044d0a5af4f33715a16fdd82c53a01c8f5ff6f70832a31b53e52972dac3deff8bf9f0bed0207d1c34e54ab3306a5e4c4efd5f7d249
-  languageName: node
-  linkType: hard
-
-"micromatch@npm:^4.0.4":
+"micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
   version: 4.0.4
   resolution: "micromatch@npm:4.0.4"
   dependencies:
@@ -7545,14 +7491,7 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"picomatch@npm:^2.0.4, picomatch@npm:^2.0.5, picomatch@npm:^2.2.1":
-  version: 2.2.2
-  resolution: "picomatch@npm:2.2.2"
-  checksum: 897a589f94665b4fd93e075fa94893936afe3f7bbef44250f0e878a8d9d001972a79589cac2856c24f6f5aa3b0abc9c8ba00c98fae4dc22bc0117188864d4181
-  languageName: node
-  linkType: hard
-
-"picomatch@npm:^2.2.3":
+"picomatch@npm:^2.0.4, picomatch@npm:^2.2.1, picomatch@npm:^2.2.3":
   version: 2.3.0
   resolution: "picomatch@npm:2.3.0"
   checksum: 16818720ea7c5872b6af110760dee856c8e4cd79aed1c7a006d076b1cc09eff3ae41ca5019966694c33fbd2e1cc6ea617ab10e4adac6df06556168f13be3fca2
@@ -8290,9 +8229,9 @@ fsevents@^2.1.2:
   resolution: "root@workspace:."
   dependencies:
     "@commitlint/cli": ^7.5.2
-    "@tophat/commit-utils-core": ^0.0.9
-    "@tophat/commitizen-adapter": ^0.0.11
-    "@tophat/commitlint-config": ^0.1.2
+    "@tophat/commit-utils-core": "workspace:packages/commit-utils-core"
+    "@tophat/commitizen-adapter": "workspace:packages/commitizen-adapter"
+    "@tophat/commitlint-config": "workspace:packages/commitlint-config"
     "@tophat/conventional-changelog-config": "workspace:packages/conventional-changelog-config"
     "@tophat/eslint-config": ^0.8.0
     "@yarnpkg/sdks": ^2.4.1-rc.4

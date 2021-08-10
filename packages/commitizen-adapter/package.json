@@ -11,7 +11,7 @@
     "test": "__tests__"
   },
   "dependencies": {
-    "@tophat/commit-utils-core": "^0.5.4",
+    "@tophat/commit-utils-core": "*",
     "lodash": "^4.17.10",
     "longest": "^2.0.1",
     "word-wrap": "^1.0.3"
