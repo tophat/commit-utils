@@ -4,10 +4,9 @@ const { compact, map, padEnd } = require('lodash')
 const longest = require('longest')
 const wrap = require('word-wrap')
 
-const maxLineWidth = 72
-
 module.exports = function engine(options) {
     const types = options.types
+    const maxLineWidth = options.maxHeaderLength
 
     const length = longest(Object.keys(types)).length + 1
     const choices = map(types, (type, key) => ({

@@ -1,12 +1,12 @@
 const { constants } = require('@tophat/commit-utils-core')
 
-const { COMMIT_TYPES } = constants
+const { COMMIT_TYPES, MAX_HEADER_LENGTH } = constants
 
 module.exports = {
     rules: {
         'body-leading-blank': [1, 'always'],
         'footer-leading-blank': [1, 'always'],
-        'header-max-length': [2, 'always', 72],
+        'header-max-length': [2, 'always', MAX_HEADER_LENGTH],
         'subject-empty': [2, 'never'],
         'type-case': [2, 'always', 'lower-case'],
         'type-empty': [2, 'never'],

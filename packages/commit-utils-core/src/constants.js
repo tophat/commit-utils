@@ -99,4 +99,5 @@ const COMMIT_TYPES = {
 
 module.exports = {
     COMMIT_TYPES,
+    MAX_HEADER_LENGTH: 100,
 }
