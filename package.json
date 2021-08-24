@@ -30,12 +30,11 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.12.1",
-    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
-    "@babel/preset-env": "^7.12.11",
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
     "@tophat/eslint-config": "^0.6.1",
+    "@yarnpkg/sdks": "^2.4.2-rc.1",
     "all-contributors-cli": "^6.19.0",
     "axios-mock-adapter": "^1.19.0",
     "babel-eslint": "^10.1.0",
@@ -59,9 +58,9 @@
     "@commitlint/format": "^11.0.0",
     "@commitlint/lint": "^11.0.0",
     "axios": "^0.21.1",
-    "chalk": "^4.1.0",
+    "chalk": "^4.1.2",
     "git-raw-commits": "^2.0.10",
-    "junit-report-builder": "^2.1.0",
+    "junit-report-builder": "^3.0.0",
     "minimist": "^1.2.5"
   },
   "engines": {
@@ -72,5 +71,6 @@
       "yarn eslint",
       "yarn jest --findRelatedTests"
     ]
-  }
+  },
+  "packageManager": "yarn@3.0.1"
 }
