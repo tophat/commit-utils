@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/tophat/commit-watch/compare/v0.2.0...v0.2.1) (2021-08-25)
+
+
+### Bug Fixes
+
+* skip validation on headers for squashed commits ([#83](https://github.com/tophat/commit-watch/issues/83)) ([86282f9](https://github.com/tophat/commit-watch/commit/86282f9232906e6dc0bb37f13ab55c5bf8d45db1))
+
 # [0.2.0](https://github.com/tophat/commit-watch/compare/v0.1.0...v0.2.0) (2021-03-26)
 
 
