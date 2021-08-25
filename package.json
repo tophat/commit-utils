@@ -55,13 +55,17 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
-    "@commitlint/format": "^11.0.0",
-    "@commitlint/lint": "^11.0.0",
+    "@commitlint/format": "^13.1.0",
+    "@commitlint/lint": "^13.1.0",
+    "@tophat/commitlint-config": "^0.3.4",
     "axios": "^0.21.1",
     "chalk": "^4.1.2",
     "git-raw-commits": "^2.0.10",
     "junit-report-builder": "^3.0.0",
     "minimist": "^1.2.5"
+  },
+  "peerDependencies": {
+    "@tophat/commitlint-config": ">= 0.3.4"
   },
   "engines": {
     "node": ">=12.0.0"

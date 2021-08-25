@@ -85,6 +85,30 @@ describe('Integration', () => {
             expect(exitCode).toBe(EXIT_FAILURE)
         })
 
+        it('allows poorly formatted headers, as long as body is formatted correctly', async () => {
+            mockMessages([
+                '[TICKET] this is a bad message, but it is a header\n\n* feat: a good message\n\n* fix: another',
+            ])
+            const exitCode = await mainSafe()
+            expect(exitCode).toBe(EXIT_SUCCESS)
+        })
+
+        it('allows notes in the body', async () => {
+            mockMessages([
+                '[TICKET] this is a bad message, but it is a header\n\n* feat: a good message\n\nThis is a note.',
+            ])
+            const exitCode = await mainSafe()
+            expect(exitCode).toBe(EXIT_SUCCESS)
+        })
+
+        it('fails poorly formatted headers if no good body', async () => {
+            mockMessages([
+                '[TICKET] this is a bad message, but it is a header\n\n* bad: a good message\n\n* bad: another',
+            ])
+            const exitCode = await mainSafe()
+            expect(exitCode).toBe(EXIT_FAILURE)
+        })
+
         it('does not update github if env vars not set', async () => {
             mockMessages(['missing prefix'])
             await mainSafe()

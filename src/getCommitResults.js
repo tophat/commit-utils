@@ -1,7 +1,7 @@
 import lint from '@commitlint/lint'
+import { rules } from '@tophat/commitlint-config'
 
 import getConfig from './getConfig'
-import { rules as RULES } from './rules'
 import { STATUSES } from './constants'
 import GitHubService from './gitHubService'
 import getCommitMessages from './getCommitMessages'
@@ -17,8 +17,32 @@ const conventionalCommitSpecLink =
 
 const getCommitLintResults = async () => {
     const messages = await getCommitMessages()
-    const lintedMessages = messages.map(m => lint(m, RULES))
-    return await Promise.all(lintedMessages).then(reports => reports.flat())
+    const lintedMessages = messages.map(m => {
+        const lines = m.split('\n').filter(line => line.trim().length)
+
+        // If we detect a GitHub squashed commit detected of the form:
+        //
+        // Some header from the PR title
+        // * fix: some commit
+        // * feat: some commit
+        //
+        // Then we skip the header. It's too late to lint it anyway.
+        if (
+            lines.length >= 2 &&
+            !lines[0]?.startsWith('* ') &&
+            lines[1]?.startsWith('* ')
+        ) {
+            return lines
+                .slice(1)
+                .filter(line => line.startsWith('* '))
+                .map(line => line.substring('* '.length))
+                .map(line => lint(line, rules))
+        }
+        return lint(m, rules)
+    })
+    return await Promise.all(lintedMessages.flat()).then(reports =>
+        reports.flat(),
+    )
 }
 
 const getCommitResults = async () => {
@@ -32,6 +56,7 @@ const getCommitResults = async () => {
     })
     await githubService.start({ message: 'Checking CommitWatch...' })
     const results = await getCommitLintResults()
+
     let status = STATUSES.PASS
     let failSummary = ''
     const passSummary = 'All commit messages look good!'
