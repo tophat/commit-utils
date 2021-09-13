@@ -10,12 +10,12 @@ module.exports = {
         const level = commits.reduce((level, commit) => {
             let intermediateLevel = level
 
-            if (commit.header?.toUpperCase().includes(BREAKING_CHANGE)) {
+            if (commit.header?.toUpperCase().startsWith(BREAKING_CHANGE)) {
                 return STRATEGY.MAJOR
             }
 
             for (const note of commit.notes) {
-                if (note.title.toUpperCase().includes(BREAKING_CHANGE)) {
+                if (note.title.toUpperCase().startsWith(BREAKING_CHANGE)) {
                     return STRATEGY.MAJOR
                 }
 

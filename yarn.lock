@@ -338,16 +338,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.2.0":
-  version: 7.13.10
-  resolution: "@babel/runtime@npm:7.13.10"
-  dependencies:
-    regenerator-runtime: ^0.13.4
-  checksum: 9229c12ad2b0ba28f64fb920ef132a04742ad860939cc2a163dd2472831e40b4a72aba2b9eb3bcf02e3f03c773a06a6a8d829440d3888c1493f81198133f2152
-  languageName: node
-  linkType: hard
-
-"@babel/runtime@npm:^7.10.5":
+"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.5, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.2.0":
   version: 7.14.8
   resolution: "@babel/runtime@npm:7.14.8"
   dependencies:
@@ -1104,6 +1095,7 @@ __metadata:
   dependencies:
     "@tophat/commit-utils-core": ^0.5.4
     compare-func: ^2.0.0
+    conventional-commits-parser: ^3.2.2
   languageName: unknown
   linkType: soft
 
@@ -1248,14 +1240,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.118":
-  version: 4.14.165
-  resolution: "@types/lodash@npm:4.14.165"
-  checksum: b6b4ebf0a3bf674751abdb1a033e64517df41f795f09a81fdd4fb7f9390f81dae132d42c53c4ff09f8bb57a77129722a730b752732b43010aaec84ca463c20ec
-  languageName: node
-  linkType: hard
-
-"@types/lodash@npm:^4.14.165":
+"@types/lodash@npm:^4.14.118, @types/lodash@npm:^4.14.165":
   version: 4.14.172
   resolution: "@types/lodash@npm:4.14.172"
   checksum: 5fc51ea40d7e455bd1c760bcc60c9e81f82d85988666d4d4969bd8311367c63bbf1fe2be48755ba87836710e45fff94014ec164ebe6ccaa72815014981152434
@@ -3029,9 +3014,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conventional-commits-parser@npm:^3.2.0":
-  version: 3.2.1
-  resolution: "conventional-commits-parser@npm:3.2.1"
+"conventional-commits-parser@npm:^3.2.0, conventional-commits-parser@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "conventional-commits-parser@npm:3.2.2"
   dependencies:
     JSONStream: ^1.0.4
     is-text-path: ^1.0.1
@@ -3039,10 +3024,9 @@ __metadata:
     meow: ^8.0.0
     split2: ^3.0.0
     through2: ^4.0.0
-    trim-off-newlines: ^1.0.0
   bin:
     conventional-commits-parser: cli.js
-  checksum: 01b83c625ac3d8f9dca0510a5e21385c9bb410b80bcb60dcfdef20e1fa7fe7fad5a280aa5e1dff8ac32ea0aea5966fa973696557d38f831f8630d4fcf31756d5
+  checksum: e7138cfeebc77affe790fa06b6c2f8ecaf74837c886c234bb268b6c4b84d123aba81851c8e3ef7169ee2d044d2d8c7a2a60a29d06b8bc3f1b5d7c2c984d5bb4f
   languageName: node
   linkType: hard
 
@@ -6649,17 +6633,7 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "micromatch@npm:4.0.2"
-  dependencies:
-    braces: ^3.0.1
-    picomatch: ^2.0.5
-  checksum: 39590a96d9ffad21f0afac044d0a5af4f33715a16fdd82c53a01c8f5ff6f70832a31b53e52972dac3deff8bf9f0bed0207d1c34e54ab3306a5e4c4efd5f7d249
-  languageName: node
-  linkType: hard
-
-"micromatch@npm:^4.0.4":
+"micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
   version: 4.0.4
   resolution: "micromatch@npm:4.0.4"
   dependencies:
@@ -7545,14 +7519,7 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"picomatch@npm:^2.0.4, picomatch@npm:^2.0.5, picomatch@npm:^2.2.1":
-  version: 2.2.2
-  resolution: "picomatch@npm:2.2.2"
-  checksum: 897a589f94665b4fd93e075fa94893936afe3f7bbef44250f0e878a8d9d001972a79589cac2856c24f6f5aa3b0abc9c8ba00c98fae4dc22bc0117188864d4181
-  languageName: node
-  linkType: hard
-
-"picomatch@npm:^2.2.3":
+"picomatch@npm:^2.0.4, picomatch@npm:^2.2.1, picomatch@npm:^2.2.3":
   version: 2.3.0
   resolution: "picomatch@npm:2.3.0"
   checksum: 16818720ea7c5872b6af110760dee856c8e4cd79aed1c7a006d076b1cc09eff3ae41ca5019966694c33fbd2e1cc6ea617ab10e4adac6df06556168f13be3fca2
