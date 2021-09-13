@@ -27,6 +27,9 @@
     "@tophat/commit-utils-core": "^0.5.4",
     "compare-func": "^2.0.0"
   },
+  "devDependencies": {
+    "conventional-commits-parser": "^3.2.2"
+  },
   "publishConfig": {
     "access": "public"
   }

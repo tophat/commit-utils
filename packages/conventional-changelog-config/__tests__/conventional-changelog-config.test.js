@@ -1,8 +1,19 @@
 'use strict'
+const { Readable } = require('stream')
+
+const conventionalCommitsParser = require('conventional-commits-parser')
+
 const writerOptsConfig = require('../src/writer-opts')
-const { BREAKING_CHANGE } = require('../src/helpers')
 const { whatBump } = require('../src/conventional-recommended-bump')
 const { STRATEGY } = require('../src/commitTypes')
+const configPromise = require('../src/index')
+
+const readStream = (stream) =>
+    new Promise((resolve) => {
+        const chunks = []
+        stream.on('data', (chunk) => chunks.push(chunk))
+        stream.on('end', () => resolve(chunks))
+    })
 
 const mockContext = {
     host: 'gitstub.com',
@@ -11,110 +22,146 @@ const mockContext = {
     repoUrl: '',
 }
 const mockCommitHash = '84c3ee0ac680287af37940cabbbeb8052e49a7ab'
-const getMockCommit = (notes = []) => ({
-    references: [],
-    hash: mockCommitHash,
-    scope: '',
-    notes: [...notes],
-    subject: 'this is the commit message',
-})
 
 describe('conventional-changelog-config', () => {
+    let config
+
+    beforeAll(async () => {
+        config = await configPromise
+    })
+
+    const getConventionalCommits = async (commits) => {
+        const commitsStream = Readable.from(
+            commits.map(
+                (commit) =>
+                    `${commit.body}\n-hash-\n${commit.sha || mockCommitHash}`,
+            ),
+        ).pipe(conventionalCommitsParser(config.parserOpts))
+        return await readStream(commitsStream)
+    }
+
     describe('what bump', () => {
-        it('uses all notes when making a decision', () => {
+        it('uses all notes when making a decision', async () => {
             expect(
-                whatBump([
-                    getMockCommit([
-                        { title: 'feat', text: 'orange' },
-                        { title: 'BREAKING CHANGE', text: 'this is breaking' },
+                whatBump(
+                    await getConventionalCommits([
+                        { body: 'feat: orange' },
+                        { body: 'BREAKING CHANGE: this is breaking' },
                     ]),
-                ]).level,
+                ).level,
             ).toEqual(STRATEGY.MAJOR)
 
             expect(
-                whatBump([
-                    getMockCommit([
-                        { title: 'feat', text: 'orange' },
-                        { title: 'fix', text: 'this is breaking' },
+                whatBump(
+                    await getConventionalCommits([
+                        { body: 'feat: orange' },
+                        { body: 'fix: this is breaking' },
                     ]),
-                ]).level,
+                ).level,
             ).toEqual(STRATEGY.MINOR)
 
             expect(
-                whatBump([
-                    getMockCommit([
-                        { title: 'fix', text: 'this is breaking' },
-                        { title: 'feat', text: 'orange' },
+                whatBump(
+                    await getConventionalCommits([
+                        { body: 'fix: this is breaking' },
+                        { body: 'feat: orange' },
                     ]),
-                ]).level,
+                ).level,
             ).toEqual(STRATEGY.MINOR)
         })
 
-        it('chooses breaking change over feature', () => {
+        it('only considers breaking changes at the beginning of the message', async () => {
             expect(
-                whatBump([
-                    getMockCommit([{ title: 'feat', text: 'orange' }]),
-                    getMockCommit([
-                        { title: 'BREAKING CHANGE', text: 'apple' },
+                whatBump(
+                    await getConventionalCommits([
+                        { body: 'feat: orange' },
+                        { body: 'chore: This is not a BREAKING CHANGE.' },
                     ]),
-                ]).level,
+                ).level,
+            ).toEqual(STRATEGY.MINOR)
+
+            expect(
+                whatBump(
+                    await getConventionalCommits([
+                        { body: 'feat: this is not a BREAKING CHANGE either' },
+                    ]),
+                ).level,
+            ).toEqual(STRATEGY.MINOR)
+
+            expect(
+                whatBump(
+                    await getConventionalCommits([
+                        {
+                            body:
+                                'fix: this is not a BREAKING CHANGE\n\n* chore: this is not a BREAKING CHANGE either',
+                        },
+                    ]),
+                ).level,
+            ).toEqual(STRATEGY.PATCH)
+        })
+
+        it('chooses breaking change over feature', async () => {
+            expect(
+                whatBump(
+                    await getConventionalCommits([
+                        { body: 'feat: orange' },
+                        { body: 'BREAKING CHANGE: apple' },
+                    ]),
+                ).level,
             ).toEqual(STRATEGY.MAJOR)
 
             expect(
-                whatBump([
-                    getMockCommit([
-                        { title: 'BREAKING CHANGE', text: 'apple' },
+                whatBump(
+                    await getConventionalCommits([
+                        { body: 'BREAKING CHANGE: apple' },
+                        { body: 'feat: orange' },
                     ]),
-                    getMockCommit([{ title: 'feat', text: 'orange' }]),
-                ]).level,
+                ).level,
             ).toEqual(STRATEGY.MAJOR)
         })
 
-        it('chooses breaking change over feature when breaking change is only in header', () => {
-            const commits = [
+        it('chooses breaking change over feature when breaking change is only in header', async () => {
+            const commits = await getConventionalCommits([
                 {
-                    ...getMockCommit([{ title: 'feat', text: 'orange' }]),
-                    header: 'BREAKING CHANGE: This is a change!',
+                    body:
+                        'BREAKING CHANGE: This is a change!\n\n* feat: orange',
                 },
-            ]
+            ])
+
             expect(whatBump(commits).level).toEqual(STRATEGY.MAJOR)
         })
 
-        it('chooses feature over fix', () => {
-            const commits = [
-                getMockCommit([{ title: 'fix', text: 'apple' }]),
-                getMockCommit([{ title: 'feat', text: 'orange' }]),
-            ]
+        it('chooses feature over fix', async () => {
+            const commits = await getConventionalCommits([
+                { body: 'fix: apple' },
+                { body: 'feat: orange' },
+            ])
             expect(whatBump(commits).level).toEqual(STRATEGY.MINOR)
         })
 
-        it('chooses fix over nothing', () => {
-            const commits = [
-                getMockCommit([{ title: 'fix', text: 'apple' }]),
-                getMockCommit([{ title: 'chore', text: 'orange' }]),
-            ]
+        it('chooses fix over nothing', async () => {
+            const commits = await getConventionalCommits([
+                { body: 'fix: apple' },
+                { body: 'chore: orange' },
+            ])
             expect(whatBump(commits).level).toEqual(STRATEGY.PATCH)
         })
 
-        it('chooses nothing if no fix, feat or breaking', () => {
-            const commits = [
-                getMockCommit([{ title: 'chore', text: 'apple' }]),
-                getMockCommit([{ title: 'chore', text: 'orange' }]),
-            ]
+        it('chooses nothing if no fix, feat or breaking', async () => {
+            const commits = await getConventionalCommits([
+                { body: 'chore: apple' },
+                { body: 'chore: orange' },
+            ])
             expect(whatBump(commits).level).toBeNull()
         })
 
-        it('interpets revert as patch', () => {
-            const commits = [
+        it('interpets revert as patch', async () => {
+            const commits = await getConventionalCommits([
                 {
-                    ...getMockCommit([{ title: 'chore', text: 'orange' }]),
-                    revert: {
-                        prefix: 'Revert',
-                        header: '"chore: switch back"',
-                        hash: 'abc',
-                    },
+                    body:
+                        'Revert "fix: some commit" (#123)\n\nThis reverts commit abc.',
                 },
-            ]
+            ])
             expect(whatBump(commits).level).toEqual(STRATEGY.PATCH)
         })
     })
@@ -122,8 +169,12 @@ describe('conventional-changelog-config', () => {
     describe('writer-opts', () => {
         it('transforms breaking commit notes', async () => {
             const mockText = 'the change is breaking'
-            const mockCommit = getMockCommit()
-            mockCommit.notes = [{ title: BREAKING_CHANGE, text: mockText }]
+            const mockCommit = (await getConventionalCommits([
+                {
+                    body: `feat: orange\n\n* BREAKING CHANGE: ${mockText}`,
+                    sha: mockCommitHash,
+                },
+            ]))[0]
             const writerOpts = await Promise.resolve(writerOptsConfig)
             const transformedCommit = writerOpts.transform(
                 mockCommit,
@@ -138,13 +189,13 @@ describe('conventional-changelog-config', () => {
         it('transforms revert commit notes', async () => {
             const mockRevertHash = 'n0ba128'
             const mockRevertText = 'please revert me (#123)'
-            const mockCommit = getMockCommit()
-            mockCommit.notes = [
+            const mockCommit = (await getConventionalCommits([
                 {
-                    title: 'Revert',
-                    text: `Revert "${mockRevertText}"\n\nThis reverts commit ${mockRevertHash}.`,
+                    body: `Revert "${mockRevertText}"\n\nThis reverts commit ${mockRevertHash}.`,
+                    sha: mockCommitHash,
                 },
-            ]
+            ]))[0]
+
             const writerOpts = await Promise.resolve(writerOptsConfig)
             const transformedCommit = writerOpts.transform(
                 mockCommit,
@@ -158,24 +209,22 @@ describe('conventional-changelog-config', () => {
         })
 
         it('drops commit notes that are not included in the changelog', async () => {
-            const mockCommit = getMockCommit()
-            mockCommit.notes = [
-                { title: 'wip', text: '' },
-                { title: 'chore', text: '' },
-                { title: 'cr', text: '' },
-                { title: 'style', text: '' },
-                { title: 'refactor', text: '' },
-                { title: 'docs', text: '' },
-                { title: 'test', text: '' },
-                { title: 'build', text: '' },
-                { title: 'ci', text: '' },
-            ]
+            const mockCommit = (await getConventionalCommits([
+                {
+                    body:
+                        'feat: orange\n\n* wip: text\n\n* chore: text\n\n* cr: text\n\n' +
+                        '* style: text\n\n* refactor: text\n\n* docs: text\n\n' +
+                        '* test: text\n\n* build: text\n\n* ci: text\n',
+                    sha: mockCommitHash,
+                },
+            ]))[0]
+            expect(mockCommit.notes).toHaveLength(9)
             const writerOpts = await Promise.resolve(writerOptsConfig)
             const transformedCommit = writerOpts.transform(
                 mockCommit,
                 mockContext,
             )
-            expect(transformedCommit).toBeUndefined()
+            expect(transformedCommit.notes).toHaveLength(1)
         })
     })
 })

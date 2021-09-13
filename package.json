@@ -56,5 +56,6 @@
     "commitizen": {
       "path": "./node_modules/@tophat/commitizen-adapter"
     }
-  }
+  },
+  "packageManager": "yarn@3.0.2"
 }
