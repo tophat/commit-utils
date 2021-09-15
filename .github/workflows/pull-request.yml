@@ -111,6 +111,7 @@ jobs:
           id: publish
           env:
             NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+            GH_TOKEN: ${{ secrets.TOPHAT_BOT_GH_TOKEN }}
           run: |
             yarn monodeploy --log-level 0 --config-file monodeploy.config.js
         - name: Upload Artifacts
