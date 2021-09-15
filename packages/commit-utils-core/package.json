@@ -24,6 +24,7 @@
     "url": "https://github.com/tophat/commit-utils/issues"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
