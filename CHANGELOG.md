@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 <!-- MONODEPLOY:BELOW -->
 
+## [0.5.9](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@0.5.8...@tophat/conventional-changelog-config@0.5.9) "@tophat/conventional-changelog-config" (2021-09-15)<a name="0.5.9"></a>
+
+### Bug Fixes
+
+* match breaking-change at start of commit message and notes only (#102) ([8e989fe](https://github.com/tophat/commit-utils/commits/8e989fe))
+
+
 ## [0.5.8](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@0.5.7...@tophat/conventional-changelog-config@0.5.8) "@tophat/conventional-changelog-config" (2021-05-13)<a name="0.5.8"></a>
 
 ### Bug Fixes
