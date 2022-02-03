@@ -9,18 +9,30 @@ describe('commit-utils-core', () => {
         ${'wip'}      | ${false}
         ${'feat'}     | ${true}
         ${'fix'}      | ${true}
-        ${'cr'}       | ${false}
-        ${'style'}    | ${false}
         ${'refactor'} | ${false}
-        ${'perf'}     | ${true}
         ${'docs'}     | ${false}
         ${'test'}     | ${false}
         ${'revert'}   | ${true}
-        ${'build'}    | ${false}
-        ${'ci'}       | ${false}
-        ${'chore'}    | ${false}
+        ${'o11y'}     | ${true}
+        ${'deps'}     | ${true}
     `(
         'commit type $commitType has the correct appearsInChangelog value of $appearsInChangelog',
+        ({ commitType, appearsInChangelog }) => {
+            expect(COMMIT_TYPES[commitType].appearsInChangelog).toEqual(
+                appearsInChangelog,
+            )
+            expect(COMMIT_TYPES[commitType].prefix).toEqual(commitType)
+        },
+    )
+
+    it.each`
+        commitType | appearsInChangelog
+        ${'perf'}  | ${true}
+        ${'build'} | ${false}
+        ${'ci'}    | ${false}
+        ${'chore'} | ${false}
+    `(
+        'LEGACY: commit type $commitType has the correct appearsInChangelog value of $appearsInChangelog',
         ({ commitType, appearsInChangelog }) => {
             expect(COMMIT_TYPES[commitType].appearsInChangelog).toEqual(
                 appearsInChangelog,
