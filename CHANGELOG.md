@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 <!-- MONODEPLOY:BELOW -->
 
+## [0.6.0](https://github.com/tophat/commit-utils/compare/@tophat/commit-utils-core@0.5.4...@tophat/commit-utils-core@0.6.0) "@tophat/commit-utils-core" (2022-02-03)<a name="0.6.0"></a>
+
+### Features
+
+* add o11y, deps types, change docs to patch (#106) ([b18afda](https://github.com/tophat/commit-utils/commits/b18afda))
+
+
+## [0.6.0](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@0.5.9...@tophat/conventional-changelog-config@0.6.0) "@tophat/conventional-changelog-config" (2022-02-03)<a name="0.6.0"></a>
+
+### Features
+
+* add o11y, deps types, change docs to patch (#106) ([b18afda](https://github.com/tophat/commit-utils/commits/b18afda))
+
+
 ## [0.5.9](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@0.5.8...@tophat/conventional-changelog-config@0.5.9) "@tophat/conventional-changelog-config" (2021-09-15)<a name="0.5.9"></a>
 
 ### Bug Fixes
