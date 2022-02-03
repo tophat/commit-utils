@@ -33,16 +33,23 @@ Top Hat uses the following commit types as part of our development flow. Note th
 | wip | Work in Progress | Changes that are part of some work in progress | No
 | feat | Features | A new feature | **Yes**
 | fix | Bug Fixes | A bugfix | **Yes**
-| cr | Code Reviews | Changes resulting from code review
-| style | Styles | Changes that don't affect the code's meaning (whitespace, formatting, etc) | No
 | refactor | Code Refactoring | Changes that neither fix a bug nor add a feature | No
-| perf | Performance Improvements | Changes that improve performance | **Yes**
 | docs | Documentation | Changes to documentation only | No
 | test | Tests | Adding missing tests or correcting existing tests | No
 | revert | Reverts | Reverts a previous commit | **Yes**
+| o11y | Observability & Analytics | Improvements to o11y | **Yes**
+| deps | Dependencies | Dependency updates | **Yes**
+
+### Deprecated Conventions
+
+| Commit Type | Title | Description | Added to changelog? |
+| --- | --- | --- | --- |
+| style | Styles | Changes that don't affect the code's meaning (whitespace, formatting, etc) | No
 | build | Builds | Changes that affect the build system or external dependencies | No
 | ci | Continous Integration | Changes to our CI configuration files and scripts | No
 | chore | Chores | Other changes that don't modify src or test files | No
+| perf | Performance Improvements | Changes that improve performance | **Yes**
+| cr | Code Reviews | Changes resulting from code review | No
 
 ## Contributing
 To report bugs, please a create a [new issue](https://github.com/tophat/commit-utils/issues).
