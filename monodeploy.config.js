@@ -8,4 +8,5 @@ module.exports = {
     autoCommitMessage: 'chore: release commit-watch [skip ci]',
     changelogFilename: 'CHANGELOG.md',
     persistVersions: true,
+    plugins: ['@monodeploy/plugin-github'],
 }
