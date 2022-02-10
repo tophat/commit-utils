@@ -1,5 +1,12 @@
 <!-- MONODEPLOY:BELOW -->
 
+## [0.3.0](https://github.com/tophat/commit-watch/compare/commit-watch@0.2.1...commit-watch@0.3.0) "commit-watch" (2022-02-10)<a name="0.3.0"></a>
+
+### Features
+
+* upgrade conventional changelog config used internally ([94197aa](https://github.com/tophat/commit-watch/commits/94197aa))
+
+
 ## [0.2.1](https://github.com/tophat/commit-watch/compare/v0.2.0...v0.2.1) (2021-08-25)
 
 
