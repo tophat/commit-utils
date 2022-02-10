@@ -57,7 +57,6 @@ ex. commit-watch --config-file commit-watch.config.js
 ```javascript
 //commit-watch.config.js
 
-
 module.exports = {
     ciRepoOwner: 'Hans Moleman',
     ciRepoName: 'manahattan-project',
