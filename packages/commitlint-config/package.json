@@ -27,7 +27,7 @@
     "@tophat/commit-utils-core": "^0.6.0"
   },
   "devDependencies": {
-    "@commitlint/utils": "^7.0.0"
+    "@commitlint/utils": "^8.3.6"
   },
   "publishConfig": {
     "access": "public",

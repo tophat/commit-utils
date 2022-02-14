@@ -1,7 +1,6 @@
 /* eslint-disable sort-keys */
 
 const { compact, map, padEnd } = require('lodash')
-const longest = require('longest')
 const wrap = require('word-wrap')
 
 const maxLineWidth = 72
@@ -9,7 +8,9 @@ const maxLineWidth = 72
 module.exports = function engine(options) {
     const types = options.types
 
-    const length = longest(Object.keys(types)).length + 1
+    const length =
+        Object.keys(types).reduce((max, type) => Math.max(max, type.length), 0)
+            .length + 1
     const choices = map(types, (type, key) => ({
         name: `${padEnd(`${key}:`, length)} ${type.description}`,
         value: key,
