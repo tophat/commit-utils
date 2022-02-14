@@ -1,6 +1,6 @@
 {
   "name": "@tophat/conventional-changelog-config",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Top Hat's conventional changelog config for changelog generation",
   "author": "Top Hat",
   "homepage": "https://github.com/tophat/commit-utils#readme",

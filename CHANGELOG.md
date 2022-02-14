@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 <!-- MONODEPLOY:BELOW -->
 
+## [0.5.6](https://github.com/tophat/commit-utils/compare/@tophat/commitizen-adapter@0.5.5...@tophat/commitizen-adapter@0.5.6) "@tophat/commitizen-adapter" (2022-02-14)<a name="0.5.6"></a>
+
+### Bug Fixes
+
+* update all dependencies (#112) ([d0903b7](https://github.com/tophat/commit-utils/commits/d0903b7))
+
+
+## [0.3.6](https://github.com/tophat/commit-utils/compare/@tophat/commitlint-config@0.3.5...@tophat/commitlint-config@0.3.6) "@tophat/commitlint-config" (2022-02-14)<a name="0.3.6"></a>
+
+### Bug Fixes
+
+* update all dependencies (#112) ([d0903b7](https://github.com/tophat/commit-utils/commits/d0903b7))
+
+
+## [0.6.1](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@0.6.0...@tophat/conventional-changelog-config@0.6.1) "@tophat/conventional-changelog-config" (2022-02-14)<a name="0.6.1"></a>
+
+### Bug Fixes
+
+* update all dependencies (#112) ([d0903b7](https://github.com/tophat/commit-utils/commits/d0903b7))
+
+
 ## [0.6.0](https://github.com/tophat/commit-utils/compare/@tophat/commit-utils-core@0.5.4...@tophat/commit-utils-core@0.6.0) "@tophat/commit-utils-core" (2022-02-03)<a name="0.6.0"></a>
 
 ### Features
