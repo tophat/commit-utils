@@ -5,10 +5,10 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^7.5.2",
-    "@tophat/commit-utils-core": "^0.0.9",
-    "@tophat/commitizen-adapter": "^0.0.11",
-    "@tophat/commitlint-config": "^0.1.2",
+    "@commitlint/cli": "^16.2.1",
+    "@tophat/commit-utils-core": "^0.6.0",
+    "@tophat/commitizen-adapter": "^0.5.5",
+    "@tophat/commitlint-config": "^0.3.5",
     "@tophat/conventional-changelog-config": "workspace:packages/conventional-changelog-config",
     "@tophat/eslint-config": "^0.8.0",
     "@yarnpkg/sdks": "^2.4.1-rc.4",
@@ -29,7 +29,6 @@
     "jest": "^26.6.3",
     "jest-junit": "^12.0.0",
     "lodash": "^4.17.20",
-    "longest": "^2.0.1",
     "monodeploy": "^2.8.11",
     "prettier": "^1.17.0",
     "safe-buffer": "^5.2.1",
@@ -57,5 +56,5 @@
       "path": "./node_modules/@tophat/commitizen-adapter"
     }
   },
-  "packageManager": "yarn@3.0.2"
+  "packageManager": "yarn@3.1.1"
 }
