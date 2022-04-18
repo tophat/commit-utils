@@ -1,6 +1,10 @@
 {
   "name": "root",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tophat/commit-utils.git"
+  },
   "workspaces": [
     "packages/*"
   ],
