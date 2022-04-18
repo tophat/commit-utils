@@ -6,12 +6,13 @@
   ],
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
+    "@monodeploy/plugin-github": "^0.4.0",
     "@tophat/commit-utils-core": "^0.6.0",
     "@tophat/commitizen-adapter": "^0.5.5",
     "@tophat/commitlint-config": "^0.3.5",
     "@tophat/conventional-changelog-config": "workspace:packages/conventional-changelog-config",
     "@tophat/eslint-config": "^0.8.0",
-    "@yarnpkg/sdks": "^2.4.1-rc.4",
+    "@yarnpkg/sdks": "^2.6.0",
     "all-contributors-cli": "^6.3.1",
     "commitizen": "^3.1.1",
     "compare-func": "^2.0.0",
@@ -29,7 +30,7 @@
     "jest": "^26.6.3",
     "jest-junit": "^12.0.0",
     "lodash": "^4.17.20",
-    "monodeploy": "^2.8.11",
+    "monodeploy": "^3.0.0",
     "prettier": "^1.17.0",
     "safe-buffer": "^5.2.1",
     "word-wrap": "^1.2.3"
@@ -56,5 +57,5 @@
       "path": "./node_modules/@tophat/commitizen-adapter"
     }
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.2.0"
 }

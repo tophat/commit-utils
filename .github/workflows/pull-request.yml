@@ -22,7 +22,7 @@ jobs:
             fetch-depth: 0
         - uses: ./.github/actions/detect-env
         - name: Setup Node.js
-          uses: actions/setup-node@v1
+          uses: actions/setup-node@v3.1.1
           with:
             node-version: ${{ env.NODE_VERSION }}
         - name: Create artifacts directory
@@ -51,7 +51,7 @@ jobs:
             fetch-depth: 0
         - uses: ./.github/actions/detect-env
         - name: Setup Node.js
-          uses: actions/setup-node@v1
+          uses: actions/setup-node@v3.1.1
           with:
             node-version: ${{ env.NODE_VERSION }}
         - name: Create artifacts directory
@@ -89,7 +89,7 @@ jobs:
             fetch-depth: 0
         - uses: ./.github/actions/detect-env
         - name: Setup Node.js
-          uses: actions/setup-node@v1
+          uses: actions/setup-node@v3.1.1
           with:
             node-version: ${{ env.NODE_VERSION }}
         - name: Create artifacts directory
@@ -113,7 +113,7 @@ jobs:
             NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
             GH_TOKEN: ${{ secrets.TOPHAT_BOT_GH_TOKEN }}
           run: |
-            yarn monodeploy --log-level 0 --config-file monodeploy.config.js
+            yarn monodeploy --log-level 0 --plugins @monodeploy/plugin-github --config-file monodeploy.config.js
         - name: Upload Artifacts
           if: ${{ always() }}
           uses: actions/upload-artifact@v2
