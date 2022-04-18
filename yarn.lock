@@ -1209,7 +1209,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tophat/commit-utils-core@^0.6.0, @tophat/commit-utils-core@workspace:packages/commit-utils-core":
+"@tophat/commit-utils-core@^0.6.0, @tophat/commit-utils-core@^0.6.1, @tophat/commit-utils-core@workspace:packages/commit-utils-core":
   version: 0.0.0-use.local
   resolution: "@tophat/commit-utils-core@workspace:packages/commit-utils-core"
   languageName: unknown
@@ -1219,7 +1219,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tophat/commitizen-adapter@workspace:packages/commitizen-adapter"
   dependencies:
-    "@tophat/commit-utils-core": ^0.6.0
+    "@tophat/commit-utils-core": ^0.6.1
     "@types/lodash": ^4.14.178
     lodash: ^4.17.21
     word-wrap: ^1.0.3
@@ -1231,7 +1231,7 @@ __metadata:
   resolution: "@tophat/commitlint-config@workspace:packages/commitlint-config"
   dependencies:
     "@commitlint/utils": ^8.3.6
-    "@tophat/commit-utils-core": ^0.6.0
+    "@tophat/commit-utils-core": ^0.6.1
   languageName: unknown
   linkType: soft
 
@@ -1239,7 +1239,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tophat/conventional-changelog-config@workspace:packages/conventional-changelog-config"
   dependencies:
-    "@tophat/commit-utils-core": ^0.6.0
+    "@tophat/commit-utils-core": ^0.6.1
     compare-func: ^2.0.0
     conventional-commits-parser: ^3.2.4
   languageName: unknown

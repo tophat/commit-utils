@@ -6,6 +6,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 <!-- MONODEPLOY:BELOW -->
 
+## [0.6.1](https://github.com/tophat/commit-utils/compare/@tophat/commit-utils-core@0.6.0...@tophat/commit-utils-core@0.6.1) "@tophat/commit-utils-core" (2022-04-18)<a name="0.6.1"></a>
+
+### Bug Fixes
+
+* add git repository to packages (#126) ([8d288fa](https://github.com/tophat/commit-utils/commits/8d288fa))
+
+
+## [0.5.7](https://github.com/tophat/commit-utils/compare/@tophat/commitizen-adapter@0.5.6...@tophat/commitizen-adapter@0.5.7) "@tophat/commitizen-adapter" (2022-04-18)<a name="0.5.7"></a>
+
+### Bug Fixes
+
+* add git repository to packages (#126) ([8d288fa](https://github.com/tophat/commit-utils/commits/8d288fa))
+
+
+## [0.3.7](https://github.com/tophat/commit-utils/compare/@tophat/commitlint-config@0.3.6...@tophat/commitlint-config@0.3.7) "@tophat/commitlint-config" (2022-04-18)<a name="0.3.7"></a>
+
+### Bug Fixes
+
+* add git repository to packages (#126) ([8d288fa](https://github.com/tophat/commit-utils/commits/8d288fa))
+
+
+## [0.6.2](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@0.6.1...@tophat/conventional-changelog-config@0.6.2) "@tophat/conventional-changelog-config" (2022-04-18)<a name="0.6.2"></a>
+
+### Bug Fixes
+
+* add git repository to packages (#126) ([8d288fa](https://github.com/tophat/commit-utils/commits/8d288fa))
+
+
 ## [0.5.6](https://github.com/tophat/commit-utils/compare/@tophat/commitizen-adapter@0.5.5...@tophat/commitizen-adapter@0.5.6) "@tophat/commitizen-adapter" (2022-02-14)<a name="0.5.6"></a>
 
 ### Bug Fixes

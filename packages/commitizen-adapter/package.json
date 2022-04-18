@@ -1,6 +1,6 @@
 {
   "name": "@tophat/commitizen-adapter",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "A customized Commitizen adapter for commit message standardization and automatic semantic versioning.",
   "author": "Top Hat",
   "homepage": "https://github.com/tophat/commit-utils#readme",
@@ -11,7 +11,7 @@
     "test": "__tests__"
   },
   "dependencies": {
-    "@tophat/commit-utils-core": "^0.6.0",
+    "@tophat/commit-utils-core": "^0.6.1",
     "lodash": "^4.17.21",
     "word-wrap": "^1.0.3"
   },
