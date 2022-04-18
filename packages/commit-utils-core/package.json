@@ -15,7 +15,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tophat/commit-utils.git"
+    "url": "https://github.com/tophat/commit-utils.git",
+    "directory": "packages/commit-utils-core"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
