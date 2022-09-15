@@ -3,10 +3,10 @@ const { Readable } = require('stream')
 
 const conventionalCommitsParser = require('conventional-commits-parser')
 
-const writerOptsConfig = require('../src/writer-opts')
-const { whatBump } = require('../src/conventional-recommended-bump')
 const { STRATEGY } = require('../src/commitTypes')
+const { whatBump } = require('../src/conventional-recommended-bump')
 const configPromise = require('../src/index')
+const writerOptsConfig = require('../src/writer-opts')
 
 const readStream = (stream) =>
     new Promise((resolve) => {
@@ -92,8 +92,7 @@ describe('conventional-changelog-config', () => {
                 whatBump(
                     await getConventionalCommits([
                         {
-                            body:
-                                'fix: this is not a BREAKING CHANGE\n\n* chore: this is not a BREAKING CHANGE either',
+                            body: 'fix: this is not a BREAKING CHANGE\n\n* chore: this is not a BREAKING CHANGE either',
                         },
                     ]),
                 ).level,
@@ -123,8 +122,7 @@ describe('conventional-changelog-config', () => {
         it('chooses breaking change over feature when breaking change is only in header', async () => {
             const commits = await getConventionalCommits([
                 {
-                    body:
-                        'BREAKING CHANGE: This is a change!\n\n* feat: orange',
+                    body: 'BREAKING CHANGE: This is a change!\n\n* feat: orange',
                 },
             ])
 
@@ -158,8 +156,7 @@ describe('conventional-changelog-config', () => {
         it('interpets revert as patch', async () => {
             const commits = await getConventionalCommits([
                 {
-                    body:
-                        'Revert "fix: some commit" (#123)\n\nThis reverts commit abc.',
+                    body: 'Revert "fix: some commit" (#123)\n\nThis reverts commit abc.',
                 },
             ])
             expect(whatBump(commits).level).toEqual(STRATEGY.PATCH)
@@ -169,12 +166,14 @@ describe('conventional-changelog-config', () => {
     describe('writer-opts', () => {
         it('transforms breaking commit notes', async () => {
             const mockText = 'the change is breaking'
-            const mockCommit = (await getConventionalCommits([
-                {
-                    body: `feat: orange\n\n* BREAKING CHANGE: ${mockText}`,
-                    sha: mockCommitHash,
-                },
-            ]))[0]
+            const mockCommit = (
+                await getConventionalCommits([
+                    {
+                        body: `feat: orange\n\n* BREAKING CHANGE: ${mockText}`,
+                        sha: mockCommitHash,
+                    },
+                ])
+            )[0]
             const writerOpts = await Promise.resolve(writerOptsConfig)
             const transformedCommit = writerOpts.transform(
                 mockCommit,
@@ -182,19 +181,21 @@ describe('conventional-changelog-config', () => {
             )
             const note = transformedCommit.notes[0]
             expect(note.text).toEqual(mockText)
-            expect(note.title).toEqual('Breaking Changes')
+            expect(note.title).toBe('Breaking Changes')
             expect(transformedCommit.hash).toEqual(mockCommitHash.substr(0, 7))
         })
 
         it('transforms revert commit notes', async () => {
             const mockRevertHash = 'n0ba128'
             const mockRevertText = 'please revert me (#123)'
-            const mockCommit = (await getConventionalCommits([
-                {
-                    body: `Revert "${mockRevertText}"\n\nThis reverts commit ${mockRevertHash}.`,
-                    sha: mockCommitHash,
-                },
-            ]))[0]
+            const mockCommit = (
+                await getConventionalCommits([
+                    {
+                        body: `Revert "${mockRevertText}"\n\nThis reverts commit ${mockRevertHash}.`,
+                        sha: mockCommitHash,
+                    },
+                ])
+            )[0]
 
             const writerOpts = await Promise.resolve(writerOptsConfig)
             const transformedCommit = writerOpts.transform(
@@ -203,21 +204,23 @@ describe('conventional-changelog-config', () => {
             )
             const note = transformedCommit.notes[0]
             expect(note.revertHash).toEqual(mockRevertHash)
-            expect(note.title).toEqual('Reverts')
-            expect(note.text).toEqual(`"${mockRevertText}"`)
+            expect(note.title).toBe('Reverts')
+            expect(note.text).toBe(`"${mockRevertText}"`)
             expect(transformedCommit.hash).toEqual(mockCommitHash.substr(0, 7))
         })
 
         it('drops commit notes that are not included in the changelog', async () => {
-            const mockCommit = (await getConventionalCommits([
-                {
-                    body:
-                        'feat: orange\n\n* wip: text\n\n* chore: text\n\n* cr: text\n\n' +
-                        '* style: text\n\n* refactor: text\n\n* docs: text\n\n' +
-                        '* test: text\n\n* build: text\n\n* ci: text\n',
-                    sha: mockCommitHash,
-                },
-            ]))[0]
+            const mockCommit = (
+                await getConventionalCommits([
+                    {
+                        body:
+                            'feat: orange\n\n* wip: text\n\n* chore: text\n\n* cr: text\n\n' +
+                            '* style: text\n\n* refactor: text\n\n* docs: text\n\n' +
+                            '* test: text\n\n* build: text\n\n* ci: text\n',
+                        sha: mockCommitHash,
+                    },
+                ])
+            )[0]
             expect(mockCommit.notes).toHaveLength(9)
             const writerOpts = await Promise.resolve(writerOptsConfig)
             const transformedCommit = writerOpts.transform(

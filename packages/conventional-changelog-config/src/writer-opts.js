@@ -1,12 +1,11 @@
 /* eslint-disable sort-keys, no-param-reassign */
 
-const util = require('util')
 const fs = require('fs')
 const path = require('path')
+const util = require('util')
 
 const compareFunc = require('compare-func')
 
-const parserOpts = require('./parser-opts')
 const { commitTypes, changelogCommitTypes } = require('./commitTypes')
 const {
     isNoteOfType,
@@ -15,6 +14,7 @@ const {
     BREAKING_CHANGE,
     EMPTY_SCOPE,
 } = require('./helpers')
+const parserOpts = require('./parser-opts')
 
 const readFile = util.promisify(fs.readFile)
 
