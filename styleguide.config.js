@@ -19,7 +19,7 @@ module.exports = {
     pagePerSection: true,
     showCode: true,
     showUsage: true,
-    webpackConfig: function() {
+    webpackConfig: function () {
         return {
             module: {
                 rules: [

@@ -9,6 +9,7 @@ module.exports = {
         'BREAKING CHANGE',
         ...commitTypes.map(({ prefix }) => `${prefix}(?:\\(.*\\))?`),
     ],
-    revertPattern: /^(revert:|Revert)\s([\s\S]*?)\s*This reverts commit (\w*)\./,
+    revertPattern:
+        /^(revert:|Revert)\s([\s\S]*?)\s*This reverts commit (\w*)\./,
     revertCorrespondence: ['prefix', 'header', 'hash'],
 }

@@ -5,4 +5,5 @@ website/build
 !.yarn/releases
 !.yarn/plugins
 !.yarn/versions
+!.yarn/sdks
 .pnp.*

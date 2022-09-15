@@ -1,6 +1,6 @@
-const parserOpts = require('./parser-opts')
 const { FEATURE_TYPES, PATCH_TYPES, STRATEGY } = require('./commitTypes')
 const { BREAKING_CHANGE } = require('./helpers')
+const parserOpts = require('./parser-opts')
 
 module.exports = {
     parserOpts,
