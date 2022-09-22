@@ -9,7 +9,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^16.2.1",
+    "@commitlint/cli": "^17.0.0",
     "@monodeploy/plugin-github": "^0.6.1",
     "@tophat/commit-utils-core": "^0.6.1",
     "@tophat/commitizen-adapter": "^0.5.7",
