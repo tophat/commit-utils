@@ -1,7 +1,9 @@
+import type { Config } from 'jest'
+
 const CI = process.env.CI === '1'
 const ARTIFACT_DIR = process.env.ARTIFACT_DIR || 'artifacts'
 
-module.exports = {
+const config: Config = {
     ...(CI && {
         reporters: [
             'default',
@@ -23,3 +25,5 @@ module.exports = {
         ],
     }),
 }
+
+export default config
