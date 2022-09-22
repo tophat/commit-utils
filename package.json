@@ -57,7 +57,9 @@
     "test": "jest",
     "test:ci": "jest --ci",
     "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate"
+    "contributors:generate": "all-contributors generate",
+    "workspace:build": "rm -rf $0/lib && run -T tsc --build $0",
+    "build": "yarn workspaces foreach -pvi --topological-dev run prepack"
   },
   "config": {
     "commitizen": {
