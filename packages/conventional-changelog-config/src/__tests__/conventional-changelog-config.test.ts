@@ -1,17 +1,16 @@
-'use strict'
-const { Readable } = require('stream')
+import { Readable, type Transform } from 'stream'
 
-const conventionalCommitsParser = require('conventional-commits-parser')
+import conventionalCommitsParser, { Commit } from 'conventional-commits-parser'
 
-const { STRATEGY } = require('../src/commitTypes')
-const { whatBump } = require('../src/conventional-recommended-bump')
-const configPromise = require('../src/index')
-const writerOptsConfig = require('../src/writer-opts')
+import configPromise from '..'
+import { STRATEGY } from '../commitTypes'
+import recommendedBump from '../conventional-recommended-bump'
+import writerOptsConfig from '../writer-opts'
 
-const readStream = (stream) =>
-    new Promise((resolve) => {
-        const chunks = []
-        stream.on('data', (chunk) => chunks.push(chunk))
+const readStream = <T>(stream: Transform) =>
+    new Promise<T[]>((resolve) => {
+        const chunks: T[] = []
+        stream.on('data', (chunk: T) => chunks.push(chunk))
         stream.on('end', () => resolve(chunks))
     })
 
@@ -24,26 +23,28 @@ const mockContext = {
 const mockCommitHash = '84c3ee0ac680287af37940cabbbeb8052e49a7ab'
 
 describe('conventional-changelog-config', () => {
-    let config
+    let config: Awaited<typeof configPromise>
 
     beforeAll(async () => {
         config = await configPromise
     })
 
-    const getConventionalCommits = async (commits) => {
+    const getConventionalCommits = async (
+        commits: Partial<Commit>[],
+    ): Promise<Commit[]> => {
         const commitsStream = Readable.from(
             commits.map(
                 (commit) =>
                     `${commit.body}\n-hash-\n${commit.sha || mockCommitHash}`,
             ),
         ).pipe(conventionalCommitsParser(config.parserOpts))
-        return await readStream(commitsStream)
+        return await readStream<Commit>(commitsStream)
     }
 
     describe('what bump', () => {
         it('uses all notes when making a decision', async () => {
             expect(
-                whatBump(
+                recommendedBump.whatBump(
                     await getConventionalCommits([
                         { body: 'feat: orange' },
                         { body: 'BREAKING CHANGE: this is breaking' },
@@ -52,7 +53,7 @@ describe('conventional-changelog-config', () => {
             ).toEqual(STRATEGY.MAJOR)
 
             expect(
-                whatBump(
+                recommendedBump.whatBump(
                     await getConventionalCommits([
                         { body: 'feat: orange' },
                         { body: 'fix: this is breaking' },
@@ -61,7 +62,7 @@ describe('conventional-changelog-config', () => {
             ).toEqual(STRATEGY.MINOR)
 
             expect(
-                whatBump(
+                recommendedBump.whatBump(
                     await getConventionalCommits([
                         { body: 'fix: this is breaking' },
                         { body: 'feat: orange' },
@@ -72,7 +73,7 @@ describe('conventional-changelog-config', () => {
 
         it('only considers breaking changes at the beginning of the message', async () => {
             expect(
-                whatBump(
+                recommendedBump.whatBump(
                     await getConventionalCommits([
                         { body: 'feat: orange' },
                         { body: 'chore: This is not a BREAKING CHANGE.' },
@@ -81,7 +82,7 @@ describe('conventional-changelog-config', () => {
             ).toEqual(STRATEGY.MINOR)
 
             expect(
-                whatBump(
+                recommendedBump.whatBump(
                     await getConventionalCommits([
                         { body: 'feat: this is not a BREAKING CHANGE either' },
                     ]),
@@ -89,7 +90,7 @@ describe('conventional-changelog-config', () => {
             ).toEqual(STRATEGY.MINOR)
 
             expect(
-                whatBump(
+                recommendedBump.whatBump(
                     await getConventionalCommits([
                         {
                             body: 'fix: this is not a BREAKING CHANGE\n\n* chore: this is not a BREAKING CHANGE either',
@@ -101,7 +102,7 @@ describe('conventional-changelog-config', () => {
 
         it('chooses breaking change over feature', async () => {
             expect(
-                whatBump(
+                recommendedBump.whatBump(
                     await getConventionalCommits([
                         { body: 'feat: orange' },
                         { body: 'BREAKING CHANGE: apple' },
@@ -110,7 +111,7 @@ describe('conventional-changelog-config', () => {
             ).toEqual(STRATEGY.MAJOR)
 
             expect(
-                whatBump(
+                recommendedBump.whatBump(
                     await getConventionalCommits([
                         { body: 'BREAKING CHANGE: apple' },
                         { body: 'feat: orange' },
@@ -126,7 +127,9 @@ describe('conventional-changelog-config', () => {
                 },
             ])
 
-            expect(whatBump(commits).level).toEqual(STRATEGY.MAJOR)
+            expect(recommendedBump.whatBump(commits).level).toEqual(
+                STRATEGY.MAJOR,
+            )
         })
 
         it('chooses feature over fix', async () => {
@@ -134,7 +137,9 @@ describe('conventional-changelog-config', () => {
                 { body: 'fix: apple' },
                 { body: 'feat: orange' },
             ])
-            expect(whatBump(commits).level).toEqual(STRATEGY.MINOR)
+            expect(recommendedBump.whatBump(commits).level).toEqual(
+                STRATEGY.MINOR,
+            )
         })
 
         it('chooses fix over nothing', async () => {
@@ -142,7 +147,9 @@ describe('conventional-changelog-config', () => {
                 { body: 'fix: apple' },
                 { body: 'chore: orange' },
             ])
-            expect(whatBump(commits).level).toEqual(STRATEGY.PATCH)
+            expect(recommendedBump.whatBump(commits).level).toEqual(
+                STRATEGY.PATCH,
+            )
         })
 
         it('chooses nothing if no fix, feat or breaking', async () => {
@@ -150,7 +157,7 @@ describe('conventional-changelog-config', () => {
                 { body: 'chore: apple' },
                 { body: 'chore: orange' },
             ])
-            expect(whatBump(commits).level).toBeNull()
+            expect(recommendedBump.whatBump(commits).level).toBeNull()
         })
 
         it('interpets revert as patch', async () => {
@@ -159,7 +166,9 @@ describe('conventional-changelog-config', () => {
                     body: 'Revert "fix: some commit" (#123)\n\nThis reverts commit abc.',
                 },
             ])
-            expect(whatBump(commits).level).toEqual(STRATEGY.PATCH)
+            expect(recommendedBump.whatBump(commits).level).toEqual(
+                STRATEGY.PATCH,
+            )
         })
     })
 
@@ -175,7 +184,9 @@ describe('conventional-changelog-config', () => {
                 ])
             )[0]
             const writerOpts = await Promise.resolve(writerOptsConfig)
-            const transformedCommit = writerOpts.transform(
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore transform is always a function
+            const transformedCommit = writerOpts.transform?.(
                 mockCommit,
                 mockContext,
             )
@@ -198,6 +209,8 @@ describe('conventional-changelog-config', () => {
             )[0]
 
             const writerOpts = await Promise.resolve(writerOptsConfig)
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore transform is always a function
             const transformedCommit = writerOpts.transform(
                 mockCommit,
                 mockContext,
@@ -223,6 +236,8 @@ describe('conventional-changelog-config', () => {
             )[0]
             expect(mockCommit.notes).toHaveLength(9)
             const writerOpts = await Promise.resolve(writerOptsConfig)
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore transform is always a function
             const transformedCommit = writerOpts.transform(
                 mockCommit,
                 mockContext,

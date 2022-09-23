@@ -5,5 +5,5 @@
         "outDir": "./lib",
     },
     "include": ["src"],
-    "exclude": ["**/node_modules", "**/.yarn"]
+    "exclude": ["**/node_modules", "**/.yarn", "**/__tests__"]
 }

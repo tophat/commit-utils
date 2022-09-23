@@ -7,12 +7,15 @@
   "license": "Apache-2.0",
   "main": "src/index.js",
   "dependencies": {
-    "@tophat/commit-utils-core": "^0.6.1",
+    "@tophat/commit-utils-core": "workspace:*",
     "lodash": "^4.17.21",
-    "word-wrap": "^1.0.3"
+    "word-wrap": "^1.2.3"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.178"
+    "@types/inquirer": "^8",
+    "@types/jest": "^29.0.3",
+    "@types/lodash": "^4.14.178",
+    "@types/node": "^16"
   },
   "files": [
     "lib"

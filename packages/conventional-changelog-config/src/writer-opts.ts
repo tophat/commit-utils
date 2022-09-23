@@ -1,52 +1,44 @@
-/* eslint-disable sort-keys, no-param-reassign */
+import fs from 'fs'
+import path from 'path'
 
-const fs = require('fs')
-const path = require('path')
-const util = require('util')
+import compareFunc from 'compare-func'
 
-const compareFunc = require('compare-func')
-
-const { commitTypes, changelogCommitTypes } = require('./commitTypes')
-const {
-    isNoteOfType,
-    isNoteOfTypeWithScope,
-    getNoteScope,
+import { changelogCommitTypes, commitTypes } from './commitTypes'
+import {
     BREAKING_CHANGE,
     EMPTY_SCOPE,
-} = require('./helpers')
-const parserOpts = require('./parser-opts')
+    getNoteScope,
+    isNoteOfType,
+    isNoteOfTypeWithScope,
+} from './helpers'
+import parserOpts from './parser-opts'
 
-const readFile = util.promisify(fs.readFile)
+import type { Context, Options } from 'conventional-changelog-writer'
+import type { Commit } from 'conventional-commits-parser'
 
-module.exports = Promise.all([
-    readFile(path.join(__dirname, './templates/template.hbs'), 'utf-8'),
-    readFile(path.join(__dirname, './templates/header.hbs'), 'utf-8'),
-    readFile(path.join(__dirname, './templates/footer.hbs'), 'utf-8'),
-]).then(([template, header, footer]) => {
-    const writerOpts = getWriterOpts()
-
-    writerOpts.mainTemplate = template
-    writerOpts.headerPartial = header
-    writerOpts.commitPartial = null
-    writerOpts.footerPartial = footer
-
-    return writerOpts
-})
-
-/* context looks like
- *{"commit":"commit","issue":"issues","date":"2018-06-19","version":"4.0.0","host":"https://github.com","owner":"tophatmonocle","repository":"fe-versioning-sandbox","repoUrl":"https://github.com/tophatmonocle/fe-versioning-sandbox","packageData":{"name":"@thm/test-package-2","version":"4.0.0","description":"FE versioning test package 2","main":"index.js","author":{"name":"Top Hat Monocle Corp."},"license":"UNLICENSED","publishConfig":{"registry":"https://thm.jfrog.io/thm/api/npm/npm-local/"},"dependencies":{"@thm/test-package-1":"^4.0.0"},"readme":"ERROR: No README data found!","_id":"@thm/test-package-2@4.0.0","repository":{"url":"git+ssh://git@github.com/tophatmonocle/fe-versioning-sandbox.git"},"bugs":{"url":"https://github.com/tophatmonocle/fe-versioning-sandbox/issues"},"homepage":"https://github.com/tophatmonocle/fe-versioning-sandbox#readme"},"gitSemverTags":[],"linkReferences":true}
- */
-
-const shouldNoteGoInChangelog = (title) =>
+const shouldNoteGoInChangelog = (title: string) =>
     title === BREAKING_CHANGE ||
     title === 'Revert' ||
     changelogCommitTypes.some(({ prefix }) => isNoteOfType(title, prefix))
 
-function getWriterOpts() {
+async function generateConfig(): Promise<Options> {
+    const template = await fs.promises.readFile(
+        path.join(__dirname, './templates/template.hbs'),
+        'utf-8',
+    )
+    const header = await fs.promises.readFile(
+        path.join(__dirname, './templates/header.hbs'),
+        'utf-8',
+    )
+    const footer = await fs.promises.readFile(
+        path.join(__dirname, './templates/footer.hbs'),
+        'utf-8',
+    )
+
     return {
-        transform: (commit, context) => {
+        transform: (commit: Commit, context: Context): Commit | false => {
             let discard = true
-            const issues = []
+            const issues: string[] = []
 
             commit.notes = commit.notes.filter(({ title }) =>
                 shouldNoteGoInChangelog(title),
@@ -61,13 +53,17 @@ function getWriterOpts() {
                     note.title = 'Breaking Changes'
                 } else if (note.title === 'Revert') {
                     note.title = 'Reverts'
-                    const match = note.text
-                        .replace(/^"|"$/g, '')
-                        .match(parserOpts.revertPattern)
-                    if (match) {
-                        const [, , header, hash] = match
-                        note.text = header
-                        note.revertHash = hash.substring(0, 7)
+                    if (parserOpts.revertPattern) {
+                        const match = note.text
+                            .replace(/^"|"$/g, '')
+                            .match(parserOpts.revertPattern)
+                        if (match) {
+                            const [, , header, hash] = match
+                            note.text = header
+                            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                            // @ts-ignore it looks like revert hash should be on the commit, not the note?
+                            note.revertHash = hash.substring(0, 7)
+                        }
                     }
                 } else {
                     for (const { prefix, groupTitle } of commitTypes) {
@@ -77,6 +73,8 @@ function getWriterOpts() {
                         } else if (isNoteOfTypeWithScope(note.title, prefix)) {
                             const scope = getNoteScope(note.title)
                             if (scope && scope !== EMPTY_SCOPE) {
+                                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                // @ts-ignore there's no scope on note
                                 note.scope = scope
                             }
                             note.title = groupTitle
@@ -93,21 +91,25 @@ function getWriterOpts() {
             if (commitType) {
                 commit.notes.push({
                     title: commitType.groupTitle,
-                    text: commit.subject,
+                    text: commit.subject ?? '',
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore There's no scope on Note?
                     scope: commit.scope,
                 })
                 discard = false
             } else if (commit.revert) {
                 commit.notes.push({
                     title: 'Reverts',
-                    text: commit.revert.header,
+                    text: commit.revert.header ?? '',
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore There's no revertHash on Note?
                     revertHash: commit.revert.hash.substring(0, 7),
                 })
                 discard = false
             }
 
             if (discard) {
-                return
+                return false
             }
 
             if (commit.scope === EMPTY_SCOPE) {
@@ -157,6 +159,16 @@ function getWriterOpts() {
         commitGroupsSort: 'title',
         commitsSort: ['scope', 'subject'],
         noteGroupsSort: 'title',
+
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore Maybe we can drop the external package?
         notesSort: compareFunc,
+
+        mainTemplate: template,
+        headerPartial: header,
+        commitPartial: undefined,
+        footerPartial: footer,
     }
 }
+
+export default generateConfig()

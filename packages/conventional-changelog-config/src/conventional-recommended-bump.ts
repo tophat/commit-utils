@@ -1,11 +1,18 @@
-const { FEATURE_TYPES, PATCH_TYPES, STRATEGY } = require('./commitTypes')
-const { BREAKING_CHANGE } = require('./helpers')
-const parserOpts = require('./parser-opts')
+import { FEATURE_TYPES, PATCH_TYPES, STRATEGY } from './commitTypes'
+import { BREAKING_CHANGE } from './helpers'
+import parserOpts from './parser-opts'
 
-module.exports = {
+import type { Commit } from 'conventional-commits-parser'
+
+export type BumpOptions = {
+    parserOpts: unknown
+    whatBump: (commits: Commit[]) => { level: number | null; reason: string }
+}
+
+const recommendedBumpOpts: BumpOptions = {
     parserOpts,
 
-    whatBump: (commits) => {
+    whatBump: (commits: Commit[]) => {
         const titlePattern = new RegExp('^(\\w+)(\\([^)]+\\))?$', 'g')
         const level = commits.reduce((level, commit) => {
             let intermediateLevel = level
@@ -67,3 +74,5 @@ module.exports = {
         }
     },
 }
+
+export default recommendedBumpOpts

@@ -3,6 +3,7 @@
         "rootDir": ".",
         "outDir": ".",
         "strict": true,
+        "noImplicitAny": true,
         "resolveJsonModule": true,
         "composite": true
     },

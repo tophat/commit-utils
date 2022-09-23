@@ -5,7 +5,7 @@
   "author": "Top Hat",
   "homepage": "https://github.com/tophat/commit-utils#readme",
   "license": "Apache-2.0",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "files": [
     "lib"
   ],
@@ -21,10 +21,11 @@
     "url": "https://github.com/tophat/commit-utils/issues"
   },
   "dependencies": {
-    "@tophat/commit-utils-core": "^0.6.1"
+    "@tophat/commit-utils-core": "workspace:*"
   },
   "devDependencies": {
-    "@commitlint/utils": "^8.3.6"
+    "@commitlint/utils": "^8.3.6",
+    "@types/jest": "^29.0.3"
   },
   "publishConfig": {
     "access": "public",
