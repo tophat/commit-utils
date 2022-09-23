@@ -1,20 +1,45 @@
-/* eslint-disable sort-keys */
+import console from 'console'
 
-const { compact, map, padEnd } = require('lodash')
-const wrap = require('word-wrap')
+import compact from 'lodash/compact'
+import padEnd from 'lodash/padEnd'
+import wrap from 'word-wrap'
+
+import { type CommitTypeConfig } from '@tophat/commit-utils-core'
+
+import type { Answers, PromptFunction } from 'inquirer'
 
 const maxLineWidth = 72
 
-module.exports = function engine(options) {
+export interface Inquirer {
+    prompt: PromptFunction
+}
+
+export type EngineOptions = {
+    types: { [commitType in string]?: CommitTypeConfig }
+}
+
+type PrompterCallback = (
+    template: string,
+    overrideOptions?: unknown,
+) => Promise<unknown>
+
+export default function engine(options: EngineOptions) {
     const types = options.types
 
     const length =
-        Object.keys(types).reduce((max, type) => Math.max(max, type.length), 0)
-            .length + 1
-    const choices = map(types, (type, key) => ({
-        name: `${padEnd(`${key}:`, length)} ${type.description}`,
-        value: key,
-    }))
+        Object.keys(types).reduce(
+            (max, type) => Math.max(max, type.length),
+            0,
+        ) + 1
+
+    const choices = Object.entries(types)
+        .filter((choice): choice is [string, CommitTypeConfig] =>
+            Boolean(choice[1]),
+        )
+        .map(([key, type]) => ({
+            name: `${padEnd(`${key}:`, length)} ${type.description}`,
+            value: key,
+        }))
 
     return {
         // When a user runs `git cz`, prompter will be executed. We pass you
@@ -23,7 +48,7 @@ module.exports = function engine(options) {
         // should be executed when you're ready to send back a commit template
         // to git. By default, we'll de-indent your commit template and will
         // keep empty lines.
-        prompter(cz, commit) {
+        prompter(cz: Inquirer, callback: PrompterCallback) {
             // eslint-disable-next-line no-console
             console.log(
                 `\nLine 1 will be cropped at ${maxLineWidth} characters. All other lines will be wrapped after ${maxLineWidth} characters.\n`,
@@ -75,7 +100,7 @@ module.exports = function engine(options) {
                         },
                     ],
                     default: 1,
-                    when(answers) {
+                    when(answers: Answers) {
                         return answers.isBreaking
                     },
                 },
@@ -84,7 +109,7 @@ module.exports = function engine(options) {
                     name: 'breaking',
                     message:
                         'Describe the breaking changes in detail and include any instructions for upgrading packages:\n',
-                    when(answers) {
+                    when(answers: Answers) {
                         return (
                             answers.isBreaking &&
                             answers.isBreakingConfirmed === 'yes'
@@ -129,7 +154,7 @@ module.exports = function engine(options) {
 
                 const footer = compact([breaking]).join('\n\n')
 
-                commit(`${head}\n\n${body}\n\n${footer}`)
+                callback(`${head}\n\n${body}\n\n${footer}`)
             })
         },
     }

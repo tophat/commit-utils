@@ -1,5 +1,4 @@
-'use strict'
-const constants = require('../src/constants')
+import { type CommitType, constants } from '@tophat/commit-utils-core'
 
 const { COMMIT_TYPES } = constants
 
@@ -17,7 +16,13 @@ describe('commit-utils-core', () => {
         ${'deps'}     | ${true}
     `(
         'commit type $commitType has the correct appearsInChangelog value of $appearsInChangelog',
-        ({ commitType, appearsInChangelog }) => {
+        ({
+            commitType,
+            appearsInChangelog,
+        }: {
+            commitType: CommitType
+            appearsInChangelog: boolean
+        }) => {
             expect(COMMIT_TYPES[commitType].appearsInChangelog).toEqual(
                 appearsInChangelog,
             )
@@ -33,7 +38,13 @@ describe('commit-utils-core', () => {
         ${'chore'} | ${false}
     `(
         'LEGACY: commit type $commitType has the correct appearsInChangelog value of $appearsInChangelog',
-        ({ commitType, appearsInChangelog }) => {
+        ({
+            commitType,
+            appearsInChangelog,
+        }: {
+            commitType: CommitType
+            appearsInChangelog: boolean
+        }) => {
             expect(COMMIT_TYPES[commitType].appearsInChangelog).toEqual(
                 appearsInChangelog,
             )

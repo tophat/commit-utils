@@ -24,6 +24,14 @@ const config: Config = {
             '!packages/**/src/**/*.test.js',
         ],
     }),
+    transform: {
+        '^.+\\.[tj]s$': [
+            'ts-jest',
+            {
+                tsconfig: 'tsconfig.test.json',
+            },
+        ],
+    },
 }
 
 export default config

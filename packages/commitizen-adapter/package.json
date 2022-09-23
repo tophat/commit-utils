@@ -6,20 +6,19 @@
   "homepage": "https://github.com/tophat/commit-utils#readme",
   "license": "Apache-2.0",
   "main": "src/index.js",
-  "directories": {
-    "lib": "src",
-    "test": "__tests__"
-  },
   "dependencies": {
-    "@tophat/commit-utils-core": "^0.6.1",
+    "@tophat/commit-utils-core": "workspace:*",
     "lodash": "^4.17.21",
-    "word-wrap": "^1.0.3"
+    "word-wrap": "^1.2.3"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.178"
+    "@types/inquirer": "^8",
+    "@types/jest": "^29.0.3",
+    "@types/lodash": "^4.14.178",
+    "@types/node": "^16"
   },
   "files": [
-    "src"
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -27,13 +26,14 @@
     "directory": "packages/commitizen-adapter"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "prepack": "run workspace:build \"$(pwd)\""
   },
   "bugs": {
     "url": "https://github.com/tophat/commit-utils/issues"
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "main": "lib/index.js"
   }
 }

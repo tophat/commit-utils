@@ -1,9 +1,13 @@
 node_modules/
 website/build
 
+lib
+
 .yarn/*
 !.yarn/releases
 !.yarn/plugins
 !.yarn/versions
 !.yarn/sdks
 .pnp.*
+
+*.tsbuildinfo

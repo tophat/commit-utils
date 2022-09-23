@@ -1,8 +1,8 @@
-/* eslint-disable sort-keys */
+import { commitTypes } from './commitTypes'
 
-const { commitTypes } = require('./commitTypes')
+import type { Options } from 'conventional-commits-parser'
 
-module.exports = {
+const config: Options = {
     headerPattern: /^(\w*)(?:\((.*)\))?: (.*)$/,
     headerCorrespondence: ['type', 'scope', 'subject'],
     noteKeywords: [
@@ -13,3 +13,5 @@ module.exports = {
         /^(revert:|Revert)\s([\s\S]*?)\s*This reverts commit (\w*)\./,
     revertCorrespondence: ['prefix', 'header', 'hash'],
 }
+
+export default config

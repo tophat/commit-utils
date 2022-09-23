@@ -1,9 +1,30 @@
-/* eslint-disable sort-keys */
+export type CommitTypeConfig = {
+    description: string
+    title: string
+    prefix: string
+    groupTitle: string
+    appearsInChangelog: boolean
+}
+
+type LegacyCommitType = 'cr' | 'style' | 'perf' | 'build' | 'ci' | 'chore'
+
+type ModernCommitType =
+    | 'feat'
+    | 'fix'
+    | 'deps'
+    | 'o11y'
+    | 'refactor'
+    | 'docs'
+    | 'test'
+    | 'revert'
+    | 'wip'
+
+export type CommitType = LegacyCommitType | ModernCommitType
 
 /**
  * These legacy types will be removed in a future breaking change.
  */
-const LEGACY_COMMIT_TYPES = {
+const LEGACY_COMMIT_TYPES: Record<LegacyCommitType, CommitTypeConfig> = {
     cr: {
         description: 'Changes resulting from code review',
         title: 'Code Reviews',
@@ -51,7 +72,7 @@ const LEGACY_COMMIT_TYPES = {
     },
 }
 
-const COMMIT_TYPES = {
+export const COMMIT_TYPES: Record<CommitType, CommitTypeConfig> = {
     feat: {
         description: 'A new feature, a new export, new component, utils, etc.',
         title: 'Features',
@@ -122,8 +143,4 @@ const COMMIT_TYPES = {
         appearsInChangelog: false,
     },
     ...LEGACY_COMMIT_TYPES,
-}
-
-module.exports = {
-    COMMIT_TYPES,
 }

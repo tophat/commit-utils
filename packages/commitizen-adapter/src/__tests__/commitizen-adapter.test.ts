@@ -1,8 +1,7 @@
-'use strict'
-const { constants } = require('@tophat/commit-utils-core')
+import { constants } from '@tophat/commit-utils-core'
 
 const { COMMIT_TYPES } = constants
-const engine = require('../src/engine')
+import engine from '../engine'
 
 describe('conventional-changelog-config', () => {
     describe('engine', () => {
@@ -12,7 +11,7 @@ describe('conventional-changelog-config', () => {
         const mockCommitSubject = 'Put cables to her fore and aft'
         const mockBreakingMessage = "We've patched her rents, stopped her vents"
 
-        const getMockCz = (mockAnswer) => ({
+        const getMockCz = (mockAnswer: any) => ({
             prompt: jest.fn(() => Promise.resolve(mockAnswer)),
         })
 
