@@ -16,17 +16,11 @@ jobs:
     runs-on: ubuntu-20.04
     if: "github.event_name == 'pull_request' && !contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v3.0.2
           with:
             ref: ${{ github.event.pull_request.head.sha }}
             fetch-depth: 0
-        - uses: ./.github/actions/detect-env
-        - name: Setup Node.js
-          uses: actions/setup-node@v3.1.1
-          with:
-            node-version: ${{ env.NODE_VERSION }}
-        - name: Create artifacts directory
-          run: mkdir -p ${{ env.ARTIFACT_DIR }}
+        - uses: ./.github/actions/setup-env
         - name: Run Commit Watch
           env:
             COMMIT_WATCH_OUTPUT_DIR: ${{ env.ARTIFACT_DIR }}/
@@ -46,24 +40,10 @@ jobs:
     runs-on: ubuntu-20.04
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v3.0.2
           with:
             fetch-depth: 0
-        - uses: ./.github/actions/detect-env
-        - name: Setup Node.js
-          uses: actions/setup-node@v3.1.1
-          with:
-            node-version: ${{ env.NODE_VERSION }}
-        - name: Create artifacts directory
-          run: mkdir -p ${{ env.ARTIFACT_DIR }}
-        - name: Restore yarn cache
-          id: yarn-cache
-          uses: actions/cache@v2
-          with:
-            path: ./.yarn/cache
-            key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
-        - name: Install dependencies
-          run: yarn install --immutable
+        - uses: ./.github/actions/setup-env
         - name: Linting
           run: yarn lint:ci
         - name: Tests
