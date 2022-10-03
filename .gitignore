@@ -11,3 +11,6 @@ lib
 .pnp.*
 
 *.tsbuildinfo
+
+.vscode/*
+!.vscode/extensions.json
