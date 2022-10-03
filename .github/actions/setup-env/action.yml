@@ -50,5 +50,5 @@ runs:
       run: |
         git config --global user.name tophat-opensource-bot
         git config --global user.email opensource-leads+bot@tophatmonocle.com
-        git config --global init.defaultBranch master
+        git config --global init.defaultBranch main
       shell: bash

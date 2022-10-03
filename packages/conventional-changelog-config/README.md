@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/%40tophat%2Fconventional-changelog-config.svg)](https://badge.fury.io/js/%40tophat%2Fconventional-changelog-config)
 [![npm downloads](https://img.shields.io/npm/dm/%40tophat%2Fconventional-changelog-config.svg)](https://npm-stat.com/charts.html?package=%40tophat%2Fconventional-changelog-config)
 
-Top Hat's shareable configuration for [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular)
+Top Hat's shareable configuration for [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog/tree/main/packages/conventional-changelog-angular)
 
 
 ## Installation
@@ -29,7 +29,7 @@ Lerna is not installed globally.
 ## Convention
 
 The changelog uses the commit message format from the
-[Angular Convention](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular#commit-message-format).
+[Angular Convention](https://github.com/conventional-changelog/conventional-changelog/tree/main/packages/conventional-changelog-angular#commit-message-format).
 
 ### Included Commit Types
 

@@ -5,7 +5,7 @@
 [![Continuous Integration](https://github.com/tophat/commit-utils/actions/workflows/pull-request.yml/badge.svg)](https://github.com/tophat/commit-utils/actions/workflows/pull-request.yml)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![Discord](https://img.shields.io/discord/809577721751142410)](https://discord.gg/YhK3GFcZrk)
-[![Maturity badge - level 1](https://img.shields.io/badge/Maturity-Level%201%20--%20New%20Project-yellow.svg)](https://github.com/tophat/getting-started/blob/master/scorecard.md)
+[![Maturity badge - level 1](https://img.shields.io/badge/Maturity-Level%201%20--%20New%20Project-yellow.svg)](https://github.com/tophat/getting-started/blob/main/scorecard.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
@@ -15,18 +15,18 @@ This repository contains a collection of packages used by Top Hat to enforce our
 
 The following packages are provided:
 
-[@tophat/commitlint-config](https://github.com/tophat/commit-utils/tree/master/packages/commitlint-config): A config for commitlint that enforces Top Hat's style guide
+[@tophat/commitlint-config](https://github.com/tophat/commit-utils/tree/main/packages/commitlint-config): A config for commitlint that enforces Top Hat's style guide
 
-[@tophat/commitizen-adapter](https://github.com/tophat/commit-utils/tree/master/packages/commitizen-adapter): An adapter for commitizen that helps you interactively build semantic commit messages
+[@tophat/commitizen-adapter](https://github.com/tophat/commit-utils/tree/main/packages/commitizen-adapter): An adapter for commitizen that helps you interactively build semantic commit messages
 
-[@tophat/conventional-changelog-config](https://github.com/tophat/commit-utils/tree/master/packages/conventional-changelog-config): A preset for conventional-changelog built on Top Hat's style guide
+[@tophat/conventional-changelog-config](https://github.com/tophat/commit-utils/tree/main/packages/conventional-changelog-config): A preset for conventional-changelog built on Top Hat's style guide
 
-[@tophat/commit-utils-core](https://github.com/tophat/commit-utils/tree/master/packages/commit-utils-core): A package containing code that is shared between all our config packages. This package is meant for *internal use* only.
+[@tophat/commit-utils-core](https://github.com/tophat/commit-utils/tree/main/packages/commit-utils-core): A package containing code that is shared between all our config packages. This package is meant for *internal use* only.
 
 
 ## Commit Convention
 
-Top Hat uses the following commit types as part of our development flow. Note that some of the commit types are automatically added to the changelog using [@tophat/conventional-changelog-config](https://github.com/tophat/commit-utils/tree/master/packages/conventional-changelog-config)
+Top Hat uses the following commit types as part of our development flow. Note that some of the commit types are automatically added to the changelog using [@tophat/conventional-changelog-config](https://github.com/tophat/commit-utils/tree/main/packages/conventional-changelog-config)
 
 | Commit Type | Title | Description | Added to changelog? |
 | --- | --- | --- | --- |
