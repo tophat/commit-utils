@@ -72,11 +72,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
+      <td align="center"><a href="https://noahnu.com/"><img src="https://avatars.githubusercontent.com/u/1297096?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Noah</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=noahnu" title="Code">💻</a> <a href="#infra-noahnu" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/tophat/commit-utils/issues?q=author%3Anoahnu" title="Bug reports">🐛</a></td>
+      <td align="center"><a href="https://www.karnov.club/"><img src="https://avatars.githubusercontent.com/u/6210361?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Marc Cataford</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=mcataford" title="Documentation">📖</a></td>
       <td align="center"><a href="http://msrose.github.io"><img src="https://avatars3.githubusercontent.com/u/3495264?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Michael Rose</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=msrose" title="Code">💻</a> <a href="https://github.com/tophat/commit-utils/commits?author=msrose" title="Documentation">📖</a></td>
       <td align="center"><a href="https://github.com/Yuuki-chan"><img src="https://avatars1.githubusercontent.com/u/5069639?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tonia Tong</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=Yuuki-chan" title="Code">💻</a> <a href="https://github.com/tophat/commit-utils/commits?author=Yuuki-chan" title="Documentation">📖</a></td>
       <td align="center"><a href="http://www.sanchitgera.ca"><img src="https://avatars0.githubusercontent.com/u/8632167?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sanchit Gera</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=sanchitgera" title="Code">💻</a> <a href="https://github.com/tophat/commit-utils/commits?author=sanchitgera" title="Documentation">📖</a></td>
       <td align="center"><a href="https://github.com/JeremySant"><img src="https://avatars1.githubusercontent.com/u/9597842?v=4?s=100" width="100px;" alt=""/><br /><sub><b>jeremysant</b></sub></a><br /><a href="https://github.com/tophat/commit-utils/commits?author=JeremySant" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/maryampaz"><img src="https://avatars1.githubusercontent.com/u/30090413?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Maryam Pazirandeh</b></sub></a><br /><a href="#design-maryampaz" title="Design">🎨</a></td>
+    </tr>
+    <tr>
       <td align="center"><a href="https://github.com/asottile"><img src="https://avatars3.githubusercontent.com/u/1810591?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anthony Sottile</b></sub></a><br /><a href="#security-asottile" title="Security">🛡️</a></td>
     </tr>
   </tbody>
