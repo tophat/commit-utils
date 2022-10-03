@@ -11,6 +11,26 @@
   "commitConvention": "angular",
   "contributors": [
     {
+      "login": "noahnu",
+      "name": "Noah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1297096?v=4",
+      "profile": "https://noahnu.com/",
+      "contributions": [
+        "code",
+        "infra",
+        "bug"
+      ]
+    },
+    {
+      "login": "mcataford",
+      "name": "Marc Cataford",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6210361?v=4",
+      "profile": "https://www.karnov.club/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
       "login": "msrose",
       "name": "Michael Rose",
       "avatar_url": "https://avatars3.githubusercontent.com/u/3495264?v=4",
