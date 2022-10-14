@@ -1,0 +1,34 @@
+---
+path: "/contributing"
+title: "Contributing"
+---
+
+## Contributing to Commit Utils
+
+### Getting Started
+
+Optionally install nvm to ensure you're using the correct version of node. You can find the node version in the `.nvmrc` file. Once you have the right version of node selected, you'll want to enable [corepack](https://github.com/nodejs/corepack) via `corepack enable`.
+
+Install dependencies.
+
+```sh
+yarn
+```
+
+This project uses [Typescript](https://www.typescriptlang.org/) and [Yarn Berry](https://yarnpkg.com/).
+
+### Linting
+
+TypeScript is linted with ESLint.
+
+
+To run ESLint:
+
+```sh
+yarn lint
+yarn lint:fix
+```
+
+### Build
+
+You can execute `yarn build` to generate the build assets that ultimately gets uploaded to the NPM registry. It will also leave the intermediate `lib` artifacts, which contain the transpiled code.

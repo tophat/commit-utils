@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs: [tests]
     steps:
-        - uses: actions/checkout@v3.0.2
+        - uses: actions/checkout@v3.1.0
           with:
             token: ${{ secrets.TOPHAT_BOT_GH_TOKEN }}
             fetch-depth: 0
@@ -55,3 +55,22 @@ jobs:
             name: reports-and-build-artifacts
             path: |
                 ${{ env.ARTIFACT_DIR }}
+  website:
+    name: Website
+    runs-on: ubuntu-20.04
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    needs: [linting, build]
+    steps:
+      - uses: actions/checkout@v3.1.0
+        with:
+          token: ${{ secrets.TOPHAT_BOT_GH_TOKEN }}
+          fetch-depth: 0
+      - uses: ./.github/actions/setup-env
+      - name: Build & Deploy Website
+        run: |
+          git checkout gh-pages
+          git reset --hard main
+          yarn docs
+          git add docs
+          git commit -m "chore: update website" -n
+          git push --force origin gh-pages
