@@ -69,7 +69,7 @@ jobs:
       - name: Build & Deploy Website
         run: |
           git checkout gh-pages
-          git reset --hard master
+          git reset --hard main
           yarn docs
           git add docs
           git commit -m "chore: update website" -n
