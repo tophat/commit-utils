@@ -13,7 +13,7 @@
     "typedoc": "^0.23.5"
   },
   "devDependencies": {
-    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/loader": "^2.0.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@types/loader-utils": "^2.0.3",
