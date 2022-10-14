@@ -1,0 +1,55 @@
+---
+path: "/"
+title: "Commit Utils"
+---
+
+[![Continuous Integration](https://github.com/tophat/commit-utils/actions/workflows/pull-request.yml/badge.svg)](https://github.com/tophat/commit-utils/actions/workflows/pull-request.yml)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+[![Discord](https://img.shields.io/discord/809577721751142410)](https://discord.gg/YhK3GFcZrk)
+[![Maturity badge - level 1](https://img.shields.io/badge/Maturity-Level%201%20--%20New%20Project-yellow.svg)](https://github.com/tophat/getting-started/blob/main/scorecard.md)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+
+This repository contains a collection of packages used by Top Hat to enforce our commitlint convention and use it to automatically generate changelogs.
+
+## Packages
+
+The following packages are provided:
+
+[@tophat/commitlint-config](https://github.com/tophat/commit-utils/tree/main/packages/commitlint-config): A config for commitlint that enforces Top Hat's style guide
+
+[@tophat/commitizen-adapter](https://github.com/tophat/commit-utils/tree/main/packages/commitizen-adapter): An adapter for commitizen that helps you interactively build semantic commit messages
+
+[@tophat/conventional-changelog-config](https://github.com/tophat/commit-utils/tree/main/packages/conventional-changelog-config): A preset for conventional-changelog built on Top Hat's style guide
+
+[@tophat/commit-utils-core](https://github.com/tophat/commit-utils/tree/main/packages/commit-utils-core): A package containing code that is shared between all our config packages. This package is meant for *internal use* only.
+
+
+## Commit Convention
+
+Top Hat uses the following commit types as part of our development flow. Note that some of the commit types are automatically added to the changelog using [@tophat/conventional-changelog-config](https://github.com/tophat/commit-utils/tree/main/packages/conventional-changelog-config)
+
+| Commit Type | Title | Description | Added to changelog? |
+| --- | --- | --- | --- |
+| wip | Work in Progress | Changes that are part of some work in progress | No
+| feat | Features | A new feature | **Yes**
+| fix | Bug Fixes | A bugfix | **Yes**
+| refactor | Code Refactoring | Changes that neither fix a bug nor add a feature | No
+| docs | Documentation | Changes to documentation only | No
+| test | Tests | Adding missing tests or correcting existing tests | No
+| revert | Reverts | Reverts a previous commit | **Yes**
+| o11y | Observability & Analytics | Improvements to o11y | **Yes**
+| deps | Dependencies | Dependency updates | **Yes**
+
+## Contributing
+
+To report bugs, please a create a [new issue](https://github.com/tophat/commit-utils/issues).
+
+### Making changes to the config
+
+This configuration specified in these packages are for Top Hat's open source and internal use, so we generally won't be accepting external contributions.
+
+If you are an external contributor and you have changes that you really feel should be included in our global config, feel free to make a suggestion, but please don't take it personally if we decide not to adopt the rule.
+These configs are really easy to extend, so feel free to do exactly that with this one and make your own based off of it!
+You can learn more from the commitlint docs for [creating shareable configs](https://eslint.org/docs/developer-guide/shareable-configs).
+
