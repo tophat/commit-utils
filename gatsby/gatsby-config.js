@@ -51,9 +51,6 @@ module.exports = {
                         options: { maxWidth: 1000 },
                     },
                 ],
-                defaultLayouts: {
-                    default: require.resolve('./src/components/Layout.tsx'),
-                },
             },
         },
         'gatsby-plugin-gatsby-cloud',

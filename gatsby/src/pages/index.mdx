@@ -3,6 +3,8 @@ path: "/"
 title: "Commit Utils"
 ---
 
+export { Layout as default } from '../components/Layout'
+
 [![Continuous Integration](https://github.com/tophat/commit-utils/actions/workflows/pull-request.yml/badge.svg)](https://github.com/tophat/commit-utils/actions/workflows/pull-request.yml)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![Discord](https://img.shields.io/discord/809577721751142410)](https://discord.gg/YhK3GFcZrk)
@@ -40,17 +42,72 @@ The following packages are provided:
 
 Top Hat uses the following commit types as part of our development flow. Note that some of the commit types are automatically added to the changelog using [@tophat/conventional-changelog-config](https://github.com/tophat/commit-utils/tree/main/packages/conventional-changelog-config)
 
-| Commit Type | Title | Description | Added to changelog? |
-| --- | --- | --- | --- |
-| wip | Work in Progress | Changes that are part of some work in progress | No
-| feat | Features | A new feature | **Yes**
-| fix | Bug Fixes | A bugfix | **Yes**
-| refactor | Code Refactoring | Changes that neither fix a bug nor add a feature | No
-| docs | Documentation | Changes to documentation only | No
-| test | Tests | Adding missing tests or correcting existing tests | No
-| revert | Reverts | Reverts a previous commit | **Yes**
-| o11y | Observability & Analytics | Improvements to o11y | **Yes**
-| deps | Dependencies | Dependency updates | **Yes**
+<table>
+   <thead>
+      <tr>
+         <th>Commit Type</th>
+         <th>Title</th>
+         <th>Description</th>
+         <th>Added to changelog?</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>wip</td>
+         <td>Work in Progress</td>
+         <td>Changes that are part of some work in progress</td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>feat</td>
+         <td>Features</td>
+         <td>A new feature</td>
+         <td><strong>Yes</strong></td>
+      </tr>
+      <tr>
+         <td>fix</td>
+         <td>Bug Fixes</td>
+         <td>A bugfix</td>
+         <td><strong>Yes</strong></td>
+      </tr>
+      <tr>
+         <td>refactor</td>
+         <td>Code Refactoring</td>
+         <td>Changes that neither fix a bug nor add a feature</td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>docs</td>
+         <td>Documentation</td>
+         <td>Changes to documentation only</td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>test</td>
+         <td>Tests</td>
+         <td>Adding missing tests or correcting existing tests</td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>revert</td>
+         <td>Reverts</td>
+         <td>Reverts a previous commit</td>
+         <td><strong>Yes</strong></td>
+      </tr>
+      <tr>
+         <td>o11y</td>
+         <td>Observability &amp; Analytics</td>
+         <td>Improvements to o11y</td>
+         <td><strong>Yes</strong></td>
+      </tr>
+      <tr>
+         <td>deps</td>
+         <td>Dependencies</td>
+         <td>Dependency updates</td>
+         <td><strong>Yes</strong></td>
+      </tr>
+   </tbody>
+</table>
 
 ## Contributing
 
