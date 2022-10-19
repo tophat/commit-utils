@@ -8,10 +8,6 @@ import Header from './Header'
 import Seo from './Seo'
 import './layout.css'
 
-const components = {
-    code: CodeBlock,
-}
-
 interface PageContext {
     frontmatter: {
         path: string
@@ -19,7 +15,7 @@ interface PageContext {
     }
 }
 
-const Layout: React.FC<{
+export const Layout: React.FC<{
     children: React.ReactNode
     pageContext: PageContext
 }> = ({ children, pageContext }) => {
@@ -34,7 +30,9 @@ const Layout: React.FC<{
     `)
 
     return (
-        <MDXProvider components={components}>
+        <MDXProvider components={{
+            code: CodeBlock,
+        }}>
             <Seo title={pageContext?.frontmatter?.title} />
             <Header siteTitle={data.site.siteMetadata?.title} />
             <div
@@ -60,5 +58,3 @@ const Layout: React.FC<{
         </MDXProvider>
     )
 }
-
-export default Layout

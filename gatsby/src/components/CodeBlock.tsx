@@ -1,15 +1,12 @@
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/vsDark'
 import React from 'react'
 
-const CodeBlock: React.FC<{
-    children: React.ReactNode
-    className: string
-}> = ({ children, className }) => {
-    const language = className.replace(/language-/, '')
+const CodeBlock: React.FC<React.HTMLAttributes<HTMLElement>> = ({ children, className }) => {
+    const language = (className?.replace(/language-/, '') as Language | undefined) ?? 'bash'
 
     return (
-        <Highlight {...defaultProps} theme={theme} code={children.trim()} language={language}>
+        <Highlight {...defaultProps} theme={theme} code={String(children).trim()} language={language}>
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <pre className={className} style={{ ...style, padding: '20px' }}>
                     {tokens.map((line, i) => (
