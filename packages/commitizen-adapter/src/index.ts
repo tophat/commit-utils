@@ -8,4 +8,4 @@ const Engine = engine({
     types: COMMIT_TYPES,
 })
 
-export default Engine
+export = Engine
