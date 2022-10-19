@@ -31,7 +31,7 @@ jobs:
             CI_BASE_BRANCH: origin/${{ github.base_ref }}
           run: yarn dlx commit-watch
         - name: Upload Artifacts
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v3
           with:
             name: commit-watch-artifacts
             path: ${{ env.ARTIFACT_DIR }}
@@ -53,7 +53,7 @@ jobs:
           env:
             CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         - name: Upload Artifacts
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v3
           with:
             name: reports-and-build-artifacts
             path: ${{ env.ARTIFACT_DIR }}
