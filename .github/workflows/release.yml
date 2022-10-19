@@ -19,7 +19,6 @@ jobs:
             fetch-depth: 0
         - uses: ./.github/actions/setup-env
         - name: Publish Package (Pre-release)
-          id: publish
           if: github.ref == 'refs/heads/next'
           env:
             NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
