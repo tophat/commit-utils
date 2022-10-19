@@ -15,7 +15,7 @@
     "@tophat/commit-utils-core": "^0.6.1",
     "@tophat/commitizen-adapter": "^0.5.7",
     "@tophat/commitlint-config": "^0.3.7",
-    "@tophat/conventional-changelog-config": "workspace:packages/conventional-changelog-config",
+    "@tophat/conventional-changelog-config": "^0.6.2",
     "@tophat/eslint-config": "^3.3.0",
     "@types/jest": "^29.2.0",
     "@types/node": "^18.11.2",

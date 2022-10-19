@@ -3748,7 +3748,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tophat/commit-utils-core@^0.6.1, @tophat/commit-utils-core@workspace:*, @tophat/commit-utils-core@workspace:packages/commit-utils-core":
+"@tophat/commit-utils-core@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "@tophat/commit-utils-core@npm:0.6.1"
+  checksum: ca17cbe91fb56cf88d5cffa431654a50f271e924cbbd93d470a7bd9fd39a79ddfe0326506fa0f7bd7ffe03721781aac4b25f28530d8628a1d4eed929057ce543
+  languageName: node
+  linkType: hard
+
+"@tophat/commit-utils-core@workspace:*, @tophat/commit-utils-core@workspace:packages/commit-utils-core":
   version: 0.0.0-use.local
   resolution: "@tophat/commit-utils-core@workspace:packages/commit-utils-core"
   dependencies:
@@ -3794,7 +3801,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tophat/commitizen-adapter@^0.5.7, @tophat/commitizen-adapter@workspace:packages/commitizen-adapter":
+"@tophat/commitizen-adapter@npm:^0.5.7":
+  version: 0.5.7
+  resolution: "@tophat/commitizen-adapter@npm:0.5.7"
+  dependencies:
+    "@tophat/commit-utils-core": ^0.6.1
+    lodash: ^4.17.21
+    word-wrap: ^1.0.3
+  checksum: 0c600ef04d92541f17b94e338fef41a8e861172c1ffc3858a7d4c576cf373759fb06abe2627a3ee69282a517ab826cfa13b50e43f556809af24e18dd8973ee2c
+  languageName: node
+  linkType: hard
+
+"@tophat/commitizen-adapter@workspace:packages/commitizen-adapter":
   version: 0.0.0-use.local
   resolution: "@tophat/commitizen-adapter@workspace:packages/commitizen-adapter"
   dependencies:
@@ -3808,7 +3826,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tophat/commitlint-config@^0.3.7, @tophat/commitlint-config@workspace:packages/commitlint-config":
+"@tophat/commitlint-config@npm:^0.3.7":
+  version: 0.3.7
+  resolution: "@tophat/commitlint-config@npm:0.3.7"
+  dependencies:
+    "@tophat/commit-utils-core": ^0.6.1
+  checksum: beff349c401822280e90e101d027c54e6a4ca192dfda384aa7e96fc7e3a2521b7f90902bd02685fbc25890f8fe5eff48809704f207010ae401fac4a1f19bb769
+  languageName: node
+  linkType: hard
+
+"@tophat/commitlint-config@workspace:packages/commitlint-config":
   version: 0.0.0-use.local
   resolution: "@tophat/commitlint-config@workspace:packages/commitlint-config"
   dependencies:
@@ -3817,6 +3844,16 @@ __metadata:
     "@types/jest": ^29.2.0
   languageName: unknown
   linkType: soft
+
+"@tophat/conventional-changelog-config@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "@tophat/conventional-changelog-config@npm:0.6.2"
+  dependencies:
+    "@tophat/commit-utils-core": ^0.6.1
+    compare-func: ^2.0.0
+  checksum: 133eae17e045961b66f839e3350cbc293ccac7a21d9ec7f5711a0f2df4cfe052092101dfdd3fb22381d8c31e08e9125e6c8dda2a336aec2bc229d9de1178d767
+  languageName: node
+  linkType: hard
 
 "@tophat/conventional-changelog-config@workspace:packages/conventional-changelog-config":
   version: 0.0.0-use.local
@@ -17720,7 +17757,7 @@ __metadata:
     "@tophat/commit-utils-core": ^0.6.1
     "@tophat/commitizen-adapter": ^0.5.7
     "@tophat/commitlint-config": ^0.3.7
-    "@tophat/conventional-changelog-config": "workspace:packages/conventional-changelog-config"
+    "@tophat/conventional-changelog-config": ^0.6.2
     "@tophat/eslint-config": ^3.3.0
     "@types/jest": ^29.2.0
     "@types/node": ^18.11.2
