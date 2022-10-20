@@ -23,15 +23,15 @@ const shouldNoteGoInChangelog = (title: string) =>
 
 async function generateConfig(): Promise<Options> {
     const template = await fs.promises.readFile(
-        path.join(__dirname, './templates/template.hbs'),
+        path.join(__dirname, '../templates/template.hbs'),
         'utf-8',
     )
     const header = await fs.promises.readFile(
-        path.join(__dirname, './templates/header.hbs'),
+        path.join(__dirname, '../templates/header.hbs'),
         'utf-8',
     )
     const footer = await fs.promises.readFile(
-        path.join(__dirname, './templates/footer.hbs'),
+        path.join(__dirname, '../templates/footer.hbs'),
         'utf-8',
     )
 
