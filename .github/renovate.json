@@ -1,5 +1,0 @@
-{
-  "extends": [
-    "github>tophat/new-project-kit//.github/renovate"
-  ]
-}
