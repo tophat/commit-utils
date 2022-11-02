@@ -3835,7 +3835,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tophat/commitlint-config@workspace:*, @tophat/commitlint-config@workspace:packages/commitlint-config":
+"@tophat/commitlint-config@workspace:^1.0.1, @tophat/commitlint-config@workspace:packages/commitlint-config":
   version: 0.0.0-use.local
   resolution: "@tophat/commitlint-config@workspace:packages/commitlint-config"
   dependencies:
@@ -7533,7 +7533,7 @@ __metadata:
     "@commitlint/format": ^17.0.0
     "@commitlint/lint": ^17.1.0
     "@commitlint/types": ^17.0.0
-    "@tophat/commitlint-config": "workspace:*"
+    "@tophat/commitlint-config": "workspace:^1.0.1"
     "@types/git-raw-commits": ^2.0.1
     "@types/jest": ^29.2.1
     "@types/node": ^18.11.9
@@ -7545,7 +7545,7 @@ __metadata:
     junit-report-builder: ^3.0.1
     typanion: ^3.12.1
   peerDependencies:
-    "@tophat/commitlint-config": ">= 1.0.0"
+    "@tophat/commitlint-config": ^1.0.1
   bin:
     commit-watch: src/bin.ts
   languageName: unknown
