@@ -1,8 +1,10 @@
+import { type QualifiedRules } from '@commitlint/types'
+
 import { constants } from '@tophat/commit-utils-core'
 
 const { COMMIT_TYPES } = constants
 
-export const rules = {
+export const rules: QualifiedRules = {
     'body-leading-blank': [1, 'always'],
     'footer-leading-blank': [1, 'always'],
     'header-max-length': [2, 'always', 72],
