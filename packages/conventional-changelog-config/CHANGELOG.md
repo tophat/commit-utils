@@ -2,6 +2,15 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+## [1.0.1](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@1.0.0...@tophat/conventional-changelog-config@1.0.1) "@tophat/conventional-changelog-config" (2022-10-20)<a name="1.0.1"></a>
+
+### Bug Fixes
+
+* include template files in packed bundle (#154) ([a9becc5](https://github.com/tophat/commit-utils/commits/a9becc5))
+
+
+
+
 ## [1.0.0](https://github.com/tophat/commit-utils/compare/@tophat/conventional-changelog-config@0.6.2...@tophat/conventional-changelog-config@1.0.0) "@tophat/conventional-changelog-config" (2022-10-19)<a name="1.0.0"></a>
 
 ### Breaking Changes
