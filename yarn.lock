@@ -3820,7 +3820,7 @@ __metadata:
     "@types/inquirer": ^9.0.2
     "@types/jest": ^29.2.0
     "@types/lodash": ^4.14.186
-    "@types/node": ^18.11.2
+    "@types/node": ^18.11.9
     lodash: ^4.17.21
     word-wrap: ^1.2.3
   languageName: unknown
@@ -4399,7 +4399,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^18.11.2":
+"@types/node@npm:*, @types/node@npm:>=10.0.0":
   version: 18.11.2
   resolution: "@types/node@npm:18.11.2"
   checksum: 0ff5c90fb9ab653e018b858479aea4d2f763b07b31f9502383d408936f525ca37cac82ea27774a0dd0356ff9badba2792a6a3fff94f79fd7c82ee2a892c43ed5
@@ -4417,6 +4417,13 @@ __metadata:
   version: 14.18.32
   resolution: "@types/node@npm:14.18.32"
   checksum: 45463114bf85d06dc12925d876dd90b7fff43d9ee10a40e48fd16aece3d0201c76426c128e41230b2818d386422be06c5be33b3d94d90ee924b6fa4d54574035
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.11.9":
+  version: 18.11.9
+  resolution: "@types/node@npm:18.11.9"
+  checksum: cc0aae109e9b7adefc32eecb838d6fad931663bb06484b5e9cbbbf74865c721b03d16fd8d74ad90e31dbe093d956a7c2c306ba5429ba0c00f3f7505103d7a496
   languageName: node
   linkType: hard
 
@@ -7529,7 +7536,7 @@ __metadata:
     "@tophat/commitlint-config": "workspace:*"
     "@types/git-raw-commits": ^2.0.1
     "@types/jest": ^29.2.1
-    "@types/node": ^18.11.2
+    "@types/node": ^18.11.9
     axios: ^1.1.3
     axios-mock-adapter: ^1.21.2
     chalk: ^4.1.2
@@ -17901,7 +17908,7 @@ __metadata:
     "@tophat/conventional-changelog-config": ^0.6.2
     "@tophat/eslint-config": ^3.3.0
     "@types/jest": ^29.2.0
-    "@types/node": ^18.11.2
+    "@types/node": ^18.11.9
     "@typescript-eslint/eslint-plugin": ^5.41.0
     "@typescript-eslint/parser": ^5.40.1
     "@yarnpkg/sdks": ^3.0.0-rc.25
