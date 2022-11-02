@@ -1,6 +1,6 @@
 {
   "name": "@tophat/commitlint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Top Hat's config for commitlint",
   "author": "Top Hat",
   "homepage": "https://github.com/tophat/commit-utils#readme",
