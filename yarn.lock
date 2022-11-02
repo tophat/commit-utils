@@ -1559,16 +1559,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/ensure@npm:^13.2.0":
-  version: 13.2.0
-  resolution: "@commitlint/ensure@npm:13.2.0"
-  dependencies:
-    "@commitlint/types": ^13.2.0
-    lodash: ^4.17.19
-  checksum: c3193e871532c14da99525852589b3a7f81ee769c1dfcbfb9b79e339a53cf9dc02dfdf7209ab46252534c3e3f30fd944d42b8eb1744c560d67b7ae5d75347727
-  languageName: node
-  linkType: hard
-
 "@commitlint/ensure@npm:^17.0.0":
   version: 17.0.0
   resolution: "@commitlint/ensure@npm:17.0.0"
@@ -1586,16 +1576,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/format@npm:^13.1.0":
-  version: 13.2.0
-  resolution: "@commitlint/format@npm:13.2.0"
-  dependencies:
-    "@commitlint/types": ^13.2.0
-    chalk: ^4.0.0
-  checksum: 2436616dfad82cf5c21a2158d84199a02af04db3bb55c1075ba6c048f6acde0e63e19f98dcbcedd5ad09b0641a3d16a40250d4f16bf8ab2816d4328b04d6a6cf
-  languageName: node
-  linkType: hard
-
 "@commitlint/format@npm:^17.0.0":
   version: 17.0.0
   resolution: "@commitlint/format@npm:17.0.0"
@@ -1606,16 +1586,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/is-ignored@npm:^13.2.0":
-  version: 13.2.0
-  resolution: "@commitlint/is-ignored@npm:13.2.0"
-  dependencies:
-    "@commitlint/types": ^13.2.0
-    semver: 7.3.5
-  checksum: 0a06adb765236a5ebf03be69f4bf30cbb4375ce902e1d819dc428bd725fed1d83790bdad9bcdb990ac61affd63a50c31f904ded807c62ca70da4556398e7f729
-  languageName: node
-  linkType: hard
-
 "@commitlint/is-ignored@npm:^17.1.0":
   version: 17.1.0
   resolution: "@commitlint/is-ignored@npm:17.1.0"
@@ -1623,18 +1593,6 @@ __metadata:
     "@commitlint/types": ^17.0.0
     semver: 7.3.7
   checksum: d371e7dbf137dee40d06b54f7edd1ac079d6ff696d756fb8b6a9c1a69b12a92295ecd2cf6d7079db229783c510b57a5f88080f486d3810177aef85b098f2464d
-  languageName: node
-  linkType: hard
-
-"@commitlint/lint@npm:^13.1.0":
-  version: 13.2.0
-  resolution: "@commitlint/lint@npm:13.2.0"
-  dependencies:
-    "@commitlint/is-ignored": ^13.2.0
-    "@commitlint/parse": ^13.2.0
-    "@commitlint/rules": ^13.2.0
-    "@commitlint/types": ^13.2.0
-  checksum: f56d9029bdf7957d8c4e5af6ab621cf0dac82422550bdc84ac28965b5828e376b986be091502bc4e60240e0fd4db9f35cecf95a6b35d5c926ea78118bab06e9f
   languageName: node
   linkType: hard
 
@@ -1670,28 +1628,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/message@npm:^13.2.0":
-  version: 13.2.0
-  resolution: "@commitlint/message@npm:13.2.0"
-  checksum: 77e4e0670490b294d4e9c55ff4788e2c76050a23e471478494a4b8efed196f0aecb7b64ce652109ecbc6847adaa95a0d3495330b7776fecac3ff6e5a6bb5f6eb
-  languageName: node
-  linkType: hard
-
 "@commitlint/message@npm:^17.0.0":
   version: 17.0.0
   resolution: "@commitlint/message@npm:17.0.0"
   checksum: ec80ea7f98082e48116fda1203277ac139bf2f442a8f58f87f8b823c6e526ec3771a9de7821b249254d580bff59a3fe205d044d1e9df29c34c3014a41e851c5d
-  languageName: node
-  linkType: hard
-
-"@commitlint/parse@npm:^13.2.0":
-  version: 13.2.0
-  resolution: "@commitlint/parse@npm:13.2.0"
-  dependencies:
-    "@commitlint/types": ^13.2.0
-    conventional-changelog-angular: ^5.0.11
-    conventional-commits-parser: ^3.2.2
-  checksum: ef445bd5f4bf5711fe845f3e507d5776f8f57319f527b25b049671006223419af2ca8765133683bbd42c725528bf254bc1d7ee745c027e105f602f1b78e86a7e
   languageName: node
   linkType: hard
 
@@ -1733,19 +1673,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/rules@npm:^13.2.0":
-  version: 13.2.0
-  resolution: "@commitlint/rules@npm:13.2.0"
-  dependencies:
-    "@commitlint/ensure": ^13.2.0
-    "@commitlint/message": ^13.2.0
-    "@commitlint/to-lines": ^13.2.0
-    "@commitlint/types": ^13.2.0
-    execa: ^5.0.0
-  checksum: 0f6d9fe431dbdbc79f1420f0ea577d2fe2010421e35a30fb87b5fda3272d5e8c257ee762de7b6affe5cf83c322383f77d5d5c7068017060c0458fae8023ea580
-  languageName: node
-  linkType: hard
-
 "@commitlint/rules@npm:^17.0.0":
   version: 17.0.0
   resolution: "@commitlint/rules@npm:17.0.0"
@@ -1770,13 +1697,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/to-lines@npm:^13.2.0":
-  version: 13.2.0
-  resolution: "@commitlint/to-lines@npm:13.2.0"
-  checksum: bd1c6597542c7dbe95817f029710ae5e206ba4523b4fded7544324832e901b8a4d4636c165bef4b911d1213606314a0c2110c3dffd2a01e7a769edc26e1da1a8
-  languageName: node
-  linkType: hard
-
 "@commitlint/to-lines@npm:^17.0.0":
   version: 17.0.0
   resolution: "@commitlint/to-lines@npm:17.0.0"
@@ -1790,15 +1710,6 @@ __metadata:
   dependencies:
     find-up: ^5.0.0
   checksum: 2e43d021a63faee67aa0e63b86a3ab9347ccda1b81f1f0722841223bd6bf127de954933c2ca3172fac0a1ce07a8b3bed62ac8f4afa04d50281dc5f80b43b61fb
-  languageName: node
-  linkType: hard
-
-"@commitlint/types@npm:^13.2.0":
-  version: 13.2.0
-  resolution: "@commitlint/types@npm:13.2.0"
-  dependencies:
-    chalk: ^4.0.0
-  checksum: 9035c01864bfbf9d3073c6ff45ef9fc8c47ee34bcc6135390bbfa6be868b23edc9b98dab5013f813e69c8ba1630a3a4a93f522a2aaf082588aeed0c5dd922167
   languageName: node
   linkType: hard
 
@@ -3915,7 +3826,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tophat/commitlint-config@npm:^0.3.5, @tophat/commitlint-config@npm:^0.3.7":
+"@tophat/commitlint-config@npm:^0.3.7":
   version: 0.3.7
   resolution: "@tophat/commitlint-config@npm:0.3.7"
   dependencies:
@@ -3924,10 +3835,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tophat/commitlint-config@workspace:packages/commitlint-config":
+"@tophat/commitlint-config@workspace:*, @tophat/commitlint-config@workspace:packages/commitlint-config":
   version: 0.0.0-use.local
   resolution: "@tophat/commitlint-config@workspace:packages/commitlint-config"
   dependencies:
+    "@commitlint/types": ^17.0.0
     "@commitlint/utils": ^8.3.6
     "@tophat/commit-utils-core": "workspace:^1.0.0"
     "@types/jest": ^29.2.0
@@ -4267,6 +4179,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/git-raw-commits@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@types/git-raw-commits@npm:2.0.1"
+  dependencies:
+    "@types/node": "*"
+  checksum: b5d41433a5201b8fbd475d29d08df77d60a402acfdba9703125eab96449a7040721d698e8bad8debbb3377338e08c3d75faab409e2e2b47b6f0a66f535d1594f
+  languageName: node
+  linkType: hard
+
 "@types/github-slugger@npm:^1.0.0":
   version: 1.3.0
   resolution: "@types/github-slugger@npm:1.3.0"
@@ -4363,13 +4284,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^29.2.0":
-  version: 29.2.0
-  resolution: "@types/jest@npm:29.2.0"
+"@types/jest@npm:^29.2.0, @types/jest@npm:^29.2.1":
+  version: 29.2.1
+  resolution: "@types/jest@npm:29.2.1"
   dependencies:
     expect: ^29.0.0
     pretty-format: ^29.0.0
-  checksum: 6779e63d8d7507b116a61b2935a200e48531849fc1ac74090212759fe17716777ca6d2c3a8d927a563e9cfa474ae91d40b1688376ae80e3a08974b3c9e9691e1
+  checksum: 5610c9a44c57f6dc39cf54429ea8d04574ad4c3e3ddf9a2621882aa94a0758a42ca97a0d0aec41a8d0b149fa63bf3d077d1f07c1f1d82e3d89ad7408de211255
   languageName: node
   linkType: hard
 
@@ -6226,12 +6147,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios-mock-adapter@npm:^1.21.2":
+  version: 1.21.2
+  resolution: "axios-mock-adapter@npm:1.21.2"
+  dependencies:
+    fast-deep-equal: ^3.1.3
+    is-buffer: ^2.0.5
+  peerDependencies:
+    axios: ">= 0.17.0"
+  checksum: 0d334838a819597f49fd5bf807e2a46cd846397cbea734fd53dcb425dee914e2d3e57cff65eb36af70cdbba848416c48979b75223afbfc1ab49789fd12011618
+  languageName: node
+  linkType: hard
+
 "axios@npm:^0.21.1":
   version: 0.21.4
   resolution: "axios@npm:0.21.4"
   dependencies:
     follow-redirects: ^1.14.0
   checksum: 44245f24ac971e7458f3120c92f9d66d1fc695e8b97019139de5b0cc65d9b8104647db01e5f46917728edfc0cfd88eb30fc4c55e6053eef4ace76768ce95ff3c
+  languageName: node
+  linkType: hard
+
+"axios@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "axios@npm:1.1.3"
+  dependencies:
+    follow-redirects: ^1.15.0
+    form-data: ^4.0.0
+    proxy-from-env: ^1.1.0
+  checksum: cab3b17bf6092c9387f7023d699db093cfa23650b56c4422cd474d124b78b2e3b5a520f932c330664a58ab85b867b1c25a95cace475ef72d236888c852b84e6d
   languageName: node
   linkType: hard
 
@@ -7299,7 +7243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clipanion@npm:^3.2.0-rc.10, clipanion@npm:^3.2.0-rc.12":
+"clipanion@npm:^3.2.0-rc.10, clipanion@npm:^3.2.0-rc.12, clipanion@npm:^3.2.0-rc.13":
   version: 3.2.0-rc.13
   resolution: "clipanion@npm:3.2.0-rc.13"
   dependencies:
@@ -7533,18 +7477,24 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "commit-watch@workspace:packages/commit-watch"
   dependencies:
-    "@commitlint/format": ^13.1.0
-    "@commitlint/lint": ^13.1.0
-    "@tophat/commitlint-config": ^0.3.5
-    axios: ^0.21.1
+    "@commitlint/format": ^17.0.0
+    "@commitlint/lint": ^17.1.0
+    "@commitlint/types": ^17.0.0
+    "@tophat/commitlint-config": "workspace:*"
+    "@types/git-raw-commits": ^2.0.1
+    "@types/jest": ^29.2.1
+    "@types/node": ^18.11.2
+    axios: ^1.1.3
+    axios-mock-adapter: ^1.21.2
     chalk: ^4.1.2
-    git-raw-commits: ^2.0.10
-    junit-report-builder: ^3.0.0
-    minimist: ^1.2.5
+    clipanion: ^3.2.0-rc.13
+    git-raw-commits: ^2.0.11
+    junit-report-builder: ^3.0.1
+    typanion: ^3.12.1
   peerDependencies:
-    "@tophat/commitlint-config": ">= 0.3.4"
+    "@tophat/commitlint-config": ">= 1.0.0"
   bin:
-    commit-watch: src/index.js
+    commit-watch: src/bin.ts
   languageName: unknown
   linkType: soft
 
@@ -10139,7 +10089,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.0":
+"follow-redirects@npm:^1.14.0, follow-redirects@npm:^1.15.0":
   version: 1.15.2
   resolution: "follow-redirects@npm:1.15.2"
   peerDependenciesMeta:
@@ -10188,6 +10138,17 @@ __metadata:
     combined-stream: ^1.0.8
     mime-types: ^2.1.12
   checksum: b019e8d35c8afc14a2bd8a7a92fa4f525a4726b6d5a9740e8d2623c30e308fbb58dc8469f90415a856698933c8479b01646a9dff33c87cc4e76d72aedbbf860d
+  languageName: node
+  linkType: hard
+
+"form-data@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "form-data@npm:4.0.0"
+  dependencies:
+    asynckit: ^0.4.0
+    combined-stream: ^1.0.8
+    mime-types: ^2.1.12
+  checksum: 01135bf8675f9d5c61ff18e2e2932f719ca4de964e3be90ef4c36aacfc7b9cb2fceb5eca0b7e0190e3383fe51c5b37f4cb80b62ca06a99aaabfcfd6ac7c9328c
   languageName: node
   linkType: hard
 
@@ -11130,7 +11091,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-raw-commits@npm:^2.0.0, git-raw-commits@npm:^2.0.10":
+"git-raw-commits@npm:^2.0.0, git-raw-commits@npm:^2.0.11":
   version: 2.0.11
   resolution: "git-raw-commits@npm:2.0.11"
   dependencies:
@@ -12238,7 +12199,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-buffer@npm:^2.0.0":
+"is-buffer@npm:^2.0.0, is-buffer@npm:^2.0.5":
   version: 2.0.5
   resolution: "is-buffer@npm:2.0.5"
   checksum: 764c9ad8b523a9f5a32af29bdf772b08eb48c04d2ad0a7240916ac2688c983bf5f8504bf25b35e66240edeb9d9085461f9b5dae1f3d2861c6b06a65fe983de42
@@ -13489,7 +13450,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"junit-report-builder@npm:^3.0.0":
+"junit-report-builder@npm:^3.0.1":
   version: 3.0.1
   resolution: "junit-report-builder@npm:3.0.1"
   dependencies:
@@ -17007,6 +16968,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"proxy-from-env@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "proxy-from-env@npm:1.1.0"
+  checksum: ed7fcc2ba0a33404958e34d95d18638249a68c430e30fcb6c478497d72739ba64ce9810a24f53a7d921d0c065e5b78e3822759800698167256b04659366ca4d4
+  languageName: node
+  linkType: hard
+
 "pseudomap@npm:^1.0.1, pseudomap@npm:^1.0.2":
   version: 1.0.2
   resolution: "pseudomap@npm:1.0.2"
@@ -18085,17 +18053,6 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 272c11bf8d083274ef79fe40a81c55c184dff84dd58e3c325299d0927ba48cece1f020793d138382b85f89bab5002a35a5ba59a3a68a7eebbb597eb733838778
-  languageName: node
-  linkType: hard
-
-"semver@npm:7.3.5":
-  version: 7.3.5
-  resolution: "semver@npm:7.3.5"
-  dependencies:
-    lru-cache: ^6.0.0
-  bin:
-    semver: bin/semver.js
-  checksum: 5eafe6102bea2a7439897c1856362e31cc348ccf96efd455c8b5bc2c61e6f7e7b8250dc26b8828c1d76a56f818a7ee907a36ae9fb37a599d3d24609207001d60
   languageName: node
   linkType: hard
 
@@ -19597,7 +19554,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typanion@npm:^3.3.0, typanion@npm:^3.3.1, typanion@npm:^3.8.0, typanion@npm:^3.9.0":
+"typanion@npm:^3.12.1, typanion@npm:^3.3.0, typanion@npm:^3.3.1, typanion@npm:^3.8.0, typanion@npm:^3.9.0":
   version: 3.12.1
   resolution: "typanion@npm:3.12.1"
   checksum: a2e26fa216f8a1dbd2ffbaacb75b1e2dc042a0356e9702fba05a968cad95d9f661b24e37f6c6d8c3adad2c8582c99fca4826ff26a2d07cd2ae617ea87e6187eb
