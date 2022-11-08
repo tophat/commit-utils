@@ -55,11 +55,7 @@ export class CommitWatchCommand extends Command {
     async execute(): Promise<number | void> {
         const commitSha =
             this.commitSha || process.env.CI_COMMIT_SHA || undefined
-        const baseRef =
-            this.baseRef ||
-            process.env.CI_BRANCH ||
-            process.env.CI_BASE_BRANCH ||
-            undefined
+        const baseRef = this.baseRef || process.env.CI_BASE_BRANCH || undefined
 
         if (!commitSha || !baseRef) {
             throw new Error('Both a commit sha and base ref are required.')
