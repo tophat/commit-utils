@@ -2,6 +2,15 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+## [2.1.1](https://github.com/tophat/commit-utils/compare/commit-watch@2.1.0...commit-watch@2.1.1) "commit-watch" (2022-11-08)<a name="2.1.1"></a>
+
+### Bug Fixes
+
+* revert CI_BRANCH support (#161) ([20d94f0](https://github.com/tophat/commit-utils/commits/20d94f0))
+
+
+
+
 ## [2.1.0](https://github.com/tophat/commit-utils/compare/commit-watch@2.0.1...commit-watch@2.1.0) "commit-watch" (2022-11-08)<a name="2.1.0"></a>
 
 ### Features

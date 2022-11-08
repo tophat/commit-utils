@@ -1,6 +1,6 @@
 {
   "name": "commit-watch",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "commit message status check for continuous integration",
   "author": "Top Hat Monocle Corp. <opensource@tophat.com>",
   "license": "Apache-2.0",
