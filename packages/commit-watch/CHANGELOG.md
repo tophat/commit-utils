@@ -2,6 +2,15 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+## [2.0.1](https://github.com/tophat/commit-utils/compare/commit-watch@2.0.0...commit-watch@2.0.1) "commit-watch" (2022-11-08)<a name="2.0.1"></a>
+
+### Bug Fixes
+
+* authorization header (#159) ([0df3c14](https://github.com/tophat/commit-utils/commits/0df3c14))
+
+
+
+
 ## [2.0.0](https://github.com/tophat/commit-utils/compare/commit-watch@1.0.0...commit-watch@2.0.0) "commit-watch" (2022-11-08)<a name="2.0.0"></a>
 
 ### Breaking Changes
