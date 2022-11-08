@@ -2,6 +2,15 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+## [1.0.2](https://github.com/tophat/commit-utils/compare/@tophat/commitlint-config@1.0.1...@tophat/commitlint-config@1.0.2) "@tophat/commitlint-config" (2022-11-08)<a name="1.0.2"></a>
+
+### Bug Fixes
+
+* typescript types in rule object ([de03771](https://github.com/tophat/commit-utils/commits/de03771))
+
+
+
+
 ## [1.0.1](https://github.com/tophat/commit-utils/compare/@tophat/commitlint-config@1.0.0...@tophat/commitlint-config@1.0.1) "@tophat/commitlint-config" (2022-11-02)<a name="1.0.1"></a>
 
 ### Bug Fixes

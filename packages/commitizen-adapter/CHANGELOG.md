@@ -2,6 +2,15 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+## [1.0.2](https://github.com/tophat/commit-utils/compare/@tophat/commitizen-adapter@1.0.1...@tophat/commitizen-adapter@1.0.2) "@tophat/commitizen-adapter" (2022-11-08)<a name="1.0.2"></a>
+
+### Dependencies
+
+* update dependency @types/node to ^18.11.9 (#137) ([bf5e8c1](https://github.com/tophat/commit-utils/commits/bf5e8c1))
+
+
+
+
 ## [1.0.1](https://github.com/tophat/commit-utils/compare/@tophat/commitizen-adapter@1.0.0...@tophat/commitizen-adapter@1.0.1) "@tophat/commitizen-adapter" (2022-11-02)<a name="1.0.1"></a>
 
 ### Dependencies
