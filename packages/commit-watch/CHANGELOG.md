@@ -2,6 +2,15 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+## [2.1.0](https://github.com/tophat/commit-utils/compare/commit-watch@2.0.1...commit-watch@2.1.0) "commit-watch" (2022-11-08)<a name="2.1.0"></a>
+
+### Features
+
+* configurable opt to fail on github errors (#160) ([a0ac490](https://github.com/tophat/commit-utils/commits/a0ac490))
+
+
+
+
 ## [2.0.1](https://github.com/tophat/commit-utils/compare/commit-watch@2.0.0...commit-watch@2.0.1) "commit-watch" (2022-11-08)<a name="2.0.1"></a>
 
 ### Bug Fixes
