@@ -40,7 +40,7 @@ export class GitHubChecks {
                 responseType: 'json',
                 timeout: 5000,
                 headers: {
-                    Authorization: `token ${this.#config.githubToken}`,
+                    Authorization: `Bearer ${this.#config.githubToken}`,
                 },
             })
             this.#lastState = data.state
