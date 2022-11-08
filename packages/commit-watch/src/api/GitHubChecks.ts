@@ -45,14 +45,19 @@ export class GitHubChecks {
             })
             this.#lastState = data.state
         } catch (error) {
-            if (axios.isAxiosError(error) && error.response) {
-                logger.error(
-                    `GitHubService HTTP_${error.response.status} :: ${
-                        error.response.data?.message ?? ''
-                    }`,
-                )
+            if (this.#config.failOnGitHubErrors) {
+                if (axios.isAxiosError(error) && error.response) {
+                    logger.error(
+                        `GitHubService HTTP_${error.response.status} :: ${
+                            error.response.data?.message ?? ''
+                        }`,
+                    )
+                }
+                throw error
             }
-            throw error
+            if (axios.isAxiosError(error) && error.response) {
+                logger.error(`GitHubService HTTP_${error.response.status}`)
+            }
         }
     }
 

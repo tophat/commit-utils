@@ -48,6 +48,10 @@ export class CommitWatchCommand extends Command {
         required: false,
     })
 
+    failOnGitHubErrors = Option.Boolean('--fail-on-github-errors', false, {
+        description: 'Whether to fail on GitHub errors.',
+    })
+
     async execute(): Promise<number | void> {
         const commitSha =
             this.commitSha || process.env.CI_COMMIT_SHA || undefined
@@ -86,6 +90,7 @@ export class CommitWatchCommand extends Command {
             },
             commitSha,
             baseRef,
+            failOnGitHubErrors: this.failOnGitHubErrors || false,
         }
 
         try {

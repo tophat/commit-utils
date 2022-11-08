@@ -14,4 +14,6 @@ export interface CommitWatchConfiguration {
     commitSha: string
     /** The base git ref we're analyzing against. We find messages between baseRef and commitSha. */
     baseRef: string
+    /** Whether to fail on GitHub errors. */
+    failOnGitHubErrors?: boolean
 }
