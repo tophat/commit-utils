@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@commitlint/format": "^17.0.0",
-    "@commitlint/lint": "^17.1.0",
+    "@commitlint/lint": "^17.2.0",
     "@commitlint/types": "^17.0.0",
     "@tophat/commitlint-config": "workspace:^1.0.2",
     "axios": "^1.1.3",
