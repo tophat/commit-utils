@@ -14,7 +14,7 @@
   "devDependencies": {
     "@types/inquirer": "^9.0.2",
     "@types/jest": "^29.2.0",
-    "@types/lodash": "^4.14.186",
+    "@types/lodash": "^4.14.187",
     "@types/node": "^18.11.9"
   },
   "files": [
