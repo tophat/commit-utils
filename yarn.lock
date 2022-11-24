@@ -3948,7 +3948,7 @@ __metadata:
     "@tophat/commit-utils-core": "workspace:^1.0.0"
     "@types/inquirer": ^9.0.2
     "@types/jest": ^29.2.0
-    "@types/lodash": ^4.14.186
+    "@types/lodash": ^4.14.187
     "@types/node": ^18.11.9
     lodash: ^4.17.21
     word-wrap: ^1.2.3
@@ -4456,10 +4456,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.175, @types/lodash@npm:^4.14.186, @types/lodash@npm:^4.14.92":
+"@types/lodash@npm:^4.14.175, @types/lodash@npm:^4.14.92":
   version: 4.14.186
   resolution: "@types/lodash@npm:4.14.186"
   checksum: ee0c1368a8100bb6efb88335107473a41928fc307ff1ef4ff1278868ccddba9c04c68c36d1ffe3a0392ef4a956e1955f7de3203ec09df4f1655dd1b88485c549
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:^4.14.187":
+  version: 4.14.190
+  resolution: "@types/lodash@npm:4.14.190"
+  checksum: 353a55a1222a57224ead8bd3379fabb2e3e3f6685f599c48b1b66f099d8e9e015e6c6352c6e2275954004c3bb510377804c63117233c6f187700b6ab78adfa02
   languageName: node
   linkType: hard
 
