@@ -21,7 +21,7 @@
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.40.1",
-    "@yarnpkg/sdks": "^3.0.0-rc.25",
+    "@yarnpkg/sdks": "^3.0.0-rc.27",
     "all-contributors-cli": "^6.24.0",
     "commitizen": "^4.2.5",
     "compare-func": "^2.0.0",
