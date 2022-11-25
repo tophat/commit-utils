@@ -30,7 +30,7 @@
     "conventional-commits-parser": "^3.2.4"
   },
   "devDependencies": {
-    "@types/jest": "^29.2.1"
+    "@types/jest": "^29.2.2"
   },
   "publishConfig": {
     "access": "public",
