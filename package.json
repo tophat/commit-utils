@@ -20,7 +20,7 @@
     "@types/jest": "^29.2.2",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
-    "@typescript-eslint/parser": "^5.40.1",
+    "@typescript-eslint/parser": "^5.42.0",
     "@yarnpkg/sdks": "^3.0.0-rc.27",
     "all-contributors-cli": "^6.24.0",
     "commitizen": "^4.2.5",
