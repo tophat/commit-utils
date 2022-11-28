@@ -10,7 +10,7 @@
     "gatsby"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
+    "@commitlint/cli": "^17.2.0",
     "@monodeploy/plugin-github": "^0.6.2",
     "@tophat/commit-utils-core": "^0.6.1",
     "@tophat/commitizen-adapter": "^0.5.7",
