@@ -19,7 +19,7 @@
     "@tophat/eslint-config": "^3.3.0",
     "@types/jest": "^29.2.2",
     "@types/node": "^18.11.9",
-    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.43.0",
     "@yarnpkg/sdks": "^3.0.0-rc.41",
     "all-contributors-cli": "^6.24.0",
