@@ -4213,7 +4213,7 @@ __metadata:
   dependencies:
     "@tophat/commit-utils-core": "workspace:^1.0.0"
     "@types/compare-func": ^1.3.0
-    "@types/conventional-changelog-writer": ^4.0.1
+    "@types/conventional-changelog-writer": ^4.0.6
     "@types/conventional-commits-parser": ^3.0.2
     "@types/jest": ^29.2.2
     compare-func: ^2.0.0
@@ -4420,13 +4420,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/conventional-changelog-writer@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "@types/conventional-changelog-writer@npm:4.0.1"
+"@types/conventional-changelog-writer@npm:^4.0.6":
+  version: 4.0.6
+  resolution: "@types/conventional-changelog-writer@npm:4.0.6"
   dependencies:
     "@types/conventional-commits-parser": "*"
     "@types/node": "*"
-  checksum: 1e029327a97406de0be4df76ee98a183a0c67a6d90d518e7b72a922e3e4f66e56e4c4c829f1bce02a80946ed474389742708739dd0ecb3e144ec0e421140ae48
+  checksum: 82b07ba3d33f2434b1703d34c3b3bddb80104dee8178264cd569e23946019e7d4d81019ee146e8672be1088303bfc871cf1ebd9fb52dd429ca3f08512d2522cd
   languageName: node
   linkType: hard
 
