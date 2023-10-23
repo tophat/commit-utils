@@ -7431,7 +7431,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clipanion@npm:^3.2.0-rc.10, clipanion@npm:^3.2.0-rc.13, clipanion@npm:^3.2.1":
+"clipanion@npm:^3.2.0-rc.10, clipanion@npm:^3.2.1":
   version: 3.2.1
   resolution: "clipanion@npm:3.2.1"
   dependencies:
@@ -7674,7 +7674,7 @@ __metadata:
     "@types/node": ^18.11.9
     axios: ^1.5.1
     axios-mock-adapter: ^1.22.0
-    clipanion: ^3.2.0-rc.13
+    clipanion: ^3.2.1
     git-raw-commits: ^4.0.0
     junit-report-builder: ^3.1.0
     typanion: ^3.14.0
