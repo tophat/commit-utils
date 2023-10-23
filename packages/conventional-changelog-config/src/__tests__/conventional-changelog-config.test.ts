@@ -1,6 +1,8 @@
 import { Readable, type Transform } from 'stream'
 
-import conventionalCommitsParser, { Commit } from 'conventional-commits-parser'
+import conventionalCommitsParser, {
+    type Commit,
+} from 'conventional-commits-parser'
 
 import configPromise from '..'
 import { STRATEGY } from '../commitTypes'
@@ -185,7 +187,7 @@ describe('conventional-changelog-config', () => {
             )[0]
             const writerOpts = await Promise.resolve(writerOptsConfig)
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore transform is always a function
+            // @ts-expect-error transform is always a function
             const transformedCommit = writerOpts.transform?.(
                 mockCommit,
                 mockContext,
@@ -210,7 +212,7 @@ describe('conventional-changelog-config', () => {
 
             const writerOpts = await Promise.resolve(writerOptsConfig)
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore transform is always a function
+            // @ts-expect-error transform is always a function
             const transformedCommit = writerOpts.transform(
                 mockCommit,
                 mockContext,
@@ -237,7 +239,7 @@ describe('conventional-changelog-config', () => {
             expect(mockCommit.notes).toHaveLength(9)
             const writerOpts = await Promise.resolve(writerOptsConfig)
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore transform is always a function
+            // @ts-expect-error transform is always a function
             const transformedCommit = writerOpts.transform(
                 mockCommit,
                 mockContext,

@@ -61,7 +61,7 @@ async function generateConfig(): Promise<Options> {
                             const [, , header, hash] = match
                             note.text = header
                             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                            // @ts-ignore it looks like revert hash should be on the commit, not the note?
+                            // @ts-expect-error it looks like revert hash should be on the commit, not the note?
                             note.revertHash = hash.substring(0, 7)
                         }
                     }
@@ -74,7 +74,7 @@ async function generateConfig(): Promise<Options> {
                             const scope = getNoteScope(note.title)
                             if (scope && scope !== EMPTY_SCOPE) {
                                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                                // @ts-ignore there's no scope on note
+                                // @ts-expect-error there's no scope on note
                                 note.scope = scope
                             }
                             note.title = groupTitle
@@ -93,7 +93,7 @@ async function generateConfig(): Promise<Options> {
                     title: commitType.groupTitle,
                     text: commit.subject ?? '',
                     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    // @ts-ignore There's no scope on Note?
+                    // @ts-expect-error There's no scope on Note?
                     scope: commit.scope,
                 })
                 discard = false
@@ -102,7 +102,7 @@ async function generateConfig(): Promise<Options> {
                     title: 'Reverts',
                     text: commit.revert.header ?? '',
                     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    // @ts-ignore There's no revertHash on Note?
+                    // @ts-expect-error There's no revertHash on Note?
                     revertHash: commit.revert.hash.substring(0, 7),
                 })
                 discard = false
@@ -146,7 +146,7 @@ async function generateConfig(): Promise<Options> {
 
             // remove references that already appear in the subject
             commit.references = commit.references.filter((reference) => {
-                if (issues.indexOf(reference.issue) === -1) {
+                if (!issues.includes(reference.issue)) {
                     return true
                 }
 
@@ -161,7 +161,7 @@ async function generateConfig(): Promise<Options> {
         noteGroupsSort: 'title',
 
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore Maybe we can drop the external package?
+        // @ts-expect-error Maybe we can drop the external package?
         notesSort: compareFunc,
 
         mainTemplate: template,

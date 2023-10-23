@@ -1,6 +1,7 @@
 module.exports = {
+    root: true,
     extends: ['@tophat', '@tophat/eslint-config/jest'],
     parserOptions: {
-        ecmaVersion: 2021,
+        project: './tsconfig.test.json',
     },
 }
